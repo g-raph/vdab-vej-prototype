@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Flanders";
+    src:
+      url('/assets/font/FlandersArtSans-Regular.otf') format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Flanders";
+    src:
+      url('/assets/font/FlandersArtSans-Bold.otf') format("opentype");
+    font-weight: 700;
+}
+
+// vars
+$color-primary: #1769A4;
+
+// main
+body {
+    font-family: 'Flanders';
+}

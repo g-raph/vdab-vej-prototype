@@ -1,0 +1,3 @@
+<div class="jobs">
+    <app-job-teaser *ngFor="let job of jobs" [job]="job" [routerLink]="['/vind-een-job', job.id]"></app-job-teaser>
+</div>
