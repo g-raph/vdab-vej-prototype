@@ -1,6 +1,41 @@
 .jobs {
-    padding: 1rem .5rem 5rem;
+    padding: 1rem 1rem 5rem;
     display: flex;
     flex-flow: column;
     gap: 1rem;
+}
+
+.searchbox {
+    background-color: #DBECF8;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    z-index: 5;
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    div:first-child {
+        font-size: 1.125rem;
+    }
+    .muted {
+        opacity: .5;
+        font-size: 1rem;
+    }
+}
+
+.btn {
+    &--primary {
+        color: #fff;
+        background-color: #1769A4;
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        padding: .25rem;
+        border-radius: .25rem;
+    }
 }

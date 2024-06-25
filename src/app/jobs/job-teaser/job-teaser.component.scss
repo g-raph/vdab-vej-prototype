@@ -6,7 +6,7 @@ $color-primary: #1769A4;
     border-radius: 1rem;
     display: flex;
     flex-flow: column;
-    gap: .5rem;
+    gap: 1rem;
     &__header {
         display: flex;
         align-items: center;
@@ -16,6 +16,7 @@ $color-primary: #1769A4;
     &__title {
         color: $color-primary;
         text-decoration: underline;
+        margin: 0;
     }
     &__logo {
         width: 5rem;
@@ -38,7 +39,7 @@ $color-primary: #1769A4;
         }
     }
     &__summary {
-        margin-top: .5rem;
+        line-height: 27px;
     }
 }
 

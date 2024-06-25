@@ -1,3 +1,8 @@
+<div class="searchbox">
+    <div>Manager, 9000 Gent</div>
+    <div class="muted">5 actieve filters</div>
+    <button class="btn btn--primary"><span class="material-symbols-outlined"> edit </span><span>Wijzig zoekopdracht / filters</span></button>
+</div>
 <div class="jobs">
     <app-job-teaser *ngFor="let job of jobs" [job]="job" [routerLink]="['/vind-een-job', job.id]"></app-job-teaser>
 </div>

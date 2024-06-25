@@ -8,53 +8,78 @@ export class ApiService {
 
   jobs = [
     {
-      title: 'Senior system engineer',
-      locationOffice: 'ASAP Office Gent',
-      locationCity: 'Herne',
+      title: 'Senior system engineer manager',
+      location: {
+        office: 'ASAP Office Gent',
+        city: 'Herne',
+      },
       summary: 'Als Procurement Manager (m/v/x) geef je leiding aan een team van 4 personen, elk belast met hun eigen portefeuille van leveranciers, samen met ...',
       online: '16 januari 2024',
       type: 'vaste job',
-      logo: '/assets/logo1.png',
+      company: {
+        name: 'Colruyt',
+        logo: '/assets/logo1.png',
+      },
       id: 1
     },
     {
       title: 'Procurement manager',
-      locationOffice: 'ASAP Office Gent',
-      locationCity: 'Herne',
+      location: {
+        office: 'ASAP Office Stabroek',
+        city: 'Stabroek',
+      },
       summary: 'Als Procurement Manager (m/v/x) geef je leiding aan een team van 4 personen, elk belast met hun eigen portefeuille van leveranciers, samen met ...',
       online: '16 januari 2024',
       type: 'vaste job',
-      logo: '/assets/logo2.png',
+      company: {
+        name: 'Aertssen Kranen',
+        logo: '/assets/logo2.png',
+      },
       id: 2
     },
     {
-      title: 'Frontend developer',
-      locationOffice: 'ASAP Office Gent',
-      locationCity: 'Herne',
+      title: 'Frontend developer manager',
+      location: {
+        office: 'ASAP Office Gent',
+        city: 'Herne',
+      },
       summary: 'Als Procurement Manager (m/v/x) geef je leiding aan een team van 4 personen, elk belast met hun eigen portefeuille van leveranciers, samen met ...',
       online: '16 januari 2024',
       type: 'vaste job',
-      logo: '/assets/logo3.jpg',
+      company: {
+        name: 'Select',
+        logo: '/assets/logo3.jpg',
+      },
       id: 3
     },
     {
       title: 'Backend developer',
-      locationOffice: 'ASAP Office Gent',
-      locationCity: 'Herne',
+      location: {
+        office: 'ASAP Office Gent',
+        city: 'Herne',
+      },
       summary: 'Als Procurement Manager (m/v/x) geef je leiding aan een team van 4 personen, elk belast met hun eigen portefeuille van leveranciers, samen met ...',
       online: '16 januari 2024',
       type: 'vaste job',
-      logo: '/assets/logo4.png',
+      company: {
+        name: 'Square City',
+        logo: '/assets/logo4.png',
+      },
       id: 4
     },
     {
       title: 'Quality Teamleader Colruyt manager',
-      locationOffice: 'ASAP Office Brussel',
-      locationCity: 'Herne',
+      location: {
+        office: 'ASAP Office Brussel',
+        city: 'Brussel',
+      },
       summary: 'Als Procurement Manager (m/v/x) geef je leiding aan een team van 4 personen, elk belast met hun eigen portefeuille van leveranciers, samen met ...',
       online: '16 januari 2024',
       type: 'vaste job',
-      logo: '/assets/logo5.png',
+      company: {
+        name: 'Adecco Interim',
+        logo: '/assets/logo5.png',
+      },
       id: 5
     },
   ];

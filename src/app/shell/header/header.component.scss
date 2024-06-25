@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-flow: column;
+    gap: 0;
+    &__top {
+        background-color: #2d89cc;
+        padding: 1.5rem;
+    }
+    &__bottom {
+        background-color: #C4DEF0;
+        padding: .5rem 1.5rem;
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            span {
+                display: block;
+            }
+        }
+    }
+    a {
+        color: #2d89cc;
+        text-decoration: none;
+    }
+}
