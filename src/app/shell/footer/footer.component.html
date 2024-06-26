@@ -1,6 +1,7 @@
 <div class="footernav">
   <div class="footernav__item" routerLink="/vind-een-job" routerLinkActive="active">
-    <span class="material-symbols-outlined"> search </span>
+    <span *ngIf="!backIcon" class="material-symbols-outlined"> search </span>
+    <span *ngIf="backIcon" class="material-symbols-outlined"> chevron_left </span>
     <span>Vind een job</span>
   </div>
   <div class="footernav__item">

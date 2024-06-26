@@ -26,6 +26,8 @@ $color-primary: #1769A4;
         display: flex;
         align-items: center;
         gap: .5rem;
+        font-size: .875rem;
+        opacity: .75;
         > span:first-child {
             opacity: .5;
         }
@@ -34,6 +36,8 @@ $color-primary: #1769A4;
         display: flex;
         align-items: center;
         gap: .5rem;
+        font-size: .875rem;
+        opacity: .75;
         > span:first-child {
             opacity: .5;
         }
@@ -41,8 +45,4 @@ $color-primary: #1769A4;
     &__summary {
         line-height: 27px;
     }
-}
-
-.bold {
-    font-weight: 700;
 }

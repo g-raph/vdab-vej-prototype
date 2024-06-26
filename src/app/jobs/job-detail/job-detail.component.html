@@ -1,4 +1,32 @@
-<div>
-    <p>job-detail works!</p>
-    {{job.title}}
+<div class="job-detail">
+    <div #topinfo>
+        <a class="back-link" [routerLink]="['/vind-een-job']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a>
+        <img class="job-detail__company__logo" [src]="job.company.logo" alt="">
+        <div   class="job-detail__company">
+            <h2>{{job.company.name}}</h2>
+            <div class="job-detail__company__links">
+                <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
+                <a href="#"><span class="material-symbols-outlined">info</span><span>Meer info over dit bedrijf</span></a>
+                <a href="#"><span class="material-symbols-outlined">campaign</span><span>Spontaan solliciteren</span></a>
+            </div>
+        </div>
+        <h1>{{job.title}}</h1>
+        <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
+        <div class="job__online"><span class="material-symbols-outlined"> schedule </span> <span>Online sinds <span class="bold">{{job.online}}</span> - <span class="bold">{{job.type}}</span></span></div>
+    </div>
+    <div *ngIf="!scrollPosLow" class="stickybox">
+        <h4>{{job.title}}</h4>
+        <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
+    </div>
+    <div class="ctas">
+        <button class="btn btn--primary">Solliciteer nu</button>
+        <button class="btn btn--secondary"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
+    </div>
+    <div class="job-detail__content" [innerHTML]="job.html"></div>
+    <div class="job-detail__highlight" [innerHTML]="job.highlight"></div>
+    <div class="ctas">
+        <button class="btn btn--primary">Solliciteer nu</button>
+        <button class="btn btn--secondary"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
+    </div>
 </div>
+<app-footer [backIcon]="true"></app-footer>
