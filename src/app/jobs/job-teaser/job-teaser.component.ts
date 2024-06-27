@@ -1,9 +1,10 @@
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-job-teaser',
   standalone: true,
-  imports: [],
+  imports: [NgIf, NgForOf],
   templateUrl: './job-teaser.component.html',
   styleUrl: './job-teaser.component.scss'
 })

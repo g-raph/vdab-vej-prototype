@@ -19,9 +19,16 @@ export class ApiService {
       online: '16 januari 2024',
       type: 'vaste job',
       company: {
-        name: 'Colruyt Group',
+        name: 'Colruyt Group Technics',
         logo: '/assets/logo1.png',
+        location: 'Gent, Oost-Vlaanderen'
       },
+      tags: [
+        'Vaste job',
+        'Remote',
+        '3-5 jaar'
+      ],
+      new: true,
       id: 1
     },
     {
@@ -38,7 +45,14 @@ export class ApiService {
       company: {
         name: 'Aertssen Kranen',
         logo: '/assets/logo2.png',
+        location: 'Stabroek, Oost-Vlaanderen'
       },
+      tags: [
+        'Vaste job',
+        'Remote',
+        '3-5 jaar'
+      ],
+      new: true,
       id: 2
     },
     {
@@ -55,11 +69,18 @@ export class ApiService {
       company: {
         name: 'Select Technology',
         logo: '/assets/logo3.jpg',
+        location: 'Herne, Oost-Vlaanderen'
       },
+      tags: [
+        'Vaste job',
+        'Remote',
+        '3-5 jaar'
+      ],
+      new: false,
       id: 3
     },
     {
-      title: 'Backend developer',
+      title: 'Backend developer manager',
       location: {
         office: 'ASAP Office Gent',
         city: 'Herne',
@@ -72,7 +93,14 @@ export class ApiService {
       company: {
         name: 'Square City',
         logo: '/assets/logo4.png',
+        location: 'Herne, Oost-Vlaanderen'
       },
+      tags: [
+        'Vaste job',
+        'Remote',
+        '3-5 jaar'
+      ],
+      new: false,
       id: 4
     },
     {
@@ -89,7 +117,14 @@ export class ApiService {
       company: {
         name: 'Adecco Interim',
         logo: '/assets/logo5.png',
+        location: 'Brussel, Vlaams-Brabant'
       },
+      tags: [
+        'Vaste job',
+        'Remote',
+        '3-5 jaar'
+      ],
+      new: false,
       id: 5
     },
   ];

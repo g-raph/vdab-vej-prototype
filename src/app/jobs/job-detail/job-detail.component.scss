@@ -12,17 +12,35 @@ $color-light: #DBECF8;
 .job-detail {
     padding: 1rem 1.5rem 6rem;
     &__company {
-        padding: 1.5rem;
+        padding: 1rem 1.5rem 1.5rem;
         margin: 0 -1.5rem;
         background-color: $color-light;
+        position: relative;
+        &:before {
+            content: '';
+            background-color: $color-light;
+            position: absolute;
+            left: 0;
+            top: -2.5rem;
+            width: 100%;
+            height: 2.5rem;
+        }
         &__logo {
-            max-width: 12rem;
+            max-width: 8rem;
             height: auto;
-            margin: 1rem 0;
+            margin: 1rem 0 0;
+            max-height: 4rem;
+            padding: 1rem;
+            border: 2px solid $color-light;
+            background-color: #fff;
+            border-radius: .5rem;
+            position: relative;
+            z-index: 2;
         }
         h2 {
             margin: 0 0 1.5rem;
             font-weight: 500;
+            font-size: 1.4rem;
         }
         &__links {
             display: flex;
@@ -52,7 +70,9 @@ $color-light: #DBECF8;
         opacity: .75;
         display: flex;
         align-items: center;
-        gap: .5rem;
+        gap: 0.25rem;
+        font-size: 1rem;
+        margin: 0 0 .25rem;
         > span:first-child {
             opacity: .5;
         }
@@ -61,7 +81,9 @@ $color-light: #DBECF8;
         opacity: .75;
         display: flex;
         align-items: center;
-        gap: .5rem;
+        gap: 0.25rem;
+        font-size: 1rem;
+        margin: 0 0 .5rem;
         > span:first-child {
             opacity: .5;
         }
@@ -86,12 +108,33 @@ $color-light: #DBECF8;
     display: flex;
     flex-flow: column;
     gap: .5rem;
+    animation: fadeInDown .5s ease;
     h4 {
         margin: 0;
         font-size: 1.25rem;
     }
-    div {
+    .job-detail__company__links {
         font-size: 1rem;
         margin-left: -.25rem;
     }
+    .bottom-actions {
+        // padding: 1rem 1.5rem;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
+
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-100%);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+ } 

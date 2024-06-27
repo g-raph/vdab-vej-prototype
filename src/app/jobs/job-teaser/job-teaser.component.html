@@ -1,4 +1,4 @@
-<div class="job">
+<!-- <div class="job">
     <div class="job__header">
         <h3 class="job__title">{{job.title}}</h3>
         <img class="job__logo" [src]="job.company.logo" alt="{{job.title}}">
@@ -6,4 +6,19 @@
     <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
     <div class="job__online"><span class="material-symbols-outlined"> schedule </span> <span>Online sinds <span class="bold">{{job.online}}</span> - <span class="bold">{{job.type}}</span></span></div>
     <div class="job__summary" [innerHTML]="job.summary"></div>
+</div> -->
+<div class="job">
+    <div *ngIf="job.new" class="new">Nieuw</div>
+    <h3 class="job__title">{{job.title}}</h3>
+    <div class="job__company">
+        <img *ngIf="job.company.logo" class="job__logo" [src]="job.company.logo" alt="{{job.title}}">
+        <div class="meta">
+            <div>{{job.company.name}}</div>
+            <div>{{job.company.location}}</div>
+        </div>
+    </div>
+    <div class="job__tags">
+        <div *ngFor="let tag of job.tags" class="tag">{{tag}}</div>
+    </div>
+    <div class="job__online">Online sinds {{job.online}}</div>
 </div>

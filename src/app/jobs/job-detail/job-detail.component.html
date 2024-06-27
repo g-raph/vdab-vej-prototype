@@ -1,6 +1,6 @@
 <div class="job-detail">
     <div #topinfo>
-        <a class="back-link" [routerLink]="['/vind-een-job']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a>
+        <!-- <a class="back-link" [routerLink]="['/vind-een-job']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a> -->
         <img class="job-detail__company__logo" [src]="job.company.logo" alt="">
         <div   class="job-detail__company">
             <h2>{{job.company.name}}</h2>
@@ -17,6 +17,10 @@
     <div *ngIf="!scrollPosLow" class="stickybox">
         <h4>{{job.title}}</h4>
         <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
+        <div class="bottom-actions">
+            <button class="btn btn--primary btn--small">Solliciteer nu</button>
+            <button class="btn btn--secondary btn--small"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
+        </div>
     </div>
     <div class="ctas">
         <button class="btn btn--primary">Solliciteer nu</button>
@@ -24,9 +28,9 @@
     </div>
     <div class="job-detail__content" [innerHTML]="job.html"></div>
     <div class="job-detail__highlight" [innerHTML]="job.highlight"></div>
-    <div class="ctas">
+    <!-- <div class="ctas">
         <button class="btn btn--primary">Solliciteer nu</button>
         <button class="btn btn--secondary"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
-    </div>
+    </div> -->
 </div>
 <app-footer [backIcon]="true"></app-footer>

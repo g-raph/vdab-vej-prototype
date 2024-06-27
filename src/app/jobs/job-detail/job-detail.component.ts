@@ -28,16 +28,16 @@ export class JobDetailComponent {
     }
   }
 
-  constructor(private api: ApiService, private router: ActivatedRoute) {
+  constructor(private api: ApiService, private router: ActivatedRoute, private el: ElementRef) {
     this.jobs = this.api.getJobs();
     this.jobId = this.router.snapshot.params['id'];
     this.job = this.api.getJob(parseInt(this.jobId));
   }
 
   ngOnInit() {
-    console.log(this.job);
+    setTimeout(() => {
+      this.el.nativeElement.querySelector('.job-detail').scrollIntoView();
+    }, 5);
   }
-
-
 
 }

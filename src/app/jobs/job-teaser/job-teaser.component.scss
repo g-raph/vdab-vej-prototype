@@ -3,10 +3,11 @@ $color-primary: #1769A4;
 .job {
     padding: 1rem;
     border: 1px solid #eee;
-    border-radius: 1rem;
+    border-radius: .5rem;
     display: flex;
     flex-flow: column;
     gap: 1rem;
+    position: relative;
     &__header {
         display: flex;
         align-items: center;
@@ -19,7 +20,7 @@ $color-primary: #1769A4;
         margin: 0;
     }
     &__logo {
-        width: 5rem;
+        width: 4rem;
         height: auto;
     }
     &__location {
@@ -44,5 +45,16 @@ $color-primary: #1769A4;
     }
     &__summary {
         line-height: 27px;
+    }
+    &__company {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__tags {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        flex-flow: row wrap;
     }
 }

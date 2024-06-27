@@ -4,7 +4,10 @@
     gap: 0;
     &__top {
         background-color: #2d89cc;
-        padding: 1.5rem;
+        padding: 1.2rem 1.5rem;
+        img {
+            width: 4.1875rem;
+        }
     }
     &__bottom {
         background-color: #C4DEF0;
@@ -13,6 +16,7 @@
             display: flex;
             align-items: center;
             gap: .5rem;
+            font-size: 1rem;
             span {
                 display: block;
             }
