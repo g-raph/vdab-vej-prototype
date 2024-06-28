@@ -28,6 +28,7 @@ h1 {
   display: flex;
   flex-flow: column;
   gap: 0.5rem;
+  box-shadow: 0 .25rem 0.75rem rgba(0,0,0,0.25);
   div:first-child {
     font-size: 1.125rem;
   }
