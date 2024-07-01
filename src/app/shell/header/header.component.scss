@@ -4,14 +4,26 @@
     gap: 0;
     &__top {
         background-color: #2d89cc;
-        padding: 1.2rem 1.5rem;
+        padding: .75rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         img {
-            width: 4.1875rem;
+            width: 3rem;
+            display: block;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            span {
+                color: #fff;
+            }
         }
     }
     &__bottom {
         background-color: #C4DEF0;
-        padding: .5rem 1.5rem;
+        padding: .5rem 1rem;
         .breadcrumbs {
             display: flex;
             align-items: center;
