@@ -1,6 +1,6 @@
 .footernav {
     position: fixed;
-    bottom: 0;
+    bottom: env(safe-area-inset-bottom);
     left: 0;
     box-sizing: border-box;
     width: 100%;
@@ -14,7 +14,7 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        padding: .5rem .5rem 1.5rem;
+        padding: .5rem;
         font-size: .75rem;
         gap: .125rem;
         flex: 1;
