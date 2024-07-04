@@ -15,5 +15,6 @@
   <div class="footernav__item" routerLink="/favorites" routerLinkActive="active">
     <span class="material-symbols-outlined"> star </span>
     <span>Bewaard</span>
+    <ng-container *ngIf="(favorites$ | async) as favs"><span *ngIf="favs.length" class="badge">{{favs.length}}</span></ng-container>
   </div>
 </div>

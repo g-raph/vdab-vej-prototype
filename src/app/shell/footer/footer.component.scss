@@ -19,11 +19,27 @@
         font-size: .75rem;
         gap: .125rem;
         flex: 1;
+        position: relative;
         &.active {
             background-color: #DBECF8;
         }
         .material-symbols-outlined {
             font-size: 1.25rem;
+        }
+        .badge {
+            background-color: #FFD82A;
+            font-size: 0.75rem;
+            font-weight: 500;
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            right: calc(50% - 1.4rem);
+            top: 8px;
         }
     }
 }
