@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
-  jobs = [
+  favorites$ = new BehaviorSubject<any[]>([]);
+  jobs$ = new BehaviorSubject<any[]>([
     {
       title: 'Senior system engineer manager',
       location: {
@@ -29,6 +29,7 @@ export class ApiService {
         '3-5 jaar'
       ],
       new: true,
+      saved: false,
       id: 1
     },
     {
@@ -53,6 +54,7 @@ export class ApiService {
         '3-5 jaar'
       ],
       new: true,
+      saved: false,
       id: 2
     },
     {
@@ -77,6 +79,7 @@ export class ApiService {
         '3-5 jaar'
       ],
       new: false,
+      saved: false,
       id: 3
     },
     {
@@ -101,6 +104,7 @@ export class ApiService {
         '3-5 jaar'
       ],
       new: false,
+      saved: false,
       id: 4
     },
     {
@@ -125,20 +129,31 @@ export class ApiService {
         '3-5 jaar'
       ],
       new: false,
+      saved: false,
       id: 5
     },
-  ];
+  ]);
 
   constructor() { }
 
-  getJobs(): any[] {
-    return this.jobs;
+  getJobs() {
+    return this.jobs$;
   }
 
   getJob(id: number) {
-    const job = this.jobs.find(item => item.id === id);
-    return job;
+    return this.jobs$.pipe(
+      map(jobs => jobs.find(job => job.id === id))
+    );
   }
 
+  addFavorite(objId: any) {
+    const vacatures = this.jobs$.getValue().map(item => {
+      if (item.id === objId) {
+        return {...item, saved: !item.saved}
+      }
+      return item;
+    });
+    this.jobs$.next(vacatures);
+  }
 
 }

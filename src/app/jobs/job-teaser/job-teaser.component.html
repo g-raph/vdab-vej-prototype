@@ -11,5 +11,9 @@
     <div class="job__tags">
         <div *ngFor="let tag of job.tags" class="tag">{{tag}}</div>
     </div>
-    <div class="job__online">Online sinds {{job.online}}</div>
+    <div class="job__bottom">
+        <div class="job__online">Online sinds {{job.online}}</div>
+        <span (click)="setAsFavorite(job.id)" [ngClass]="{'active': job.saved}" class="material-symbols-outlined star">star</span>
+        <!-- <span (click)="setAsFavorite(job.id)" *ngIf="job.saved" class="material-symbols-outlined star active">stars</span> -->
+    </div>
 </div>

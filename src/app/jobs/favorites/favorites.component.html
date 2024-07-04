@@ -1,0 +1,10 @@
+<div class="favorite-page" *ngIf="(favorites$ | async) as favorites">
+    <h1>Bewaarde vacatures</h1>
+    <div *ngIf="favorites.length" class="favorites">
+        <app-job-teaser *ngFor="let job of favorites" [job]="job" [routerLink]="['/vind-een-job', job.id]"></app-job-teaser>
+    </div>
+    <div *ngIf="!favorites.length" class="favorites">
+        Er zijn momenteel geen bewaarde vacatures.
+    </div>
+</div>
+<app-footer></app-footer>

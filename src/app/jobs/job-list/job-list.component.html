@@ -1,4 +1,4 @@
-<div class="jobs-container" [ngClass]="{'filter-open': (filterOpen | async)}">
+<div class="jobs-container" [ngClass]="{'filter-open': (filterOpen | async)}" *ngIf="jobs$ | async as jobs">
     <div class="searchbox">
         <div class="meta">
             <div>Manager, 9000 Gent</div>

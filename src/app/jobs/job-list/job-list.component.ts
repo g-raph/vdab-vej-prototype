@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
+import { AsyncPipe, NgClass, NgForOf, NgIf } from '@angular/common';
 import { Component, ElementRef } from '@angular/core';
 import { JobTeaserComponent } from '../job-teaser/job-teaser.component';
 import { RouterLink } from '@angular/router';
@@ -10,12 +10,12 @@ import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-job-list',
   standalone: true,
-  imports: [NgForOf, JobTeaserComponent, RouterLink, FooterComponent, NgClass, AsyncPipe],
+  imports: [NgForOf, JobTeaserComponent, RouterLink, FooterComponent, NgClass, AsyncPipe, NgIf],
   templateUrl: './job-list.component.html',
   styleUrl: './job-list.component.scss'
 })
 export class JobListComponent {
-  jobs = this.api.getJobs();
+  jobs$ = this.api.getJobs();
   filterOpen = this.filterService.filterOpen$;
   constructor(private api: ApiService, private filterService: FilterModalService, private el: ElementRef) {}
 
