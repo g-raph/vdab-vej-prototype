@@ -44,4 +44,8 @@ export class JobDetailComponent {
     this.api.addFavorite(job);
   }
 
+  scrollToPosition(container: string) {
+    this.el.nativeElement.querySelector(container).scrollIntoView({ behavior: "smooth"});
+  }
+
 }

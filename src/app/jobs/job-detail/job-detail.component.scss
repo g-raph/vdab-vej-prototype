@@ -11,6 +11,9 @@ $color-light: #DBECF8;
 
 .job-detail {
     padding: 1rem 1.5rem 6rem;
+    h1 {
+        margin: 1rem 0;
+    }
     &__company {
         padding: 1rem 1.5rem 1.5rem;
         margin: 0 -1.5rem;
@@ -61,34 +64,27 @@ $color-light: #DBECF8;
     &__highlight {
         background-color: #f9f9f9;
         padding: 1rem 1.5rem;
-        margin: 2rem -1.5rem;
+        margin: 2rem -1.5rem .5rem;
     }
 }
 
 .job {
     &__location {
-        opacity: .75;
+        color: #1769A4;
+        text-decoration: underline;
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        font-size: 1rem;
-        margin: 0 0 .25rem;
-        > span:first-child {
-            opacity: .5;
-            font-size: 1.25rem;
-        }
+        font-size: 1.25rem;
+        margin: 0 0 .5rem;
     }
     &__online {
-        opacity: .75;
+        opacity: .5;
         display: flex;
         align-items: center;
         gap: 0.25rem;
         font-size: 1rem;
-        margin: 0 0 .5rem;
-        > span:first-child {
-            font-size: 1.25rem;
-            opacity: .5;
-        }
+        margin: 0 0 2rem;
     }
 }
 
