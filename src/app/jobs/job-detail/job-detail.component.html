@@ -1,6 +1,6 @@
 <div class="job-detail" *ngIf="job$ | async as job">
     <div #topinfo>
-        <a class="back-link" [routerLink]="['/vind-een-job']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a>
+        <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a>
         <img class="job-detail__company__logo" [src]="job.company.logo" alt="">
         <div   class="job-detail__company">
             <h2>{{job.company.name}}</h2>
@@ -15,11 +15,11 @@
         <div class="job__online"><span class="material-symbols-outlined"> schedule </span> <span>Online sinds <span class="bold">{{job.online}}</span> - <span class="bold">{{job.type}}</span></span></div>
     </div>
     <div *ngIf="!scrollPosLow" class="stickybox">
-        <a class="back-link" [routerLink]="['/vind-een-job']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a>
+        <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a>
         <h4>{{job.title}}</h4>
         <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
         <div class="bottom-actions">
-            <button class="btn btn--primary btn--small">Solliciteer nu</button>
+            <button routerLink="/login" class="btn btn--primary btn--small">Solliciteer nu</button>
             <button (click)="setAsFavorite(job.id)" class="btn btn--small" [class.btn--secondary]="!job.saved" [class.btn--yellow]="job.saved"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
         </div>
     </div>
