@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 export const routes: Routes = [
     {
         path:'vind-een-job', 
-        data: { breadcrumb: 'Vind een job' },
+        data: { breadcrumb: 'Jobs' },
         children: [
             {
                 path: '',
