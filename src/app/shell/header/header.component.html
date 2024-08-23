@@ -2,7 +2,7 @@
     <div class="header__top">
         <a href="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
         <div class="icons">
-            <span [routerLink]="['/']" class="material-symbols-outlined">search</span>
+            <span (click)="toggleSearchForm()" class="material-symbols-outlined">search</span>
             <!-- <span [routerLink]="['/favorites']" class="material-symbols-outlined">star</span> -->
             <!-- <span [routerLink]="['/login']" class="material-symbols-outlined">account_circle</span> -->
             <span class="material-symbols-outlined">menu</span>
@@ -10,5 +10,20 @@
     </div>
     <div class="header__bottom">
         <app-breadcrumb></app-breadcrumb>
+    </div>
+    <div *ngIf="showSearchForm" (click)="toggleSearchForm()" class="fade"></div>
+    <div class="search-form" [class.open]="showSearchForm">
+        <form [formGroup]="form">
+            <div class="field" [class.open]="showSubMenu">
+                <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
+                <span *ngIf="!showCloseBtn" class="material-symbols-outlined">search</span>
+                <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined">close</span>
+            </div>
+        </form>
+        <div class="submenu" [class.open]="showSubMenu">
+            <a class="active" href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
+            <a href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
+            <a href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
+        </div>
     </div>
 </div>
