@@ -25,8 +25,8 @@ export class ApiService {
       },
       tags: [
         'Vaste job',
-        'Remote',
-        '3-5 jaar'
+        'Thuiswerk mogelijk',
+        '3-5 jaar ervaring'
       ],
       new: true,
       saved: false,
@@ -50,8 +50,8 @@ export class ApiService {
       },
       tags: [
         'Vaste job',
-        'Remote',
-        '3-5 jaar'
+        'Thuiswerk mogelijk',
+        '3-5 jaar ervaring'
       ],
       new: true,
       saved: false,
@@ -75,8 +75,8 @@ export class ApiService {
       },
       tags: [
         'Vaste job',
-        'Remote',
-        '3-5 jaar'
+        'Thuiswerk mogelijk',
+        '3-5 jaar ervaring'
       ],
       new: false,
       saved: false,
@@ -100,8 +100,8 @@ export class ApiService {
       },
       tags: [
         'Vaste job',
-        'Remote',
-        '3-5 jaar'
+        'Thuiswerk mogelijk',
+        '3-5 jaar ervaring'
       ],
       new: false,
       saved: false,
@@ -125,8 +125,8 @@ export class ApiService {
       },
       tags: [
         'Vaste job',
-        'Remote',
-        '3-5 jaar'
+        'Thuiswerk mogelijk',
+        '3-5 jaar ervaring'
       ],
       new: false,
       saved: false,

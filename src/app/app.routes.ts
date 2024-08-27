@@ -26,7 +26,7 @@ export const routes: Routes = [
                     {
                         path:':id', 
                         component: JobDetailComponent,
-                        data: { breadcrumb: 'Detail' },
+                        data: { breadcrumb: 'Vacaturedetail' },
                     },
                 ]
             },

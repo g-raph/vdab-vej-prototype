@@ -6,25 +6,32 @@
     box-sizing: border-box;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    background-color: #C4DEF0;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     &__item {
         display: flex;
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        padding: .5rem .5rem calc(.5rem + env(safe-area-inset-bottom));
+        padding: .75rem .5rem calc(.75rem + env(safe-area-inset-bottom));
         font-size: .75rem;
         gap: .125rem;
         flex: 1;
         position: relative;
-        &.active {
-            background-color: #DBECF8;
-        }
+        text-align: center;
+        line-height: .8;
         .material-symbols-outlined {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            padding: .125rem .75rem;
+        }
+        &.active {
+            color: #1769a4;
+            .material-symbols-outlined {
+                background-color: #dbecf8;
+                border-radius: 1rem;
+            }
         }
         .badge {
             background-color: #FFD82A;
