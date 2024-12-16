@@ -1,26 +1,84 @@
 <div class="opleiding-list">
-    <h1>Vind een opleiding</h1>
-    <div class="opleiding-list__content">
-        <div class="opleiding-list__filters">
-            <form [formGroup]="filterForm">
-                <div formGroupName="categories">
-                  <div *ngFor="let category of categories">
-                    <label class="o-form__label c-checkbox__label" for="veo_001">
-                        <input type="checkbox" class="c-checkbox__input" id="veo_001" value="1" [formControlName]="category">
-                        <div>{{ category }}
-                            <span class="c-filter__options-count">(85133)</span>
-                        </div>
-                    </label>
-                  </div>
+  <h1>Vind een opleiding</h1>
+  <div class="opleiding-list__content">
+    <div class="opleiding-list__filters">
+      <form [formGroup]="filterForm">
+          <div formGroupName="filterCategorie">
+            <h4>Categorie</h4>
+            <div *ngFor="let category of filterCategorie; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_categorie_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_categorie_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
                 </div>
-              </form>
-        </div>
-        <div class="opleiding-list__results">
-            <ul>
-                <li *ngFor="let item of filteredItems">
-                  {{ item.name }} ({{ item.category }})
-                </li>
-              </ul>
-        </div>
+              </label>
+            </div>
+          </div>
+          <div formGroupName="filterGratis">
+            <h4>Gratis</h4>
+            <div *ngFor="let category of filterGratis; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_gratis_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_gratis_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div formGroupName="filterStartdatum">
+            <h4>Startdatum</h4>
+            <div *ngFor="let category of filterStartdatum; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_startdatum_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_startdatum_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div formGroupName="filterLesmoment">
+            <h4>Lesmoment</h4>
+            <div *ngFor="let category of filterLesmoment; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_Lesmoment_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_Lesmoment_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+      </form>
     </div>
+    <div class="opleiding-list__results">
+      <ul>
+        <li *ngFor="let item of filteredItems">
+          {{ item.name }} ({{ item.filterCategorie }})
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
