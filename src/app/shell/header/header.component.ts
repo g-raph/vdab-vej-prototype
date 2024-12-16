@@ -14,6 +14,7 @@ import { debounceTime } from 'rxjs';
 })
 export class HeaderComponent {
   showSearchForm = false;
+  showMenu = false;
   showSubMenu = false;
   showCloseBtn = false;
   form: FormGroup;
@@ -33,6 +34,9 @@ export class HeaderComponent {
   toggleSearchForm() {
     this.showSearchForm = !this.showSearchForm;
     this.resetField();
+  }
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
   }
   resetField() {
     this.form.get('text')?.setValue('');

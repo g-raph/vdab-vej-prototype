@@ -5,7 +5,24 @@
             <span (click)="toggleSearchForm()" class="material-symbols-outlined">search</span>
             <!-- <span [routerLink]="['/favorites']" class="material-symbols-outlined">star</span> -->
             <!-- <span [routerLink]="['/login']" class="material-symbols-outlined">account_circle</span> -->
-            <span class="material-symbols-outlined">menu</span>
+            <span (click)="toggleMenu()" class="material-symbols-outlined">menu</span>
+        </div>
+        <div *ngIf="showMenu" class="menu-dropdown">
+            <ul>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/vind-een-opleiding']">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span>Vind een opleiding</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/studieboom']">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span>Studieboom</span>
+                    </a>
+                </li>
+            </ul>
+
         </div>
     </div>
     <div class="header__bottom">

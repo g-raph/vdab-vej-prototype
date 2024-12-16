@@ -1,0 +1,26 @@
+<div class="opleiding-list">
+    <h1>Vind een opleiding</h1>
+    <div class="opleiding-list__content">
+        <div class="opleiding-list__filters">
+            <form [formGroup]="filterForm">
+                <div formGroupName="categories">
+                  <div *ngFor="let category of categories">
+                    <label class="o-form__label c-checkbox__label" for="veo_001">
+                        <input type="checkbox" class="c-checkbox__input" id="veo_001" value="1" [formControlName]="category">
+                        <div>{{ category }}
+                            <span class="c-filter__options-count">(85133)</span>
+                        </div>
+                    </label>
+                  </div>
+                </div>
+              </form>
+        </div>
+        <div class="opleiding-list__results">
+            <ul>
+                <li *ngFor="let item of filteredItems">
+                  {{ item.name }} ({{ item.category }})
+                </li>
+              </ul>
+        </div>
+    </div>
+</div>

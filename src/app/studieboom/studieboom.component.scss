@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    &__inner {
+        max-width: 1440px;
+        width: 100%;
+        margin: 2rem 0;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    .finalChoice {
+        font-size: 1.25rem;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 1rem;
+        .selected-value {
+            color: #1769a4;
+        }
+        .chevron {
+            color: #666;
+        }
+    }
+}
+
+button.submit {
+    max-width: 300px;
+    @media screen and (max-width: 640px) {
+        max-width: 100%;
+      }
+}
+
+.final-choice-input {
+    width: 100%;
+    max-width: 500px;
+    @media screen and (max-width: 640px) {
+        max-width: 100%;
+      }
+}
