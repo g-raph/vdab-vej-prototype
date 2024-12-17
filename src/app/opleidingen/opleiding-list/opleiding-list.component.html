@@ -71,6 +71,57 @@
               </label>
             </div>
           </div>
+          <div formGroupName="filterLeervorm">
+            <h4>Leervorm</h4>
+            <div *ngFor="let category of filterLeervorm; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_Leervorm_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_Leervorm_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div formGroupName="filterOrganisator">
+            <h4>Organisator</h4>
+            <div *ngFor="let category of filterOrganisator; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_Organisator_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_Organisator_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div formGroupName="filterKnelpuntberoep">
+            <h4>Knelpuntberoep</h4>
+            <div *ngFor="let category of filterKnelpuntberoep; let i = index">
+              <label class="o-form__label c-checkbox__label" [for]="'veo_Knelpuntberoep_' + i">
+                <input
+                  type="checkbox"
+                  class="c-checkbox__input"
+                  [id]="'veo_Knelpuntberoep_' + i"
+                  [formControlName]="category"
+                />
+                <div>
+                  {{ category }}
+                  <span class="c-filter__options-count">(85133)</span>
+                </div>
+              </label>
+            </div>
+          </div>
       </form>
     </div>
     <div class="opleiding-list__results">
