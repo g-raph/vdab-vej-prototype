@@ -1,0 +1,24 @@
+<div class="dropdown">
+  <div class="dropdown__header">
+    <h4>{{ title }}</h4>
+  </div>
+  <div class="dropdown__body">
+    <div *ngFor="let category of filters; let i = index">
+      <label
+        class="o-form__label c-checkbox__label"
+        [for]="'veo_' + title.toLowerCase() + '_' + i"
+      >
+        <input
+          type="checkbox"
+          class="c-checkbox__input"
+          [id]="'veo_' + title.toLowerCase() + '_' + i"
+          [formControlName]="category"
+        />
+        <div>
+          {{ category }}
+          <span class="c-filter__options-count">(85133)</span>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>

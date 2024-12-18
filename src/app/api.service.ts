@@ -129,11 +129,64 @@ export class ApiService {
       id: 5
     },
   ]);
+  opleidingen$ = new BehaviorSubject<any[]>([
+    { name: 'Apple', filterCategorie: 'Beroepsopleidingen', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'December 2024', filterLesmoment: 'Buiten de kantooruren', filterLeervorm: 'Afstandsleren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Ja' },
+    { name: 'Carrot', filterCategorie: 'Persoonlijke en professionele groei', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'April 2025', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Groepsleren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Ja' },
+    { name: 'Banana', filterCategorie: 'Beroepsopleidingen', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'December 2024', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Duaal leren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Nee' },
+    { name: 'Broccoli', filterCategorie: 'Persoonlijke en professionele groei', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'December 2024', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Groepsleren', filterOrganisator: 'Andere', filterKnelpuntberoep: 'Ja' },
+    { name: 'Chicken', filterCategorie: 'Beroepsopleidingen', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'Mei 2025', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Online leren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Nee' },
+    { name: 'Beef', filterCategorie: 'Persoonlijke en professionele groei', filterGratis: 'Gratis opleidingen voor iedereen', filterStartdatum: 'September 2025', filterLesmoment: 'Buiten de kantooruren', filterLeervorm: 'Workshop', filterOrganisator: 'Andere', filterKnelpuntberoep: 'Nee' }
+  ]);
+  opleidingFilters$ = new BehaviorSubject<any[]>([
+    {
+      title: 'Categorie',
+      groupName: 'filterCategorie',
+      filters: ['Beroepsopleidingen', 'Persoonlijke en professionele groei']
+    },
+    {
+      title: 'Gratis',
+      groupName: 'filterGratis',
+      filters: ['Gratis opleidingen voor wie geen werk heeft', 'Gratis opleidingen voor iedereen']
+    },
+    {
+      title: 'Startdatum',
+      groupName: 'filterStartdatum',
+      filters: ['December 2024', 'Januari 2025', 'Februari 2025', 'Maart 2025', 'April 2025', 'Mei 2025', 'Juni 2025', 'Juli 2025', 'Augustus 2025', 'September 2025', 'Oktober 2025', 'November 2025', 'December 2025']
+    },
+    {
+      title: 'Lesmoment',
+      groupName: 'filterLesmoment',
+      filters: ['Buiten de kantooruren', 'Tijdens de kantooruren']
+    },
+    {
+      title: 'Leervorm',
+      groupName: 'filterLeervorm',
+      filters: ['Afstandsleren', 'Duaal leren', 'Groepsleren', 'Online leren', 'Workshop']
+    },
+    {
+      title: 'Organisator',
+      groupName: 'filterOrganisator',
+      filters: ['VDAB', 'Andere']
+    },
+    {
+      title: 'Knelpuntberoep',
+      groupName: 'filterKnelpuntberoep',
+      filters: ['Ja', 'Nee']
+    },
+  ]);
 
   constructor() { }
 
   getJobs() {
     return this.jobs$;
+  }
+  
+  getOpleidingen() {
+    return this.opleidingen$;
+  }
+  
+  getOpleidingFilters() {
+    return this.opleidingFilters$;
   }
 
   getJob(id: number) {

@@ -160,6 +160,7 @@
 
 .menu-dropdown {
     position: absolute;
+    z-index: 99999;
     right: 0;
     top: 2.75rem;
     background: #fff;

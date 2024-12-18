@@ -1,1 +1,10 @@
-<p>opleiding-teaser works!</p>
+<div class="opleiding">
+    <div *ngIf="opleiding.new" class="new">Nieuw</div>
+    <div class="titlebox"><div *ngIf="opleiding.filterLeervorm === 'Workshop'" class="tag">Workshop</div><h3 class="opleiding__title">{{opleiding.name}}</h3></div>
+    <div class="opleiding__tags">
+        <div *ngFor="let tag of opleiding.tags" class="tag">{{tag}}</div>
+    </div>
+    <div class="opleiding__bottom">
+        <span (click)="setAsFavorite(opleiding.id)" [ngClass]="{'active fill': opleiding.saved}" class="material-symbols-outlined star">star</span>
+    </div>
+</div>
