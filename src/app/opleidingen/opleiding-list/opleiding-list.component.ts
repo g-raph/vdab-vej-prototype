@@ -3,6 +3,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.component';
 
+export interface TreeNode {
+  name: string;
+  checked: boolean;
+  expanded: boolean;
+  children?: TreeNode[];
+}
+
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
@@ -11,9 +18,27 @@ import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.c
   styleUrl: './opleiding-list.component.scss',
 })
 export class OpleidingListComponent {
-  filterCategorie = [
-    'Beroepsopleidingen',
-    'Persoonlijke en professionele groei',
+  filterCategorie: TreeNode[] = [
+    {
+      name: 'Beroepsopleidingen',
+      checked: false,
+      expanded: false,
+      children: [
+        { name: 'Apple', checked: false, expanded: false },
+      ]
+    },
+    {
+      name: 'Persoonlijke en professionele groei',
+      checked: false,
+      expanded: false,
+      children: [
+        { name: 'Talen', checked: false, expanded: false },
+        { name: 'Communicatie', checked: false, expanded: false },
+        { name: 'Digitale vaardigheden', checked: false, expanded: false },
+        { name: 'Persoonlijke vaardigheden', checked: false, expanded: false },
+        { name: 'Professionele vaardigheden', checked: false, expanded: false },
+      ]
+    }
   ];
   filterGratis = [
     'Gratis opleidingen voor wie geen werk heeft',
@@ -44,12 +69,12 @@ export class OpleidingListComponent {
   ];
   filterOrganisator = ['VDAB', 'Andere'];
   filterKnelpuntberoep = ['Ja', 'Nee'];
-  filterSubsetGroei = ['Talen', 'Communicatie', 'Digitale vaardigheden', 'Persoonlijke vaardigheden', 'Professionele vaardigheden'];
   filterForm: FormGroup;
   items = [
     {
       name: 'Kapper/Kapster',
       filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Apple',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Buiten de kantooruren',
@@ -60,6 +85,7 @@ export class OpleidingListComponent {
     {
       name: 'Kapper',
       filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Apple',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'April 2025',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -70,6 +96,7 @@ export class OpleidingListComponent {
     {
       name: 'Nederlands - Nederlandse spelling',
       filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Talen',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -80,6 +107,7 @@ export class OpleidingListComponent {
     {
       name: 'Assertiviteit in de werksituatie',
       filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Persoonlijke vaardigheden',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -90,6 +118,7 @@ export class OpleidingListComponent {
     {
       name: 'Barbier',
       filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Apple',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -100,6 +129,7 @@ export class OpleidingListComponent {
     {
       name: 'Powerpoint voor managers',
       filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Professionele vaardigheden',
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
@@ -110,6 +140,7 @@ export class OpleidingListComponent {
     {
       name: 'Leren werken met een computer',
       filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Digitale vaardigheden',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -120,6 +151,7 @@ export class OpleidingListComponent {
     {
       name: 'Barbier',
       filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Apple',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -130,6 +162,7 @@ export class OpleidingListComponent {
     {
       name: 'Succesvol presenteren',
       filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Digitale vaardigheden',
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
@@ -140,6 +173,7 @@ export class OpleidingListComponent {
     {
       name: 'Barbier voor vrouwen',
       filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Apple',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -161,7 +195,19 @@ export class OpleidingListComponent {
     this.filterForm = this.fb.group({
       filterCategorie: this.fb.group(
         this.filterCategorie.reduce((acc: any, category: any) => {
-          acc[category] = false;
+          acc[category.name] = false;
+          return acc;
+        }, {})
+      ),
+      filterSubCategorieBeroep: this.fb.group(
+        this.filterCategorie[0].children?.reduce((acc: any, category: any) => {
+          acc[category.name] = false;
+          return acc;
+        }, {})
+      ),
+      filterSubCategorieGroei: this.fb.group(
+        this.filterCategorie[1].children?.reduce((acc: any, category: any) => {
+          acc[category.name] = false;
           return acc;
         }, {})
       ),
@@ -202,12 +248,44 @@ export class OpleidingListComponent {
         }, {})
       ),
     });
+    console.log(this.filterForm)
+  }
+
+  countItemsCategorie(category: string) {
+    return this.items.filter(item => item.filterCategorie === category).length;
+  }
+  countItemsSubCategorie(category: string) {
+    return this.items.filter(item => item.filterSubCategorie === category).length;
+  }
+  countItemsGratis(category: string) {
+    return this.items.filter(item => item.filterGratis === category).length;
+  }
+  countItemsStartdatum(category: string) {
+    return this.items.filter(item => item.filterStartdatum === category).length;
+  }
+  countItemsLesmoment(category: string) {
+    return this.items.filter(item => item.filterLesmoment === category).length;
+  }
+  countItemsLeervorm(category: string) {
+    return this.items.filter(item => item.filterLeervorm === category).length;
+  }
+  countItemsOrganisator(category: string) {
+    return this.items.filter(item => item.filterOrganisator === category).length;
+  }
+  countItemsKnelpuntberoep(category: string) {
+    return this.items.filter(item => item.filterKnelpuntberoep === category).length;
   }
 
   get filteredItems() {
     const selectedCategories = Object.keys(
       this.filterForm.value.filterCategorie
     ).filter((category) => this.filterForm.value.filterCategorie[category]);
+    const selectedSubCategoriesBeroep = Object.keys(
+      this.filterForm.value.filterSubCategorieBeroep
+    ).filter((category) => this.filterForm.value.filterSubCategorieBeroep[category]);
+    const selectedSubCategoriesGroei = Object.keys(
+      this.filterForm.value.filterSubCategorieGroei
+    ).filter((category) => this.filterForm.value.filterSubCategorieGroei[category]);
     const selectedGratis = Object.keys(
       this.filterForm.value.filterGratis
     ).filter((category) => this.filterForm.value.filterGratis[category]);
@@ -234,6 +312,12 @@ export class OpleidingListComponent {
       const matchesCategory =
         selectedCategories.length === 0 ||
         selectedCategories.includes(item.filterCategorie);
+      const matchesSubCategoryBeroep =
+        selectedSubCategoriesBeroep.length === 0 ||
+        selectedSubCategoriesBeroep.includes(item.filterSubCategorie);
+      const matchesSubCategoryGroei =
+        selectedSubCategoriesGroei.length === 0 ||
+        selectedSubCategoriesGroei.includes(item.filterSubCategorie);
       const matchesGratis =
         selectedGratis.length === 0 ||
         selectedGratis.includes(item.filterGratis);
@@ -260,7 +344,9 @@ export class OpleidingListComponent {
         matchesLesmoment &&
         matchesLeervorm &&
         matchesOrganisator &&
-        matchesKnelpuntberoep
+        matchesKnelpuntberoep &&
+        matchesSubCategoryBeroep &&
+        matchesSubCategoryGroei
       );
     });
   }
@@ -285,5 +371,28 @@ export class OpleidingListComponent {
   }
   toggleFiltersOrganisator() {
     this.showFiltersOrganisator = !this.showFiltersOrganisator;
+  }
+
+  // checkbox toggle subset
+  toggleExpand(node: TreeNode): void {
+    node.expanded = !node.expanded;
+  }
+
+  toggleCheck(node: TreeNode): void {
+    node.checked = !node.checked;
+
+    // Update all children if present
+    if (node.children) {
+      this.setChildrenChecked(node.children, node.checked);
+    }
+  }
+
+  setChildrenChecked(children: TreeNode[], checked: boolean): void {
+    children.forEach(child => {
+      child.checked = checked;
+      if (child.children) {
+        this.setChildrenChecked(child.children, checked);
+      }
+    });
   }
 }

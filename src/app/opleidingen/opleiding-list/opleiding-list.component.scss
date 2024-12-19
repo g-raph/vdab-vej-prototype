@@ -25,6 +25,9 @@
     h3 {
       margin-top: 0;
     }
+    .children {
+      padding-left: 2rem;
+    }
   }
   &__results {
     flex: 1;
@@ -91,4 +94,8 @@
       transform: rotate(270deg);
     }
   }
+}
+
+.c-filter__options-count {
+  opacity: .5;
 }
