@@ -575,7 +575,6 @@ export class OpleidingListComponent {
     } else {
       this.selectedFilters.push(category);
     }
-    console.log(this.selectedFilters);
   }
 
   uncheckAllFilters() {

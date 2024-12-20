@@ -314,7 +314,6 @@ export class StudieboomComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Form submitted:', this.myForm.value);
     this.showFinalField = true;
   }
 }
