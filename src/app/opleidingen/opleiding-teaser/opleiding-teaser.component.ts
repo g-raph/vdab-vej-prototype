@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from '../../api.service';
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-opleiding-teaser',
   standalone: true,
-  imports: [NgIf, NgForOf, NgClass],
+  imports: [NgIf, NgClass],
   templateUrl: './opleiding-teaser.component.html',
   styleUrl: './opleiding-teaser.component.scss'
 })

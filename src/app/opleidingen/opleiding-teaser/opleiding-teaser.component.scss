@@ -40,7 +40,12 @@ $color-primary: #1769A4;
     .titlebox {
         display: flex;
         align-items: center;
-        gap: .5rem;
+        justify-content: space-between;
+        .left {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
     }
     &__logo {
         width: 4rem;
