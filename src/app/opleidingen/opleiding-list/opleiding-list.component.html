@@ -1,5 +1,22 @@
 <div class="opleiding-list">
   <h1>Vind een opleiding</h1>
+  <div class="search">
+    <div class="search__top">
+      <div class="field">
+        <label for="search">Zoek op trefwoord</label>
+        <input type="text" name="search" id="search">
+      </div>
+      <div class="field">
+          <label for="location">Sorteer op afstand van</label>
+          <input type="text" name="location" id="location">
+      </div>
+      <button class="btn btn--primary">Zoek</button>
+    </div>
+    <div class="search__bottom">
+      <div class="filtertag" *ngFor="let item of selectedFilters">{{item}}</div>
+      <div *ngIf="selectedFilters.length" class="remove" (click)="uncheckAllFilters()">Verwijder alle filters</div>
+    </div>
+  </div>
   <div class="opleiding-list__content">
     <div class="opleiding-list__filters">
       <form [formGroup]="filterForm">
@@ -12,7 +29,7 @@
             <div *ngFor="let category of filterCategorie; let i = index">
               <div class="parents" formGroupName="filterCategorie" >
                 <label class="o-form__label c-checkbox__label" [for]="'veo_categorie_' + i">
-                  <input type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
+                  <input (click)="addToSelectedFilters(category.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
                     [formControlName]="category.name"
                     [checked]="category.checked"
                     (change)="toggleCheck(category)" />
@@ -25,7 +42,7 @@
               <div class="children" *ngIf="category.children && category.expanded" [formGroupName]="i === 0 ? 'filterSubCategorieBeroep' : 'filterSubCategorieGroei'">
                 <div *ngFor="let child of category.children; let idx = index">
                   <label class="o-form__label c-checkbox__label" [for]="'veo_subcategorie_' + i + idx">
-                    <input type="checkbox" class="c-checkbox__input" [id]="'veo_subcategorie_' + i + idx" [formControlName]="child.name" />
+                    <input (click)="addToSelectedFilters(child.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_subcategorie_' + i + idx" [formControlName]="child.name" />
                     <div>
                       {{ child.name }}
                       <span class="c-filter__options-count">({{ countItemsSubCategorie(child.name) }})</span>
@@ -45,7 +62,7 @@
           <div class="dropdown__body" *ngIf="showFiltersGratis">
             <div *ngFor="let category of filterGratis; let i = index">
               <label class="o-form__label c-checkbox__label" [for]="'veo_gratis_' + i">
-                <input type="checkbox" class="c-checkbox__input" [id]="'veo_gratis_' + i"
+                <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_gratis_' + i"
                   [formControlName]="category" />
                 <div>
                   {{ category }}
@@ -63,7 +80,7 @@
           <div class="dropdown__body" *ngIf="showFiltersStartdatum">
             <div *ngFor="let category of filterStartdatum; let i = index">
               <label class="o-form__label c-checkbox__label" [for]="'veo_startdatum_' + i">
-                <input type="checkbox" class="c-checkbox__input" [id]="'veo_startdatum_' + i"
+                <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_startdatum_' + i"
                   [formControlName]="category" />
                 <div>
                   {{ category }}
@@ -81,7 +98,7 @@
           <div class="dropdown__body" *ngIf="showFiltersLesmoment">
             <div *ngFor="let category of filterLesmoment; let i = index">
               <label class="o-form__label c-checkbox__label" [for]="'veo_Lesmoment_' + i">
-                <input type="checkbox" class="c-checkbox__input" [id]="'veo_Lesmoment_' + i"
+                <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Lesmoment_' + i"
                   [formControlName]="category" />
                 <div>
                   {{ category }}
@@ -99,7 +116,7 @@
           <div class="dropdown__body" *ngIf="showFiltersLeervorm">
             <div *ngFor="let category of filterLeervorm; let i = index">
               <label class="o-form__label c-checkbox__label" [for]="'veo_Leervorm_' + i">
-                <input type="checkbox" class="c-checkbox__input" [id]="'veo_Leervorm_' + i"
+                <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Leervorm_' + i"
                   [formControlName]="category" />
                 <div>
                   {{ category }}
@@ -117,7 +134,7 @@
           <div class="dropdown__body" *ngIf="showFiltersOrganisator">
             <div *ngFor="let category of filterOrganisator; let i = index">
               <label class="o-form__label c-checkbox__label" [for]="'veo_Organisator_' + i">
-                <input type="checkbox" class="c-checkbox__input" [id]="'veo_Organisator_' + i"
+                <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Organisator_' + i"
                   [formControlName]="category" />
                 <div>
                   {{ category }}
@@ -136,7 +153,7 @@
           <div class="dropdown__body" *ngIf="showFiltersKnelpuntberoep">
             <div *ngFor="let category of filterKnelpuntberoep; let i = index">
               <label class="o-form__label c-checkbox__label" [for]="'veo_Knelpuntberoep_' + i">
-                <input type="checkbox" class="c-checkbox__input" [id]="'veo_Knelpuntberoep_' + i"
+                <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Knelpuntberoep_' + i"
                   [formControlName]="category" />
                 <div>
                   {{ category }}

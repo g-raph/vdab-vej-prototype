@@ -99,3 +99,36 @@
 .c-filter__options-count {
   opacity: .5;
 }
+
+.search {
+  background: #eff7fe;
+  padding: 1.5rem;
+  border-radius: .25rem;
+  margin-bottom: 2rem;
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .field {
+      flex: 3;
+    }
+    button {
+      flex: 1;
+      margin-top: 1.5rem;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: .5rem;
+  }
+}
+
+.filtertag {
+  background-color: #2a4278;
+  color: #fff;
+  padding: .25rem .75rem;
+  border-radius: 1rem;
+  font-size: .875rem;
+}

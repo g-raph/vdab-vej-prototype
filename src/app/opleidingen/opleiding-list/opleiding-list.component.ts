@@ -20,7 +20,7 @@ export interface TreeNode {
 export class OpleidingListComponent {
   filterCategorie: TreeNode[] = [
     {
-      name: 'Beroepsopleidingen',
+      name: 'Beroepsopleidingen en bijscholingen',
       checked: false,
       expanded: false,
       children: [
@@ -58,6 +58,11 @@ export class OpleidingListComponent {
         { name: 'Persoonlijke vaardigheden', checked: false, expanded: false },
         { name: 'Professionele vaardigheden', checked: false, expanded: false },
       ]
+    },
+    {
+      name: 'Nederlands voor anderstaligen',
+      checked: false,
+      expanded: false,
     }
   ];
   filterGratis = [
@@ -93,7 +98,7 @@ export class OpleidingListComponent {
   items = [
     {
       name: 'Kapper/Kapster',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Creatief',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'December 2024',
@@ -104,7 +109,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Verzorgende',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Gezondheid',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'April 2025',
@@ -137,7 +142,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Bekister',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Bouw',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
@@ -170,7 +175,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Leerkracht wiskunde',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Onderwijs',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
@@ -192,7 +197,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Poetsvrouw / Poetsman',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Onderhoud',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
@@ -204,7 +209,7 @@ export class OpleidingListComponent {
     
     {
       name: 'Vertaler Russisch - Nederlands',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Communicatie',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Januari 2025',
@@ -215,7 +220,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Bankbediende KBC',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Financieel',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Mei 2025',
@@ -226,7 +231,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Boer verzorging kalveren',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Land- en tuinbouw',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Februari 2025',
@@ -237,7 +242,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Klusjesman Center Parks',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Techniek',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'September 2025',
@@ -248,7 +253,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Marketing assistent - social media',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Marketing',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Juni 2025',
@@ -270,7 +275,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Onderzoeken beheren',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Onderzoek en ontwikkeling',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'December 2024',
@@ -281,7 +286,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Rijbewijs CE',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Logistiek en transport',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'Maart 2025',
@@ -292,7 +297,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Administratieve taken beheer',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Administratie',
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'Oktober 2025',
@@ -303,7 +308,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Verkopen van stofzuigers',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Verkoop',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
       filterStartdatum: 'November 2025',
@@ -312,7 +317,42 @@ export class OpleidingListComponent {
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
+    {
+      name: 'Nederlands - spelling',
+      filterCategorie: 'Nederlands voor anderstaligen',
+      filterSubCategorie: '',
+      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterStartdatum: 'Oktober 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      name: 'Nederlands - algemeen',
+      filterCategorie: 'Nederlands voor anderstaligen',
+      filterSubCategorie: '',
+      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterStartdatum: 'Oktober 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      name: 'Nederlands - werkwoorden',
+      filterCategorie: 'Nederlands voor anderstaligen',
+      filterSubCategorie: '',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft',
+      filterStartdatum: 'November 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
   ];
+
+  selectedFilters: string[] = [];
 
   showFiltersCategorie = true;
   showFiltersGratis = true;
@@ -481,6 +521,8 @@ export class OpleidingListComponent {
     });
   }
 
+  
+
   toggleFiltersGratis() {
     this.showFiltersGratis = !this.showFiltersGratis;
   }
@@ -524,5 +566,75 @@ export class OpleidingListComponent {
         this.setChildrenChecked(child.children, checked);
       }
     });
+  }
+
+  addToSelectedFilters(category: string) {
+    const index = this.selectedFilters.indexOf(category);
+    if (index > -1) { // only splice array when item is found
+      this.selectedFilters.splice(index, 1); // 2nd parameter means remove one item only
+    } else {
+      this.selectedFilters.push(category);
+    }
+    console.log(this.selectedFilters);
+  }
+
+  uncheckAllFilters() {
+    this.filterForm = this.fb.group({
+      filterCategorie: this.fb.group(
+        this.filterCategorie.reduce((acc: any, category: any) => {
+          acc[category.name] = false;
+          return acc;
+        }, {})
+      ),
+      filterSubCategorieBeroep: this.fb.group(
+        this.filterCategorie[0].children?.reduce((acc: any, category: any) => {
+          acc[category.name] = false;
+          return acc;
+        }, {})
+      ),
+      filterSubCategorieGroei: this.fb.group(
+        this.filterCategorie[1].children?.reduce((acc: any, category: any) => {
+          acc[category.name] = false;
+          return acc;
+        }, {})
+      ),
+      filterGratis: this.fb.group(
+        this.filterGratis.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
+      filterStartdatum: this.fb.group(
+        this.filterStartdatum.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
+      filterLesmoment: this.fb.group(
+        this.filterLesmoment.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
+      filterLeervorm: this.fb.group(
+        this.filterLeervorm.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
+      filterOrganisator: this.fb.group(
+        this.filterOrganisator.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
+      filterKnelpuntberoep: this.fb.group(
+        this.filterKnelpuntberoep.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
+    });
+    this.selectedFilters = [];
   }
 }
