@@ -258,10 +258,10 @@ export class StudieboomComponent implements OnInit {
   ngOnInit(): void {
     
     this.myForm = this.fb.group({
-      selectedOption1: [0],  
-      selectedOption2: [0],   
-      selectedOption3: [0],
-      selectedOption4: [0],
+      selectedOption1: [99],  
+      selectedOption2: [999],   
+      selectedOption3: [9999],
+      selectedOption4: [99999],
       finalField: []
     });
 

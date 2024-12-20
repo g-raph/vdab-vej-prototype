@@ -6,7 +6,7 @@
         <!-- First select dropdown -->
         <label for="options1">Kies een studie</label>
         <select id="options1" formControlName="selectedOption1">
-          <option class="muted" disabled value="0">-- Selecteer een studie --</option>
+          <option class="muted" disabled value="99">-- Selecteer een studie --</option>
           <option *ngFor="let option of firstSelectOptions" [value]="option.id">
             {{ option.name }}
           </option>
@@ -15,9 +15,9 @@
 
       <!-- Conditionally display the second select when the first select has a value -->
       <div *ngIf="showSecondSelect" class="field">
-        <label for="options2">Studiedomein</label>
+        <label for="options2">Verfijn studie</label>
         <select id="options2" formControlName="selectedOption2">
-          <option class="muted" disabled value="0">-- Selecteer studiedomein --</option>
+          <option class="muted" disabled value="999">-- Verfijn studie --</option>
           <option
             *ngFor="let option of filteredSecondSelectOptions"
             [value]="option.id"
@@ -28,9 +28,9 @@
       </div>
 
       <div *ngIf="showThirdSelect" class="field">
-        <label for="options3">Studiegebied</label>
+        <label for="options3">Studiedomein</label>
         <select id="options3" formControlName="selectedOption3">
-          <option class="muted" disabled value="0">-- Selecteer studiegebied --</option>
+          <option class="muted" disabled value="9999">-- Selecteer studiedomein --</option>
           <option
             *ngFor="let option of filteredThirdSelectOptions"
             [value]="option.id"
@@ -41,9 +41,9 @@
       </div>
 
       <div *ngIf="showFourthSelect" class="field">
-        <label for="options4">Verfijn studiegebied</label>
+        <label for="options4">Studiegebied</label>
         <select id="options4" formControlName="selectedOption4">
-          <option class="muted" disabled value="0">-- Verfijn je studiegebied --</option>
+          <option class="muted" disabled value="99999">-- Selecteer studiegebied --</option>
           <option
             *ngFor="let option of filteredFourthSelectOptions"
             [value]="option.id"
