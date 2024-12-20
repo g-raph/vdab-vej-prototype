@@ -1,54 +1,84 @@
 <div class="container">
-    <div class="container__inner">
-        <h1>Studieboom prototype</h1>
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-            <div class="field">
-                <!-- First select dropdown -->
-                <label for="options1">Kies een categorie</label>
-                <select id="options1" formControlName="selectedOption1">
-                <option value="">-- Selecteer een categorie --</option>
-                <option *ngFor="let option of firstSelectOptions" [value]="option.id">
-                    {{ option.name }}
-                </option>
-                </select>
-            </div>
-            
-            <!-- Conditionally display the second select when the first select has a value -->
-            <div *ngIf="showSecondSelect" class="field">
-                <label for="options2">Kies een subcategorie</label>
-                <select id="options2" formControlName="selectedOption2">
-                <option value="">-- Selecteer een subcategorie --</option>
-                <option *ngFor="let option of filteredSecondSelectOptions" [value]="option.id">
-                    {{ option.name }}
-                </option>
-                </select>
-            </div>
-            
-            <div *ngIf="showThirdSelect" class="field">
-                <label for="options3">Kies een subcategorie</label>
-                <select id="options3" formControlName="selectedOption3">
-                <option value="">-- Selecteer een subcategorie --</option>
-                <option *ngFor="let option of filteredThirdSelectOptions" [value]="option.id">
-                    {{ option.name }}
-                </option>
-                </select>
-            </div>
-            
-            <div *ngIf="showFourthSelect" class="field">
-                <label for="options4">Kies een subcategorie</label>
-                <select id="options4" formControlName="selectedOption4">
-                <option value="">-- Selecteer een subcategorie --</option>
-                <option *ngFor="let option of filteredFourthSelectOptions" [value]="option.id">
-                    {{ option.name }}
-                </option>
-                </select>
-            </div>
-          
-            <button type="submit" class="submit btn--primary"><span class="material-symbols-outlined">check</span><span>Selecteer diploma</span></button>
+  <div class="container__inner">
+    <h1>Studieboom prototype</h1>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div class="field">
+        <!-- First select dropdown -->
+        <label for="options1">Kies een studie</label>
+        <select id="options1" formControlName="selectedOption1">
+          <option class="muted" disabled value="0">-- Selecteer een studie --</option>
+          <option *ngFor="let option of firstSelectOptions" [value]="option.id">
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
 
-            <div class="finalChoice" *ngIf="showFinalField">
-                <span class="selected-value">{{(firstSelectOptions[myForm.value.selectedOption1 - 1]).name}}</span> <span class="chevron">></span> <span class="selected-value">{{(secondSelectOptions[myForm.value.selectedOption2 - 1]).name}}</span> <span class="chevron">></span> <span class="selected-value">{{(thirdSelectOptions[myForm.value.selectedOption3 - 1]).name}}</span> <span class="chevron">></span> <input class="final-choice-input" type="text" name="finalChoice" id="" [value]="(fourthSelectOptions[myForm.value.selectedOption4 - 1]).name">
-            </div>
-        </form>
-    </div>
+      <!-- Conditionally display the second select when the first select has a value -->
+      <div *ngIf="showSecondSelect" class="field">
+        <label for="options2">Studiedomein</label>
+        <select id="options2" formControlName="selectedOption2">
+          <option class="muted" disabled value="0">-- Selecteer studiedomein --</option>
+          <option
+            *ngFor="let option of filteredSecondSelectOptions"
+            [value]="option.id"
+          >
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+
+      <div *ngIf="showThirdSelect" class="field">
+        <label for="options3">Studiegebied</label>
+        <select id="options3" formControlName="selectedOption3">
+          <option class="muted" disabled value="0">-- Selecteer studiegebied --</option>
+          <option
+            *ngFor="let option of filteredThirdSelectOptions"
+            [value]="option.id"
+          >
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+
+      <div *ngIf="showFourthSelect" class="field">
+        <label for="options4">Verfijn studiegebied</label>
+        <select id="options4" formControlName="selectedOption4">
+          <option class="muted" disabled value="0">-- Verfijn je studiegebied --</option>
+          <option
+            *ngFor="let option of filteredFourthSelectOptions"
+            [value]="option.id"
+          >
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit btn--primary">
+        <span class="material-symbols-outlined">check</span
+        ><span>Selecteer diploma</span>
+      </button>
+
+      <div class="finalChoice" *ngIf="showFinalField">
+        <!-- <span class="selected-value">{{
+          firstSelectOptions[myForm.value.selectedOption1 - 1].name
+        }}</span>
+        <span class="chevron">></span>
+        <span class="selected-value">{{
+          secondSelectOptions[myForm.value.selectedOption2 - 1].name
+        }}</span>
+        <span class="chevron">></span>
+        <span class="selected-value">{{
+          thirdSelectOptions[myForm.value.selectedOption3 - 1].name
+        }}</span>
+        <span class="chevron">></span> -->
+        <input
+          class="final-choice-input"
+          type="text"
+          name="finalChoice"
+          id=""
+          [value]="secondSelectOptions[myForm.value.selectedOption2 - 1].name + ' ' + thirdSelectOptions[myForm.value.selectedOption3 - 1].name + ' ' + fourthSelectOptions[myForm.value.selectedOption4 - 1].name"
+        />
+      </div>
+    </form>
+  </div>
 </div>

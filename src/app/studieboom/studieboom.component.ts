@@ -54,7 +54,7 @@ export class StudieboomComponent implements OnInit {
     { id: 26, name: 'Ba-na-Ba', categoryId: 4 },
     { id: 27, name: 'Academische bachelor', categoryId: 4 },
 
-    { id: 28, name: 'Basis Master', categoryId: 5 },
+    { id: 28, name: 'Master', categoryId: 5 },
     { id: 29, name: 'Ma-na-Ma', categoryId: 5 },
     { id: 30, name: 'Doctoraat', categoryId: 5 },
     
@@ -258,10 +258,10 @@ export class StudieboomComponent implements OnInit {
   ngOnInit(): void {
     
     this.myForm = this.fb.group({
-      selectedOption1: [],  
-      selectedOption2: [],   
-      selectedOption3: [],
-      selectedOption4: [],
+      selectedOption1: [0],  
+      selectedOption2: [0],   
+      selectedOption3: [0],
+      selectedOption4: [0],
       finalField: []
     });
 
