@@ -18,6 +18,7 @@ export interface TreeNode {
   styleUrl: './opleiding-list.component.scss',
 })
 export class OpleidingListComponent {
+  filterboxOpen = false;
   filterCategorie: TreeNode[] = [
     {
       name: 'Beroepsopleidingen en bijscholingen',
@@ -444,6 +445,10 @@ export class OpleidingListComponent {
   }
   countItemsKnelpuntberoep(category: string) {
     return this.items.filter(item => item.filterKnelpuntberoep === category).length;
+  }
+
+  toggleOpenFilters() {
+    this.filterboxOpen = !this.filterboxOpen;
   }
 
   get filteredItems() {
