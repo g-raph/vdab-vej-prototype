@@ -12,9 +12,9 @@
       </div>
       <button class="btn btn--primary">Zoek</button>
     </div>
-    <div class="search__bottom">
+    <div class="search__bottom" *ngIf="selectedFilters.length">
       <div class="filtertag" *ngFor="let item of selectedFilters">{{item}}</div>
-      <div *ngIf="selectedFilters.length" class="remove" (click)="uncheckAllFilters()">Verwijder alle filters</div>
+      <div class="remove" (click)="uncheckAllFilters()">Verwijder alle filters</div>
     </div>
   </div>
   <div class="opleiding-list__mobile-filter-button mobile-only">
@@ -44,9 +44,9 @@
             </div>
             <button class="btn btn--primary">Zoek</button>
           </div>
-          <div class="search__bottom">
+          <div class="search__bottom" *ngIf="selectedFilters.length">
             <div class="filtertag" *ngFor="let item of selectedFilters">{{item}}</div>
-            <div *ngIf="selectedFilters.length" class="remove" (click)="uncheckAllFilters()">Verwijder alle filters</div>
+            <div class="remove" (click)="uncheckAllFilters()">Verwijder alle filters</div>
           </div>
         </div>
         <form [formGroup]="filterForm">
