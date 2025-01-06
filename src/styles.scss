@@ -326,7 +326,8 @@ select {
   }
 }
 
-input[type=checkbox] {
+input[type=checkbox],
+input[type=text] {
   appearance: none;
   border: 1px solid #aeb0b6;
   border-radius: 0.3125rem;
