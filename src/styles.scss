@@ -203,6 +203,10 @@ a, .c-hyperlink {
   text-decoration: none;
 }
 
+button {
+  font-family: inherit;
+}
+
 .btn {
   &--primary {
     color: #fff;
