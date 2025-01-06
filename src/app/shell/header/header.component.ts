@@ -15,9 +15,11 @@ import { debounceTime } from 'rxjs';
 export class HeaderComponent {
   showSearchForm = false;
   showMenu = false;
+  showSettings = false;
   showSubMenu = false;
   showCloseBtn = false;
   form: FormGroup;
+  fontForm: FormGroup;
   searchTerm = '';
   constructor(fb: FormBuilder) {
     this.form = fb.group({
@@ -30,6 +32,21 @@ export class HeaderComponent {
       .subscribe(dataValue => {
         this.openSubMenu(dataValue);
       });
+
+    this.fontForm = fb.group({
+      optionfontfamily: [''],
+      optionfontsize: ['']
+    });
+  }
+  onOptionChangeFontForm(value: string) {
+    document.body.setAttribute("class", "");
+    value !== '' ? document.body.classList.toggle(value) : document.body.setAttribute("class", "");
+    this.toggleSettings();
+  }
+  onOptionChangeFontSize(value: string) {
+    document.body.setAttribute("class", "");
+    value !== '' ? document.body.classList.toggle(value) : document.body.setAttribute("class", "");
+    this.toggleSettings();
   }
   toggleSearchForm() {
     this.showSearchForm = !this.showSearchForm;
@@ -37,6 +54,9 @@ export class HeaderComponent {
   }
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+  toggleSettings() {
+    this.showSettings = !this.showSettings;
   }
   resetField() {
     this.form.get('text')?.setValue('');

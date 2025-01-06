@@ -2,6 +2,7 @@
     <div class="header__top">
         <a href="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
         <div class="icons">
+            <span (click)="toggleSettings()" class="material-symbols-outlined">settings</span>
             <span (click)="toggleSearchForm()" class="material-symbols-outlined">search</span>
             <!-- <span [routerLink]="['/favorites']" class="material-symbols-outlined">star</span> -->
             <!-- <span [routerLink]="['/login']" class="material-symbols-outlined">account_circle</span> -->
@@ -23,6 +24,36 @@
                 </li>
             </ul>
 
+        </div>
+        <div *ngIf="showSettings" class="settings-dropdown">
+            <form [formGroup]="fontForm" class="settings-form">
+                <h4>Font family</h4>
+                <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option1" (change)="onOptionChangeFontForm('')" />
+                    Flanders
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option2" (change)="onOptionChangeFontForm('font-inter')" />
+                    Inter
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option3" (change)="onOptionChangeFontForm('font-opensans')" />
+                    Open Sans
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option4" (change)="onOptionChangeFontForm('font-comicsans')" />
+                    Comic Sans
+                  </label>
+                <h4>Font size</h4>
+                <label>
+                    <input type="radio" formControlName="optionfontsize" value="option1" (change)="onOptionChangeFontSize('')" />
+                    Normal (18px)
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontsize" value="option2" (change)="onOptionChangeFontSize('smaller-font')" />
+                    Smaller (16px)
+                  </label>
+            </form>
         </div>
     </div>
     <div class="header__bottom">
