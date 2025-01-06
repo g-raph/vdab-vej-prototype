@@ -1,0 +1,23 @@
+$color-primary: #1769a4;
+
+.scroll-to-top {
+    position: fixed;
+    z-index: 9999999999;
+    bottom: 100px;
+    right: -100%;
+    background-color: $color-primary;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    &.show {
+        right: 0;
+    }
+  }
+  
+  .scroll-to-top:hover {
+    background-color: #222;
+  }
