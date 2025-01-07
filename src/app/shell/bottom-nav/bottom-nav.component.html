@@ -1,0 +1,8 @@
+<div class="bottomnav">
+    <div *ngFor="let item of bottomNavConfig" class="bottomnav__item" [routerLink]="item.routerlink" routerLinkActive="active">
+      <span class="material-symbols-outlined"> {{item.icon}} </span>
+      <span>{{item.label}}</span>
+      <ng-container *ngIf="item.hasBadge && (favorites$ | async) as favs"><span *ngIf="favs.length" class="badge">{{favs.length}}</span></ng-container>
+    </div>
+</div>
+  

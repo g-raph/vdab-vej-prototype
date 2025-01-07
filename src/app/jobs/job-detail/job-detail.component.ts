@@ -5,17 +5,48 @@ import { FooterComponent } from '../../shell/footer/footer.component';
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
 import { FavoriteService } from '../../favorite.service';
 import { Observable } from 'rxjs';
+import { bottomNavItem } from '../job-list/job-list.component';
+import { BottomNavComponent } from '../../shell/bottom-nav/bottom-nav.component';
 
 @Component({
   selector: 'app-job-detail',
   standalone: true,
-  imports: [RouterLink, FooterComponent, NgIf, AsyncPipe, JsonPipe],
+  imports: [RouterLink, NgIf, AsyncPipe, BottomNavComponent],
   templateUrl: './job-detail.component.html',
   styleUrl: './job-detail.component.scss'
 })
 export class JobDetailComponent {
   jobId: any;
   job$: Observable<any>;
+
+  navConfig: bottomNavItem[] = [
+      {
+        id: 1,
+        icon: 'search',
+        label: 'Jobs',
+        routerlink: '/vind-een-job/zoekresultaten',
+        hasBadge: false
+      },
+      {
+        id: 2,
+        icon: 'task',
+        label: 'Jobsuggesties',
+        hasBadge: false
+      },
+      {
+        id: 3,
+        icon: 'notifications',
+        label: 'Job alert',
+        routerlink: '#',
+        hasBadge: false
+      },
+      {
+        id: 4,
+        icon: 'star',
+        label: 'Bewaarde vacatures',
+        hasBadge: true
+      },
+  ];
 
   @ViewChild('topinfo', {static: false}) private topinfo: ElementRef<HTMLDivElement> = {} as ElementRef;
   scrollPosLow = true;

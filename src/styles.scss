@@ -331,6 +331,7 @@ select {
 }
 
 input[type=checkbox],
+input[type=password],
 input[type=text] {
   appearance: none;
   border: 1px solid #aeb0b6;
@@ -344,3 +345,23 @@ input[type=text] {
   font-size: 1.125rem;
 }
 
+.mobile-only {
+  display: none;
+  @media screen and (max-width: 990px) {
+    display: flex;
+  }
+}
+
+.desktop-only--block {
+  display: block;
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+}
+
+.desktop-only--flex {
+  display: flex;
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+}

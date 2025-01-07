@@ -449,6 +449,7 @@ export class OpleidingListComponent {
 
   toggleOpenFilters() {
     this.filterboxOpen = !this.filterboxOpen;
+    document.body.style.overflow = this.filterboxOpen ? 'hidden' : 'visible';
   }
 
   get filteredItems() {

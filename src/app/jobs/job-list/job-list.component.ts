@@ -3,20 +3,57 @@ import { Component, ElementRef } from '@angular/core';
 import { JobTeaserComponent } from '../job-teaser/job-teaser.component';
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../../api.service';
-import { FooterComponent } from '../../shell/footer/footer.component';
 import { FilterModalService } from '../../filter-modal.service';
-import { BehaviorSubject } from 'rxjs';
+import { BottomNavComponent } from "../../shell/bottom-nav/bottom-nav.component";
+
+export interface bottomNavItem {
+  id: number,
+  icon: string,
+  label: string,
+  routerlink?: string,
+  hasBadge: boolean
+}
 
 @Component({
   selector: 'app-job-list',
   standalone: true,
-  imports: [NgForOf, JobTeaserComponent, RouterLink, FooterComponent, NgClass, AsyncPipe, NgIf],
+  imports: [NgForOf, JobTeaserComponent, RouterLink, NgClass, AsyncPipe, NgIf, BottomNavComponent],
   templateUrl: './job-list.component.html',
   styleUrl: './job-list.component.scss'
 })
 export class JobListComponent {
   jobs$ = this.api.getJobs();
   filterOpen = this.filterService.filterOpen$;
+
+  navConfig: bottomNavItem[] = [
+    {
+      id: 1,
+      icon: 'search',
+      label: 'Jobs',
+      routerlink: '/vind-een-job/zoekresultaten',
+      hasBadge: false
+    },
+    {
+      id: 2,
+      icon: 'task',
+      label: 'Jobsuggesties',
+      hasBadge: false
+    },
+    {
+      id: 3,
+      icon: 'notifications',
+      label: 'Job alert',
+      hasBadge: false
+    },
+    {
+      id: 4,
+      icon: 'star',
+      label: 'Bewaarde vacatures',
+      routerlink: '/favorites',
+      hasBadge: true
+    },
+  ];
+
   constructor(private api: ApiService, private filterService: FilterModalService, private el: ElementRef) {}
 
   ngOnInit(): void {

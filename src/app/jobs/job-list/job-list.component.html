@@ -17,7 +17,8 @@
     <div class="jobs">
         <app-job-teaser *ngFor="let job of jobs" [job]="job" [routerLink]="['/vind-een-job', 'zoekresultaten', job.id]"></app-job-teaser>
     </div>
-    <app-footer [backIcon]="false"></app-footer>
+    <!-- <app-footer [backIcon]="false"></app-footer> -->
+    <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
     <div class="filter-modal" [ngClass]="{'open': (filterOpen | async)}">
         <div class="filter-modal__header">
             <h2>Vind een job</h2>
