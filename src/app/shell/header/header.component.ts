@@ -39,13 +39,19 @@ export class HeaderComponent {
     });
   }
   onOptionChangeFontForm(value: string) {
-    document.body.setAttribute("class", "");
-    value !== '' ? document.body.classList.toggle(value) : document.body.setAttribute("class", "");
+    document.body.classList.remove('font-inter');
+    document.body.classList.remove('font-opensans');
+    document.body.classList.remove('font-comicsans');
+    if (value !== '') {
+      document.body.classList.toggle(value);
+    }
     this.toggleSettings();
   }
   onOptionChangeFontSize(value: string) {
-    document.body.setAttribute("class", "");
-    value !== '' ? document.body.classList.toggle(value) : document.body.setAttribute("class", "");
+    document.body.classList.remove('smaller-font');
+    if (value !== '') {
+      document.body.classList.toggle(value);
+    }
     this.toggleSettings();
   }
   toggleSearchForm() {
