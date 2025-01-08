@@ -11,16 +11,26 @@ import { OpleidingDetailComponent } from './opleidingen/opleiding-detail/opleidi
 
 export const routes: Routes = [
     {
-        path:'vind-een-job', 
+        path:'', 
+        children: [
+            {
+                path: '',
+                component: HomeComponent,
+            },
+        ]
+    },
+    {
+        path:'jobs', 
         data: { breadcrumb: 'Jobs' },
         children: [
             {
                 path: '',
-                component: JobSearchComponent,
+                component: JobSearchComponent, 
+                data: { breadcrumb: 'Jobs'},                
             },
             {
-                path:'zoekresultaten', 
-                data: { breadcrumb: 'Zoekresultaten' },
+                path:'vind-een-job', 
+                data: { breadcrumb: 'Resultaten' },
                 children: [
                     {
                         path: '',
@@ -29,7 +39,7 @@ export const routes: Routes = [
                     {
                         path:':id', 
                         component: JobDetailComponent,
-                        data: { breadcrumb: 'Vacaturedetail' },
+                        data: { breadcrumb: 'Job detail' },
                     },
                 ]
             },

@@ -1,10 +1,9 @@
-import { NgIf } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-scroll-top',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './scroll-top.component.html',
   styleUrl: './scroll-top.component.scss'
 })

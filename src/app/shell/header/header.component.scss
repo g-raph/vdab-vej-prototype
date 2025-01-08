@@ -181,12 +181,16 @@
         list-style: none;
         display: flex;
         flex-flow: column;
-        gap: .25rem;
+        gap: .5rem;
         a {
             display: flex;
             align-items: center;
-            gap: .25rem;
+            gap: .5rem;
             font-weight: 400;
+            color: #252525;
+            &:hover, &.active {
+                color: #2d89cc;
+            }
         }
     }
 }

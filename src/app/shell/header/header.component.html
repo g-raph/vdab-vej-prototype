@@ -11,14 +11,26 @@
         <div *ngIf="showMenu" class="menu-dropdown">
             <ul>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/vind-een-opleiding']">
+                    <a (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
+                        <span class="material-symbols-outlined">assured_workload</span>
+                        <span>Jobs</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
+                        <span class="material-symbols-outlined">work</span>
+                        <span>Vind een job</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/vind-een-opleiding']" routerLinkActive="active">
                         <span class="material-symbols-outlined">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/studieboom']">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                    <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
+                        <span class="material-symbols-outlined">flowchart</span>
                         <span>Studieboom</span>
                     </a>
                 </li>
@@ -56,7 +68,7 @@
             </form>
         </div>
     </div>
-    <div class="header__bottom">
+    <div class="header__bottom" *ngIf="!isHome">
         <app-breadcrumb></app-breadcrumb>
     </div>
     <div *ngIf="showSearchForm" (click)="toggleSearchForm()" class="fade"></div>

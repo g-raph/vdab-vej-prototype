@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { NgIf } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime } from 'rxjs';
+import { debounceTime, filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, BreadcrumbComponent, NgIf, ReactiveFormsModule],
+  imports: [RouterLink, RouterLinkActive, BreadcrumbComponent, NgIf, ReactiveFormsModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   showSearchForm = false;
   showMenu = false;
   showSettings = false;
@@ -21,7 +21,8 @@ export class HeaderComponent {
   form: FormGroup;
   fontForm: FormGroup;
   searchTerm = '';
-  constructor(fb: FormBuilder) {
+  isHome: boolean = false;
+  constructor(fb: FormBuilder, private router: Router) {
     this.form = fb.group({
       text: ''
     });
@@ -37,6 +38,13 @@ export class HeaderComponent {
       optionfontfamily: [''],
       optionfontsize: ['']
     });
+  }
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.isHome = event.url === '/';
+      });
   }
   onOptionChangeFontForm(value: string) {
     document.body.classList.remove('font-inter');

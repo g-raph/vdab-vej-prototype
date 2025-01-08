@@ -30,7 +30,7 @@ export class JobListComponent {
       id: 1,
       icon: 'search',
       label: 'Jobs',
-      routerlink: '/vind-een-job/zoekresultaten',
+      routerlink: '/jobs/vind-een-job',
       hasBadge: false
     },
     {

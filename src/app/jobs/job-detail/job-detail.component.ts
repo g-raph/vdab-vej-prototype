@@ -24,7 +24,7 @@ export class JobDetailComponent {
         id: 1,
         icon: 'search',
         label: 'Jobs',
-        routerlink: '/vind-een-job/zoekresultaten',
+        routerlink: '/jobs/vind-een-job',
         hasBadge: false
       },
       {
@@ -37,13 +37,13 @@ export class JobDetailComponent {
         id: 3,
         icon: 'notifications',
         label: 'Job alert',
-        routerlink: '#',
         hasBadge: false
       },
       {
         id: 4,
         icon: 'star',
         label: 'Bewaarde vacatures',
+        routerlink: '/favorites',
         hasBadge: true
       },
   ];
