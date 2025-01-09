@@ -9,6 +9,7 @@ import { StudieboomComponent } from './studieboom/studieboom.component';
 import { OpleidingListComponent } from './opleidingen/opleiding-list/opleiding-list.component';
 import { OpleidingDetailComponent } from './opleidingen/opleiding-detail/opleiding-detail.component';
 import { TestComponent } from './shell/test/test.component';
+import { OpleidingSearchComponent } from './opleidingen/opleiding-search/opleiding-search.component';
 
 export const routes: Routes = [
     {
@@ -36,7 +37,7 @@ export const routes: Routes = [
             {
                 path: '',
                 component: JobSearchComponent, 
-                data: { breadcrumb: 'Jobs'},                
+                data: { breadcrumb: 'Alles over jobs'},                
             },
             {
                 path:'vind-een-job', 
@@ -56,17 +57,28 @@ export const routes: Routes = [
         ]
     },
     {
-        path:'vind-een-opleiding', 
+        path:'opleidingen', 
         data: { breadcrumb: 'Opleidingen' },
         children: [
             {
                 path: '',
-                component: OpleidingListComponent,
+                component: OpleidingSearchComponent, 
+                data: { breadcrumb: 'Alles over opleidingen'},                
             },
             {
-                path:':id', 
-                component: OpleidingDetailComponent,
-                data: { breadcrumb: 'Opleiding detail' },
+                path:'vind-een-opleiding', 
+                data: { breadcrumb: 'Opleidingen' },
+                children: [
+                    {
+                        path: '',
+                        component: OpleidingListComponent,
+                    },
+                    {
+                        path:':id', 
+                        component: OpleidingDetailComponent,
+                        data: { breadcrumb: 'Opleiding detail' },
+                    },
+                ]
             },
         ]
     },
