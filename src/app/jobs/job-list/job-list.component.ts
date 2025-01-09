@@ -64,7 +64,7 @@ export class JobListComponent {
   
   scrollToTopPosition() {
     setTimeout(() => {
-      this.el.nativeElement.querySelector('.jobs-container').scrollIntoView();
+      this.el.nativeElement.querySelector('.job-list').scrollIntoView();
     }, 5);
   }
 
