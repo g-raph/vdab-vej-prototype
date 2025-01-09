@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header mobile-only">
     <div class="header__top">
         <a href="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
         <div class="icons">
@@ -72,7 +72,7 @@
         <app-breadcrumb></app-breadcrumb>
     </div>
     <div *ngIf="showSearchForm" (click)="toggleSearchForm()" class="fade"></div>
-    <div class="search-form" [class.open]="showSearchForm">
+    <div class="search-form" [class.open]="showSearchForm" [class.ishome]="isHome">
         <form [formGroup]="form">
             <div class="field" [class.open]="showSubMenu">
                 <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
@@ -85,5 +85,144 @@
             <a href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
             <a href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
         </div>
+    </div>
+</div>
+
+<div class="header-desktop desktop-only--flex">
+    <div class="header-desktop--top">
+        <img src="/assets/vlaanderen-logo.svg" alt="vlaanderen logo">
+        <div class="right">
+            <a href="#"><span class="material-symbols-outlined">shield_person</span><span>Naar site werkgevers</span></a>
+            <a href="#"><span class="material-symbols-outlined">handshake</span><span>Naar site partners</span></a>
+            <a routerLink="/login"><span class="material-symbols-outlined">account_circle</span><span>Log in</span></a>
+            <a (click)="toggleSettings()"><span class="material-symbols-outlined">settings</span></a>
+        </div>
+        <div *ngIf="showSettings" class="settings-dropdown">
+            <form [formGroup]="fontForm" class="settings-form">
+                <h4>Font family</h4>
+                <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option1" (change)="onOptionChangeFontForm('')" />
+                    Flanders
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option2" (change)="onOptionChangeFontForm('font-inter')" />
+                    Inter
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option3" (change)="onOptionChangeFontForm('font-opensans')" />
+                    Open Sans
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontfamily" value="option4" (change)="onOptionChangeFontForm('font-comicsans')" />
+                    Comic Sans
+                  </label>
+                <h4>Font size</h4>
+                <label>
+                    <input type="radio" formControlName="optionfontsize" value="option1" (change)="onOptionChangeFontSize('')" />
+                    Normal (18px)
+                  </label>
+                  <label>
+                    <input type="radio" formControlName="optionfontsize" value="option2" (change)="onOptionChangeFontSize('smaller-font')" />
+                    Smaller (16px)
+                  </label>
+            </form>
+        </div>
+    </div>
+    <div class="header-desktop--bottom">
+        <div class="box">
+            <div class="left">
+                <a routerLink="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
+                <div (click)="toggleMenu()" class="menu" [class.active]="showMenu">
+                    <span class="material-symbols-outlined">menu</span>
+                    <span>Menu</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="header-desktop__search-form">
+                    <form [formGroup]="form">
+                        <div class="field" [class.open]="showSubMenu">
+                            <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
+                            <span *ngIf="!showCloseBtn" class="material-symbols-outlined">search</span>
+                            <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined">close</span>
+                        </div>
+                    </form>
+                    <div class="submenu" [class.open]="showSubMenu">
+                        <a class="active" href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
+                        <a href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
+                        <a href="/vind-een-job/zoekresultaten"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showMenu" class="menu-dropdown">
+        <div class="box">
+            <ul class="block-1">
+                <li>
+                    <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
+                        <span>Jobs</span>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </h3>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
+                        <span class="material-symbols-outlined">work</span>
+                        <span>Vind een job</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="block-1">
+                <li>
+                    <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
+                        <span>Opleidingen</span>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </h3>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/vind-een-opleiding']" routerLinkActive="active">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span>Vind een opleiding</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="block-3">
+                <li>
+                    <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
+                        <span>Oriënteren</span>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </h3>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
+                        <span class="material-symbols-outlined">work</span>
+                        <span>Vind een job</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/vind-een-opleiding']" routerLinkActive="active">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span>Vind een opleiding</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="block-4">
+                <li>
+                    <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
+                        <span>Prototypes</span>
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </h3>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
+                        <span class="material-symbols-outlined">flowchart</span>
+                        <span>Studieboom</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="header-desktop__breadcrumbs" *ngIf="!isHome">
+        <div class="box"><app-breadcrumb></app-breadcrumb></div>
     </div>
 </div>

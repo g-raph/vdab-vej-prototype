@@ -1,19 +1,17 @@
 .container {
     &--top {
-    background: radial-gradient(62.07% 385.69% at 73.23% 50%, #49B4AA 0, #0C887E 100%);
+      background: radial-gradient(62.07% 385.69% at 73.23% 50%, #49B4AA 0, #0C887E 100%);
       display: flex;
       justify-content: center;
     }
     &--bottom {
       display: flex;
       justify-content: center;
-  
+      
     }
 }
 
 .main-search {
-    max-width: 1440px;
-    width: 100%;
     padding: 2rem 1rem;
     color: #fff;
     h1 {
