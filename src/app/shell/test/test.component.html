@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+    <!-- Parent Checkbox -->
+    <label>
+      <input
+        type="checkbox"
+        formControlName="parent"
+        (change)="onParentChange($event)"
+      />
+      Parent task
+    </label>
+
+    <!-- Child Checkboxes -->
+    <div style="margin-left: 20px;">
+      <label *ngFor="let child of childTasks.controls; let i = index">
+        <input
+          type="checkbox"
+          [formControlName]="i"
+          (change)="onChildChange()"
+        />
+        {{ taskNames[i] }}
+      </label>
+    </div>
+  </form>

@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { StudieboomComponent } from './studieboom/studieboom.component';
 import { OpleidingListComponent } from './opleidingen/opleiding-list/opleiding-list.component';
 import { OpleidingDetailComponent } from './opleidingen/opleiding-detail/opleiding-detail.component';
+import { TestComponent } from './shell/test/test.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,15 @@ export const routes: Routes = [
             {
                 path: '',
                 component: HomeComponent,
+            },
+        ]
+    },
+    {
+        path:'test', 
+        children: [
+            {
+                path: '',
+                component: TestComponent,
             },
         ]
     },
