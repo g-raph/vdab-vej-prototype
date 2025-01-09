@@ -212,7 +212,7 @@
         position: absolute;
         border: .5rem solid transparent;
         border-bottom: .5rem solid #fff;
-        left: 5.5rem;
+        right: 7.5rem;
         top: -1rem;
     }
     ul {
@@ -328,7 +328,7 @@
             list-style: none;
             display: flex;
             flex-flow: column;
-            gap: .5rem;
+            gap: .75rem;
             width: 25%;
             h3 {
                 font-weight: 400;
