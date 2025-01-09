@@ -60,3 +60,20 @@
       }
     }
 }
+
+.cta-blocks {
+  padding: 4rem 0;
+  .box {
+    display: flex;
+    justify-content: space-between;
+    > * {
+      width: calc((100% / 3) - 2rem);
+    }
+    @media screen and (max-width: 990px) {
+      flex-flow: column;
+      > * {
+        width: 100%;
+      }
+    }
+  }
+}
