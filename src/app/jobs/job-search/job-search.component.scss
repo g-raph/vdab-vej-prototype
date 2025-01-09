@@ -12,29 +12,32 @@
 }
 
 .main-search {
-    max-width: 1440px;
-    width: 100%;
-    padding: 2rem 1rem;
+    padding: 6rem 1rem;
     color: #fff;
+    background: url('/assets/wow-jobs.webp') no-repeat right top / contain;
     h1 {
         margin-top: 0;
         color: #fff;
         font-weight: 500;
     }
     form {
+      display: flex;
+      gap: 2rem;
+      flex-flow: column;
+      width: 80%;
+      .top {
         display: flex;
-        flex-flow: column;
-        gap: 2rem;
-        .top {
-          display: flex;
+        gap: 1rem;
+        @media screen and (max-width: 990px) {
           flex-flow: column;
-          gap: 1rem;
         }
+
       }
       .field {
         display: flex;
         flex-flow: column;
         gap: 0.25rem;
+        flex: 1;
         label {
           font-weight: 400;
         }
@@ -51,8 +54,10 @@
         }
       }
       .submit {
-        margin-top: 1.5rem;
+        width: auto;
+        margin-top: 1.6rem;
       }
+    }
 }
 
 .domains {
