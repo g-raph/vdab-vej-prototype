@@ -11,7 +11,7 @@
                     <label for="location">Postcode, gemeente of provincie</label>
                     <input type="text" name="location" id="location">
                 </div>
-                <button class="submit btn--primary"><span class="material-symbols-outlined">search</span><span>Vind een job</span></button>
+                <button [routerLink]="['/jobs/vind-een-job']" routerLinkActive="router-link-active"  class="submit btn--primary"><span class="material-symbols-outlined">search</span><span>Vind een job</span></button>
             </div>
         </form>
     </div>
@@ -19,7 +19,12 @@
 <div class="container--bottom">
     <div class="cta-blocks">
         <div class="box">
-            <app-cta-block *ngFor="let item of ctaBlockItems" [item]="item"></app-cta-block>
+            <app-cta-block *ngFor="let item of ctaBlockItems1" [item]="item"></app-cta-block>
+        </div>
+    </div>
+    <div class="cta-blocks-2">
+        <div class="box">
+            <app-cta-block *ngFor="let item of ctaBlockItems2" [item]="item"></app-cta-block>
         </div>
     </div>
 </div>

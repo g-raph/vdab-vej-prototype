@@ -5,7 +5,10 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
   font-family: "Flanders";
   p {
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
+    color: #474b50;
   }
   h1,
   h2,
