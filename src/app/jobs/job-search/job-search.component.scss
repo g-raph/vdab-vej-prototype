@@ -7,7 +7,8 @@
   &--bottom {
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    flex-flow: column;
   }
 }
 
@@ -15,16 +16,27 @@
     padding: 6rem 1rem;
     color: #fff;
     background: url('/assets/wow-jobs.webp') no-repeat right top / contain;
+    @media screen and (max-width: 990px) {
+      background: none;
+      padding: 2rem 1rem;
+    }
     h1 {
         margin-top: 0;
         color: #fff;
         font-weight: 500;
+        font-size: 2.8rem;
+        @media screen and (max-width: 990px) {
+          font-size: 2rem;
+        }
     }
     form {
       display: flex;
       gap: 2rem;
       flex-flow: column;
       width: 80%;
+      @media screen and (max-width: 990px) {
+        width: 100%;
+      }
       .top {
         display: flex;
         gap: 1rem;
@@ -61,9 +73,12 @@
 }
 
 .domains {
-    padding: 1rem;
+    padding: 3rem 1rem 6rem;
     max-width: 1440px;
     width: 100%;
+    @media screen and (max-width: 990px) {
+      padding: 1rem 1rem 3rem;
+    }
     .links {
         display: flex;
         flex-flow: row wrap;
@@ -73,10 +88,38 @@
         list-style: none;
         li {
           width: 25%;
+          @media screen and (max-width: 990px) {
+            width: 100%;
+          }
         }
         a {
             font-weight: 400;
             text-decoration: underline;
         }
     }
+}
+
+.cta-blocks {
+  padding: 6rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-primary-bg);
+  @media screen and (max-width: 990px) {
+    padding: 3rem 0;
+  }
+  .box {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    > * {
+      width: calc((100% / 2) - 2rem);
+    }
+    @media screen and (max-width: 990px) {
+      flex-flow: column;
+      > * {
+        width: 100%;
+      }
+    }
+  }
 }
