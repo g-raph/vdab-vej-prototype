@@ -10,7 +10,12 @@ $color-light: #DBECF8;
 }
 
 .job-detail {
-    padding: 1rem 1.5rem 6rem;
+    padding: 1rem 0 6rem;
+    display: flex;
+    justify-content: center;
+    .box {
+        display: flex;
+    }
     h1 {
         margin: 1rem 0;
     }

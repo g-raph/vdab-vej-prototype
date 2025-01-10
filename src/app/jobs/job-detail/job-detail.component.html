@@ -1,41 +1,48 @@
 <div class="job-detail" *ngIf="job$ | async as job">
-    <div #topinfo>
-        <!-- <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a> -->
-        <img class="job-detail__company__logo" [src]="job.company.logo" alt="" (click)="scrollToPosition('.company-bottom')">
-        <!-- <div   class="job-detail__company">
-            <h2>{{job.company.name}}</h2>
-            <div class="job-detail__company__links">
-                <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
-                <a href="#"><span class="material-symbols-outlined">info</span><span>Meer info over dit bedrijf</span></a>
-                <a href="#"><span class="material-symbols-outlined">campaign</span><span>Spontaan solliciteren</span></a>
+    <div class="box">
+        <div class="left">
+            <div #topinfo>
+                <!-- <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a> -->
+                <img class="job-detail__company__logo" [src]="job.company.logo" alt="" (click)="scrollToPosition('.company-bottom')">
+                <!-- <div   class="job-detail__company">
+                    <h2>{{job.company.name}}</h2>
+                    <div class="job-detail__company__links">
+                        <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
+                        <a href="#"><span class="material-symbols-outlined">info</span><span>Meer info over dit bedrijf</span></a>
+                        <a href="#"><span class="material-symbols-outlined">campaign</span><span>Spontaan solliciteren</span></a>
+                    </div>
+                </div> -->
+                <h1>{{job.title}}</h1>
+                <div (click)="scrollToPosition('.company-bottom')" class="job__location"><span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
+                <div class="job__online"><span>Online sinds <span class="bold">{{job.online}}</span> - <span class="bold">{{job.type}}</span></span></div>
             </div>
-        </div> -->
-        <h1>{{job.title}}</h1>
-        <div (click)="scrollToPosition('.company-bottom')" class="job__location"><span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div>
-        <div class="job__online"><span>Online sinds <span class="bold">{{job.online}}</span> - <span class="bold">{{job.type}}</span></span></div>
-    </div>
-    <div *ngIf="!scrollPosLow" class="stickybox">
-        <!-- <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a> -->
-        <h4>{{job.title}}</h4>
-        <!-- <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div> -->
-        <div class="bottom-actions">
-            <button routerLink="/login" class="btn btn--primary btn--small">Solliciteer nu</button>
-            <button (click)="setAsFavorite(job.id)" class="btn btn--small" [class.btn--secondary]="!job.saved" [class.btn--yellow]="job.saved"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
+            <div *ngIf="!scrollPosLow" class="stickybox">
+                <!-- <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a> -->
+                <h4>{{job.title}}</h4>
+                <!-- <div class="job__location"><span class="material-symbols-outlined"> location_on </span> <span><span class="bold">{{job.location.office}}</span> in <span class="bold">{{job.location.city}}</span></span></div> -->
+                <div class="bottom-actions">
+                    <button routerLink="/login" class="btn btn--primary btn--small">Solliciteer nu</button>
+                    <button (click)="setAsFavorite(job.id)" class="btn btn--small" [class.btn--secondary]="!job.saved" [class.btn--yellow]="job.saved"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
+                </div>
+            </div>
+            <div class="ctas">
+                <button routerLink="/login" class="btn btn--primary">Solliciteer nu</button>
+                <button (click)="setAsFavorite(job.id)" class="btn" [class.btn--secondary]="!job.saved" [class.btn--yellow]="job.saved"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
+            </div>
+            <div class="job-detail__content" [innerHTML]="job.html"></div>
+            <div class="job-detail__highlight" [innerHTML]="job.highlight"></div>
+            <img class="job-detail__company__logo company-bottom" [src]="job.company.logo" alt="">
+            <div   class="job-detail__company">
+                <h2>{{job.company.name}}</h2>
+                <div class="job-detail__company__links">
+                    <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
+                    <a href="#"><span class="material-symbols-outlined">info</span><span>Meer info over dit bedrijf</span></a>
+                    <a href="#"><span class="material-symbols-outlined">campaign</span><span>Solliciteer spontaan</span></a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="ctas">
-        <button routerLink="/login" class="btn btn--primary">Solliciteer nu</button>
-        <button (click)="setAsFavorite(job.id)" class="btn" [class.btn--secondary]="!job.saved" [class.btn--yellow]="job.saved"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
-    </div>
-    <div class="job-detail__content" [innerHTML]="job.html"></div>
-    <div class="job-detail__highlight" [innerHTML]="job.highlight"></div>
-    <img class="job-detail__company__logo company-bottom" [src]="job.company.logo" alt="">
-    <div   class="job-detail__company">
-        <h2>{{job.company.name}}</h2>
-        <div class="job-detail__company__links">
-            <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
-            <a href="#"><span class="material-symbols-outlined">info</span><span>Meer info over dit bedrijf</span></a>
-            <a href="#"><span class="material-symbols-outlined">campaign</span><span>Solliciteer spontaan</span></a>
+        <div class="right desktop-only--flex">
+            test
         </div>
     </div>
 </div>
