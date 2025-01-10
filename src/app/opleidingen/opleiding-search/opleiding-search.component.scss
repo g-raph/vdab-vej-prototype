@@ -11,6 +11,8 @@
   &--bottom {
     display: flex;
     justify-content: center;
+    flex-flow: column;
+    align-items: center;
   }
 }
 
@@ -74,25 +76,53 @@
 }
 
 .domains {
-  padding: 1rem;
+  padding: 3rem 1rem 6rem;
   max-width: 1440px;
   width: 100%;
+  @media screen and (max-width: 990px) {
+    padding: 1rem 1rem 3rem;
+  }
   .links {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 0.75rem 0;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    li {
-      width: 25%;
-      @media screen and (max-width: 990px) {
-        width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      gap: .75rem 0;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        width: 25%;
+        @media screen and (max-width: 990px) {
+          width: 100%;
+        }
       }
-    }
-    a {
-      font-weight: 400;
-      text-decoration: underline;
+      a {
+          font-weight: 400;
+          text-decoration: underline;
+      }
+  }
+}
+
+.cta-blocks {
+padding: 6rem 0;
+width: 100%;
+display: flex;
+justify-content: center;
+background-color: var(--color-primary-bg);
+@media screen and (max-width: 990px) {
+  padding: 3rem 0;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  > * {
+    width: calc((100% / 2) - 2rem);
+  }
+  @media screen and (max-width: 990px) {
+    flex-flow: column;
+    > * {
+      width: 100%;
     }
   }
+}
 }
