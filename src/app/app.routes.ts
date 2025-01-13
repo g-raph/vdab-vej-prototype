@@ -67,7 +67,7 @@ export const routes: Routes = [
             },
             {
                 path:'vind-een-opleiding', 
-                data: { breadcrumb: 'Opleidingen' },
+                data: { breadcrumb: 'Resultaten' },
                 children: [
                     {
                         path: '',

@@ -15,6 +15,7 @@ $color-light: #DBECF8;
     justify-content: center;
     .box {
         display: flex;
+        gap: 2rem;
     }
     h1 {
         margin: 1rem 0;
@@ -24,6 +25,7 @@ $color-light: #DBECF8;
         margin: 0 -1.5rem;
         background-color: $color-light;
         position: relative;
+        flex-flow: column;
         &:before {
             content: '';
             background-color: $color-light;
@@ -68,6 +70,23 @@ $color-light: #DBECF8;
         padding: 1rem 1.5rem;
         margin: 2rem -1.5rem .5rem;
     }
+    .right {
+        flex-flow: column;
+        .job-detail__company {
+            margin: 0;
+            border-radius: 0 0 .25rem .25rem;
+            &::before {
+                border-radius: .25rem .25rem 0 0;
+            }
+            &__logo {
+                margin-left: 1.5rem;
+            }
+        }
+        .job-detail__highlight {
+            margin: 2rem 0 .5rem;
+            border-radius: .25rem;
+        }
+    }
 }
 
 .job {
@@ -92,9 +111,12 @@ $color-light: #DBECF8;
 
 .ctas {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     gap: .5rem;
     margin-top: 1rem;
+    @media screen and (max-width: 990px) {
+        flex-flow: column;
+    }
 }
 
 .stickybox {
@@ -102,15 +124,20 @@ $color-light: #DBECF8;
     width: 100%;
     box-sizing: border-box;
     top: 0;
+    left: 0;
     padding: .75rem 1.5rem;
     z-index: 999;
     background-color: #fff;
     box-shadow: 0 .25rem 0.75rem rgba(0,0,0,0.25);
-    margin: 0 -1.5rem;
+    margin: 0;
     display: flex;
     flex-flow: column;
     gap: .5rem;
     animation: fadeInDown .5s ease;
+    @media screen and (max-width: 990px) {
+        margin: 0 -1.5rem;
+        left: auto;
+    }
     .job__location {
         font-size: .875rem;
         > span:first-child {

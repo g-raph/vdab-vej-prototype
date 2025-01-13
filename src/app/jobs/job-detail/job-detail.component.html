@@ -3,7 +3,7 @@
         <div class="left">
             <div #topinfo>
                 <!-- <a class="back-link" [routerLink]="['/vind-een-job', 'zoekresultaten']"><span class="material-symbols-outlined">chevron_left</span> <span>Zoekresultaten</span></a> -->
-                <img class="job-detail__company__logo" [src]="job.company.logo" alt="" (click)="scrollToPosition('.company-bottom')">
+                <img class="mobile-only job-detail__company__logo" [src]="job.company.logo" alt="" (click)="scrollToPosition('.company-bottom')">
                 <!-- <div   class="job-detail__company">
                     <h2>{{job.company.name}}</h2>
                     <div class="job-detail__company__links">
@@ -30,9 +30,9 @@
                 <button (click)="setAsFavorite(job.id)" class="btn" [class.btn--secondary]="!job.saved" [class.btn--yellow]="job.saved"><span class="material-symbols-outlined">star</span><span>Bewaar</span></button>
             </div>
             <div class="job-detail__content" [innerHTML]="job.html"></div>
-            <div class="job-detail__highlight" [innerHTML]="job.highlight"></div>
-            <img class="job-detail__company__logo company-bottom" [src]="job.company.logo" alt="">
-            <div   class="job-detail__company">
+            <div class="mobile-only job-detail__highlight" [innerHTML]="job.highlight"></div>
+            <img class="mobile-only job-detail__company__logo company-bottom" [src]="job.company.logo" alt="">
+            <div class="mobile-only job-detail__company">
                 <h2>{{job.company.name}}</h2>
                 <div class="job-detail__company__links">
                     <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
@@ -42,7 +42,16 @@
             </div>
         </div>
         <div class="right desktop-only--flex">
-            test
+            <img class="job-detail__company__logo company-bottom" [src]="job.company.logo" alt="">
+            <div class="job-detail__company">
+                <h2>{{job.company.name}}</h2>
+                <div class="job-detail__company__links">
+                    <a href="#"><span class="material-symbols-outlined">visibility</span><span>Bekijk alle 50 vacatures</span></a>
+                    <a href="#"><span class="material-symbols-outlined">info</span><span>Meer info over dit bedrijf</span></a>
+                    <a href="#"><span class="material-symbols-outlined">campaign</span><span>Solliciteer spontaan</span></a>
+                </div>
+            </div>
+            <div class="job-detail__highlight" [innerHTML]="job.highlight"></div>
         </div>
     </div>
 </div>
