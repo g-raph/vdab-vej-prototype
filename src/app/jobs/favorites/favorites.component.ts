@@ -18,14 +18,14 @@ export class FavoritesComponent {
   navConfig: bottomNavItem[] = [
         {
           id: 1,
-          icon: 'search',
+          icon: 'work',
           label: 'Jobs',
           routerlink: '/jobs/vind-een-job',
           hasBadge: false
         },
         {
           id: 2,
-          icon: 'search',
+          icon: 'workspace_premium',
           label: 'Opleidingen',
           routerlink: '/opleidingen/vind-een-opleiding',
           hasBadge: false
