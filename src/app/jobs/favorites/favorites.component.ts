@@ -25,18 +25,13 @@ export class FavoritesComponent {
         },
         {
           id: 2,
-          icon: 'task',
-          label: 'Jobsuggesties',
+          icon: 'search',
+          label: 'Opleidingen',
+          routerlink: '/opleidingen/vind-een-opleiding',
           hasBadge: false
         },
         {
           id: 3,
-          icon: 'notifications',
-          label: 'Job alert',
-          hasBadge: false
-        },
-        {
-          id: 4,
           icon: 'star',
           label: 'Bewaard',
           routerlink: '/favorites',

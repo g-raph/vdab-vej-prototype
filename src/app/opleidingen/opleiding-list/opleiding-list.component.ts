@@ -2,6 +2,8 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.component';
+import { bottomNavItem } from '../../jobs/job-list/job-list.component';
+import { BottomNavComponent } from '../../shell/bottom-nav/bottom-nav.component';
 
 export interface TreeNode {
   name: string;
@@ -13,11 +15,27 @@ export interface TreeNode {
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf],
+  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent],
   templateUrl: './opleiding-list.component.html',
   styleUrl: './opleiding-list.component.scss',
 })
 export class OpleidingListComponent {
+  navConfig: bottomNavItem[] = [
+    {
+      id: 1,
+      icon: 'search',
+      label: 'Opleidingen',
+      routerlink: '/opleidingen/vind-een-opleiding',
+      hasBadge: false
+    },
+    {
+      id: 2,
+      icon: 'star',
+      label: 'Bewaard',
+      routerlink: '/favorites',
+      hasBadge: true
+    },
+  ];
   filterboxOpen = false;
   filterCategorie: TreeNode[] = [
     {
