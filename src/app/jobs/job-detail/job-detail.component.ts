@@ -42,7 +42,7 @@ export class JobDetailComponent {
       {
         id: 4,
         icon: 'star',
-        label: 'Bewaarde vacatures',
+        label: 'Bewaard',
         routerlink: '/favorites',
         hasBadge: true
       },

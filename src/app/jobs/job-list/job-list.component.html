@@ -87,8 +87,10 @@
 </div> -->
 
 <div class="job-list" [ngClass]="{'filter-open': (filterOpen | async)}" *ngIf="jobs$ | async as jobs">
-    <app-bottom-nav class="mobile-only" [bottomNavConfig]="navConfig"></app-bottom-nav>
-    <h1>Vind een job</h1>
+    <div class="job-list__top">
+        <h1>Vind een job</h1>
+        <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
+    </div>
     <div class="search desktop-only--block">
       <div class="search__top">
         <div class="field">

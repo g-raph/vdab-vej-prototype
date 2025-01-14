@@ -30,7 +30,7 @@ export class HomeComponent {
       id: 2,
       title: 'Oriënteren',
       text: 'Ontdek welke job bij je past en wat je mogelijkheden zijn op de arbeidsmarkt.',
-      link: '/',
+      link: '/orienteren',
       label: 'Alles om je te oriënteren',
     }
   ];

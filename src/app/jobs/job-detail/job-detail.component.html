@@ -42,6 +42,7 @@
             </div>
         </div>
         <div class="right desktop-only--flex">
+            <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
             <img class="job-detail__company__logo company-bottom" [src]="job.company.logo" alt="">
             <div class="job-detail__company">
                 <h2>{{job.company.name}}</h2>
@@ -55,4 +56,3 @@
         </div>
     </div>
 </div>
-<app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>

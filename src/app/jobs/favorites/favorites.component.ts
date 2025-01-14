@@ -38,7 +38,7 @@ export class FavoritesComponent {
         {
           id: 4,
           icon: 'star',
-          label: 'Bewaarde vacatures',
+          label: 'Bewaard',
           routerlink: '/favorites',
           hasBadge: true
         },

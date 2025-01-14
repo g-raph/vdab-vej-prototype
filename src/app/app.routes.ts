@@ -10,6 +10,7 @@ import { OpleidingListComponent } from './opleidingen/opleiding-list/opleiding-l
 import { OpleidingDetailComponent } from './opleidingen/opleiding-detail/opleiding-detail.component';
 import { TestComponent } from './shell/test/test.component';
 import { OpleidingSearchComponent } from './opleidingen/opleiding-search/opleiding-search.component';
+import { OrienterenSearchComponent } from './orienteren/orienteren-search/orienteren-search.component';
 
 export const routes: Routes = [
     {
@@ -80,6 +81,17 @@ export const routes: Routes = [
                     },
                 ]
             },
+        ]
+    },
+    {
+        path:'orienteren', 
+        data: { breadcrumb: 'Oriënteren' },
+        children: [
+            {
+                path: '',
+                component: OrienterenSearchComponent, 
+                data: { breadcrumb: 'Alles over oriënteren'},                
+            }
         ]
     },
     {path:'login', component: LoginComponent, data: { breadcrumb: 'Login'} },

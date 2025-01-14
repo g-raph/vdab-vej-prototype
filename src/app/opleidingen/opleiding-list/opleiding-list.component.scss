@@ -155,9 +155,13 @@
 
 .dropdown {
   padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
   border-bottom: 1px solid #ddd;
+  &:first-child {
+    padding-top: 0;
+  }
   &:last-child {
-    padding: 0;
+    padding-bottom: 0;
     border: 0;
   }
   &__header {
