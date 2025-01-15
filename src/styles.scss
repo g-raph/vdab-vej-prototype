@@ -1,9 +1,10 @@
 body {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: var(--font-size);
   color: #252525;
   padding-bottom: env(safe-area-inset-bottom);
-  font-family: "Flanders";
+  font-family: var(--font-family);
+  line-height: var(--line-height);
   p {
     font-weight: 400;
     line-height: 27px;
@@ -58,7 +59,7 @@ body {
     overflow: hidden;
   }
   &.smaller-font {
-    font-size: 1rem;
+    font-size: var(--font-size-small);
   }
 }
 

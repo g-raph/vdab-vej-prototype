@@ -11,6 +11,7 @@ import { OpleidingSearchComponent } from './domains/opleidingen/opleiding-search
 import { OpleidingListComponent } from './domains/opleidingen/opleiding-list/opleiding-list.component';
 import { OpleidingDetailComponent } from './domains/opleidingen/opleiding-detail/opleiding-detail.component';
 import { OrienterenSearchComponent } from './domains/orienteren/orienteren-search/orienteren-search.component';
+import { ContentpageComponent } from './pages/contentpage/contentpage.component';
 
 export const routes: Routes = [
     {
@@ -97,5 +98,6 @@ export const routes: Routes = [
     {path:'login', component: LoginComponent, data: { breadcrumb: 'Login'} },
     {path:'favorites', component: FavoritesComponent, data: { breadcrumb: 'Bewaarde vacatures'} },
     {path:'studieboom', component: StudieboomComponent, data: { breadcrumb: 'Studieboom'} },
+    {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'} },
     {path:'**', redirectTo:'vind-een-job'},
 ];

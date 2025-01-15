@@ -46,7 +46,7 @@ export class HomeComponent {
       id: 1,
       title: 'Ben je werkgever?',
       text: 'We helpen je om kandidaten te vinden en op te leiden.',
-      link: '/opleidingen/vind-een-opleiding',
+      link: '/content',
       label: 'Naar site werkgevers',
     }
   ];
