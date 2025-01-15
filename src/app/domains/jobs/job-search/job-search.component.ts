@@ -1,6 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CtaBlockComponent, ctaBlockItem } from '../../components/cta-block/cta-block.component';
+import { CtaBlockComponent, ctaBlockItem } from '../../../components/cta-block/cta-block.component';
 import { NgFor } from '@angular/common';
 
 @Component({

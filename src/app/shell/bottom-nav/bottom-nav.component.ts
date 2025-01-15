@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { map } from 'rxjs';
 import { ApiService } from '../../api.service';
-import { bottomNavItem } from '../../jobs/job-list/job-list.component';
+import { bottomNavItem } from '../../domains/jobs/job-list/job-list.component';
 
 @Component({
   selector: 'app-bottom-nav',

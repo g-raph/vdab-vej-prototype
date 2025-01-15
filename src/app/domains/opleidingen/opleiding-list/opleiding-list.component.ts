@@ -1,9 +1,9 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.component';
+import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';
 import { bottomNavItem } from '../../jobs/job-list/job-list.component';
-import { BottomNavComponent } from '../../shell/bottom-nav/bottom-nav.component';
+import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.component';
 
 export interface TreeNode {
   name: string;

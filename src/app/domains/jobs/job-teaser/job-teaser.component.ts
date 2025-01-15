@@ -1,6 +1,6 @@
 import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-job-teaser',

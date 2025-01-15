@@ -1,7 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CtaBlockComponent, ctaBlockItem } from '../../components/cta-block/cta-block.component';
+import { CtaBlockComponent, ctaBlockItem } from '../../../components/cta-block/cta-block.component';
 
 @Component({
   selector: 'app-opleiding-search',

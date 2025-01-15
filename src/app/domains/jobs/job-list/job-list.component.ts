@@ -2,9 +2,9 @@ import { AsyncPipe, NgClass, NgForOf, NgIf } from '@angular/common';
 import { Component, ElementRef } from '@angular/core';
 import { JobTeaserComponent } from '../job-teaser/job-teaser.component';
 import { RouterLink } from '@angular/router';
-import { ApiService } from '../../api.service';
-import { FilterModalService } from '../../filter-modal.service';
-import { BottomNavComponent } from "../../shell/bottom-nav/bottom-nav.component";
+import { ApiService } from '../../../api.service';
+import { FilterModalService } from '../../../filter-modal.service';
+import { BottomNavComponent } from "../../../shell/bottom-nav/bottom-nav.component";
 
 export interface bottomNavItem {
   id: number,

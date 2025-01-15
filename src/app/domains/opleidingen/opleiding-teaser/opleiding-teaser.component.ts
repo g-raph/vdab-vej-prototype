@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ApiService } from '../../api.service';
 import { NgClass, NgIf } from '@angular/common';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-opleiding-teaser',

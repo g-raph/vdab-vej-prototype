@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
-import { JobListComponent } from './jobs/job-list/job-list.component';
-import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
-import { JobSearchComponent } from './jobs/job-search/job-search.component';
-import { LoginComponent } from './auth/login/login.component';
-import { FavoritesComponent } from './jobs/favorites/favorites.component';
-import { HomeComponent } from './home/home.component';
-import { StudieboomComponent } from './studieboom/studieboom.component';
-import { OpleidingListComponent } from './opleidingen/opleiding-list/opleiding-list.component';
-import { OpleidingDetailComponent } from './opleidingen/opleiding-detail/opleiding-detail.component';
+import { JobListComponent } from './domains/jobs/job-list/job-list.component';
+import { JobDetailComponent } from './domains/jobs/job-detail/job-detail.component';
+import { JobSearchComponent } from './domains/jobs/job-search/job-search.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { FavoritesComponent } from './domains/jobs/favorites/favorites.component';
+import { HomeComponent } from './pages/home/home.component';
+import { StudieboomComponent } from './pages/studieboom/studieboom.component';
 import { TestComponent } from './shell/test/test.component';
-import { OpleidingSearchComponent } from './opleidingen/opleiding-search/opleiding-search.component';
-import { OrienterenSearchComponent } from './orienteren/orienteren-search/orienteren-search.component';
+import { OpleidingSearchComponent } from './domains/opleidingen/opleiding-search/opleiding-search.component';
+import { OpleidingListComponent } from './domains/opleidingen/opleiding-list/opleiding-list.component';
+import { OpleidingDetailComponent } from './domains/opleidingen/opleiding-detail/opleiding-detail.component';
+import { OrienterenSearchComponent } from './domains/orienteren/orienteren-search/orienteren-search.component';
 
 export const routes: Routes = [
     {
@@ -38,11 +38,11 @@ export const routes: Routes = [
             {
                 path: '',
                 component: JobSearchComponent, 
-                data: { breadcrumb: 'Alles over jobs'},                
+                data: { breadcrumb: 'Jobs'},                
             },
             {
                 path:'vind-een-job', 
-                data: { breadcrumb: 'Resultaten' },
+                data: { breadcrumb: 'Vind een job' },
                 children: [
                     {
                         path: '',
@@ -64,11 +64,11 @@ export const routes: Routes = [
             {
                 path: '',
                 component: OpleidingSearchComponent, 
-                data: { breadcrumb: 'Alles over opleidingen'},                
+                data: { breadcrumb: 'Opleidingen'},                
             },
             {
                 path:'vind-een-opleiding', 
-                data: { breadcrumb: 'Resultaten' },
+                data: { breadcrumb: 'Vind een opleiding' },
                 children: [
                     {
                         path: '',
