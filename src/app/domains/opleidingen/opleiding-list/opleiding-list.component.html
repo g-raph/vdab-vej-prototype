@@ -60,13 +60,13 @@
             </div>
             <div class="dropdown__body" *ngIf="showFiltersCategorie">
               <div *ngFor="let category of filterCategorie; let i = index">
-                <div class="parents" formGroupName="filterCategorie" >
+                <div class="parents" formGroupName="filterCategorie">
                   <label class="o-form__label c-checkbox__label" [for]="'veo_categorie_' + i" (click)="toggleExpand(category)">
                     <input (click)="addToSelectedFilters(category.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
                       [formControlName]="category.name"
                       [checked]="category.checked"
                       (change)="toggleCheck(category)" />
-                    <div>
+                    <div (click)="toggleExpand(category)">
                       {{ category.name }}
                       <span class="c-filter__options-count">({{ countItemsCategorie(category.name) }})</span>
                     </div>
