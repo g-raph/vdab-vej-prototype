@@ -611,62 +611,7 @@ export class OpleidingListComponent {
   }
 
   uncheckAllFilters() {
-    this.filterForm = this.fb.group({
-      filterCategorie: this.fb.group(
-        this.filterCategorie.reduce((acc: any, category: any) => {
-          acc[category.name] = false;
-          return acc;
-        }, {})
-      ),
-      filterSubCategorieBeroep: this.fb.group(
-        this.filterCategorie[0].children?.reduce((acc: any, category: any) => {
-          acc[category.name] = false;
-          return acc;
-        }, {})
-      ),
-      filterSubCategorieGroei: this.fb.group(
-        this.filterCategorie[1].children?.reduce((acc: any, category: any) => {
-          acc[category.name] = false;
-          return acc;
-        }, {})
-      ),
-      filterGratis: this.fb.group(
-        this.filterGratis.reduce((acc: any, category: any) => {
-          acc[category] = false;
-          return acc;
-        }, {})
-      ),
-      filterStartdatum: this.fb.group(
-        this.filterStartdatum.reduce((acc: any, category: any) => {
-          acc[category] = false;
-          return acc;
-        }, {})
-      ),
-      filterLesmoment: this.fb.group(
-        this.filterLesmoment.reduce((acc: any, category: any) => {
-          acc[category] = false;
-          return acc;
-        }, {})
-      ),
-      filterLeervorm: this.fb.group(
-        this.filterLeervorm.reduce((acc: any, category: any) => {
-          acc[category] = false;
-          return acc;
-        }, {})
-      ),
-      filterOrganisator: this.fb.group(
-        this.filterOrganisator.reduce((acc: any, category: any) => {
-          acc[category] = false;
-          return acc;
-        }, {})
-      ),
-      filterKnelpuntberoep: this.fb.group(
-        this.filterKnelpuntberoep.reduce((acc: any, category: any) => {
-          acc[category] = false;
-          return acc;
-        }, {})
-      ),
-    });
+    window.location.reload();
     this.selectedFilters = [];
   }
 }

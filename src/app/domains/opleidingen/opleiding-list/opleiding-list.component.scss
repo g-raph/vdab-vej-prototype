@@ -166,15 +166,15 @@ input[type="checkbox"] {
 
 /* Create a custom checkbox design */
 .custom-checkbox {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   background-color: #fafafa;
   border: 1px solid #666;
   border-radius: 2px;
   display: inline-block;
   position: relative;
   cursor: pointer;
-  flex: 0 0 14px;
+  flex: 0 0 16px;
 }
 
 /* Checked state */
