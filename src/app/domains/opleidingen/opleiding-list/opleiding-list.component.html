@@ -66,6 +66,7 @@
                       [formControlName]="category.name"
                       [checked]="category.checked"
                       (change)="toggleCheck(category)" />
+                    <span class="custom-checkbox" (click)="toggleExpand(category)" [class.half]="category.hasChildrenChecked"></span>
                     <div (click)="toggleExpand(category)">
                       {{ category.name }}
                       <span class="c-filter__options-count">({{ countItemsCategorie(category.name) }})</span>
@@ -73,9 +74,10 @@
                   </label>
                 </div>
                 <div class="children" *ngIf="category.children && category.expanded" [formGroupName]="i === 0 ? 'filterSubCategorieBeroep' : 'filterSubCategorieGroei'">
-                  <div *ngFor="let child of category.children; let idx = index">
+                  <div *ngFor="let child of category.children; let idx = index" >
                     <label class="o-form__label c-checkbox__label" [for]="'veo_subcategorie_' + i + idx">
-                      <input (click)="addToSelectedFilters(child.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_subcategorie_' + i + idx" [formControlName]="child.name" />
+                      <input (change)="checkIfChildrenAreChecked(category)" (click)="addToSelectedFilters(child.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_subcategorie_' + i + idx" [formControlName]="child.name" />
+                      <span class="custom-checkbox"></span>
                       <div>
                         {{ child.name }}
                         <span class="c-filter__options-count">({{ countItemsSubCategorie(child.name) }})</span>
@@ -97,6 +99,7 @@
                 <label class="o-form__label c-checkbox__label" [for]="'veo_gratis_' + i">
                   <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_gratis_' + i"
                     [formControlName]="category" />
+                  <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
                     <span class="c-filter__options-count">({{ countItemsGratis(category) }})</span>
@@ -115,7 +118,8 @@
                 <label class="o-form__label c-checkbox__label" [for]="'veo_startdatum_' + i">
                   <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_startdatum_' + i"
                     [formControlName]="category" />
-                  <div>
+                    <span class="custom-checkbox"></span>
+                    <div>
                     {{ category }}
                     <span class="c-filter__options-count">({{ countItemsStartdatum(category) }})</span>
                   </div>
@@ -133,6 +137,7 @@
                 <label class="o-form__label c-checkbox__label" [for]="'veo_Lesmoment_' + i">
                   <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Lesmoment_' + i"
                     [formControlName]="category" />
+                  <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
                     <span class="c-filter__options-count">({{ countItemsLesmoment(category) }})</span>
@@ -151,6 +156,7 @@
                 <label class="o-form__label c-checkbox__label" [for]="'veo_Leervorm_' + i">
                   <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Leervorm_' + i"
                     [formControlName]="category" />
+                  <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
                     <span class="c-filter__options-count">({{ countItemsLeervorm(category) }})</span>
@@ -169,6 +175,7 @@
                 <label class="o-form__label c-checkbox__label" [for]="'veo_Organisator_' + i">
                   <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Organisator_' + i"
                     [formControlName]="category" />
+                  <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
                     <span class="c-filter__options-count">({{ countItemsOrganisator(category) }})</span>
@@ -188,6 +195,7 @@
                 <label class="o-form__label c-checkbox__label" [for]="'veo_Knelpuntberoep_' + i">
                   <input (click)="addToSelectedFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_Knelpuntberoep_' + i"
                     [formControlName]="category" />
+                  <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
                     <span class="c-filter__options-count">({{ countItemsKnelpuntberoep(category) }})</span>

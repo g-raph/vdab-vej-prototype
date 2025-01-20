@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';
@@ -8,6 +8,7 @@ import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.c
 export interface TreeNode {
   name: string;
   checked: boolean;
+  hasChildrenChecked?: boolean;
   expanded: boolean;
   children?: TreeNode[];
 }
@@ -15,7 +16,7 @@ export interface TreeNode {
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent],
+  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent, NgStyle],
   templateUrl: './opleiding-list.component.html',
   styleUrl: './opleiding-list.component.scss',
 })
@@ -41,6 +42,7 @@ export class OpleidingListComponent {
     {
       name: 'Beroepsopleidingen en bijscholingen',
       checked: false,
+      hasChildrenChecked: false,
       expanded: false,
       children: [
         { name: 'Administratie', checked: false, expanded: false },
@@ -69,6 +71,7 @@ export class OpleidingListComponent {
     {
       name: 'Persoonlijke en professionele groei',
       checked: false,
+      hasChildrenChecked: false,
       expanded: false,
       children: [
         { name: 'Talen', checked: false, expanded: false },
@@ -372,6 +375,7 @@ export class OpleidingListComponent {
   ];
 
   selectedFilters: string[] = [];
+  childIsChecked = false;
 
   showFiltersCategorie = true;
   showFiltersGratis = true;
@@ -590,6 +594,11 @@ export class OpleidingListComponent {
         this.setChildrenChecked(child.children, checked);
       }
     });
+  }
+
+  checkIfChildrenAreChecked(cat: TreeNode) {
+    const matches = cat.children?.filter(obj => this.selectedFilters.includes(obj.name));
+    cat.hasChildrenChecked = matches?.length ? true : false;
   }
 
   addToSelectedFilters(category: string) {
