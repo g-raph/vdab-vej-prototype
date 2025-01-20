@@ -16,7 +16,7 @@ export interface TreeNode {
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent, NgStyle],
+  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent],
   templateUrl: './opleiding-list.component.html',
   styleUrl: './opleiding-list.component.scss',
 })
