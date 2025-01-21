@@ -45,7 +45,7 @@
                 <label for="location">Sorteer op afstand van</label>
                 <input type="text" name="location" id="location">
             </div>
-            <button class="btn btn--primary">Zoek</button>
+            <button class="btn btn--primary" (click)="toggleOpenFilters()">Zoek</button>
           </div>
           <div class="search__bottom" *ngIf="selectedFilters.length">
             <div class="filtertag" *ngFor="let item of selectedFilters">{{item}}</div>

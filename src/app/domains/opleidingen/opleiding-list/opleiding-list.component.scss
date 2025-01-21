@@ -79,7 +79,7 @@
           }
         }
         &__body {
-          padding: 1rem;
+          padding: 1rem 1rem 6rem;
           .search {
             flex-flow: column;
             gap: 1rem;
@@ -96,6 +96,10 @@
               }
               button {
                 margin-top: 0;
+                position: fixed;
+                bottom: 1rem;
+                z-index: 9999;
+                width: calc(100% - 2rem);
               }
             }
             &__bottom {
