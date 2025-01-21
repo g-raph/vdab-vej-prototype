@@ -107,12 +107,17 @@ export class OpleidingListComponent {
     'December 2025',
   ];
   filterLesmoment = ['Buiten de kantooruren', 'Tijdens de kantooruren'];
+  filterWaarLeerJe = [
+    'Fysiek',
+    'Online',
+    'Hybride',
+  ];
   filterLeervorm = [
-    'Afstandsleren',
-    'Duaal leren',
     'Groepsleren',
-    'Online leren',
-    'Workshop',
+    'E-cursus',
+    'Workshops',
+    '1 op 1 (individueel)',
+    'Duaal leren',
   ];
   filterOrganisator = ['VDAB', 'Andere'];
   filterKnelpuntberoep = ['Ja', 'Nee'];
@@ -125,7 +130,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Buiten de kantooruren',
-      filterLeervorm: 'Afstandsleren',
+      filterWaarLeerJe: 'Fysiek',
+      filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Ja',
     },
@@ -136,6 +142,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'April 2025',
       filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Fysiek',
       filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Ja',
@@ -147,6 +154,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Hybride',
       filterLeervorm: 'Duaal leren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
@@ -158,7 +166,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Groepsleren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'E-cursus',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Ja',
     },
@@ -169,7 +178,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Online leren',
+      filterWaarLeerJe: 'Hybride',
+      filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
@@ -180,7 +190,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
-      filterLeervorm: 'Workshop',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'Workshops',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
@@ -191,7 +202,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Groepsleren',
+      filterWaarLeerJe: 'Fysiek',
+      filterLeervorm: '1 op 1 (individueel)',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Ja',
     },
@@ -202,7 +214,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Online leren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: '1 op 1 (individueel)',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
@@ -213,7 +226,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
-      filterLeervorm: 'Workshop',
+      filterWaarLeerJe: 'Fysiek',
+      filterLeervorm: 'Workshops',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
@@ -224,7 +238,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Online leren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'E-cursus',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
@@ -236,7 +251,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Januari 2025',
       filterLesmoment: 'Buiten de kantooruren',
-      filterLeervorm: 'Afstandsleren',
+      filterWaarLeerJe: 'Fysiek',
+      filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
@@ -247,7 +263,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Groepsleren',
+      filterWaarLeerJe: 'Hybride',
+      filterLeervorm: '1 op 1 (individueel)',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
@@ -258,6 +275,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Februari 2025',
       filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Fysiek',
       filterLeervorm: 'Duaal leren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
@@ -269,7 +287,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Groepsleren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: '1 op 1 (individueel)',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
@@ -280,7 +299,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Juni 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Online leren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Ja',
     },
@@ -291,7 +311,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
-      filterLeervorm: 'Workshop',
+      filterWaarLeerJe: 'Fysiek',
+      filterLeervorm: 'Workshops',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
@@ -302,6 +323,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Hybride',
       filterLeervorm: 'Groepsleren',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
@@ -313,7 +335,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'Maart 2025',
       filterLesmoment: 'Tijdens de kantooruren',
-      filterLeervorm: 'Online leren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'E-cursus',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Ja',
     },
@@ -324,6 +347,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Fysiek',
       filterLeervorm: 'Groepsleren',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
@@ -335,6 +359,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'November 2025',
       filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Fysiek',
       filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
@@ -346,7 +371,8 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
-      filterLeervorm: 'Groepsleren',
+      filterWaarLeerJe: 'Hybride',
+      filterLeervorm: 'Duaal leren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
@@ -357,6 +383,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor iedereen',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Fysiek',
       filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
@@ -368,6 +395,7 @@ export class OpleidingListComponent {
       filterGratis: 'Gratis opleidingen voor wie geen werk en een uitkering heeft',
       filterStartdatum: 'November 2025',
       filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
       filterLeervorm: 'Groepsleren',
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
@@ -381,6 +409,7 @@ export class OpleidingListComponent {
   showFiltersGratis = true;
   showFiltersStartdatum = false;
   showFiltersLesmoment = false;
+  showFiltersWaarLeerJe = false;
   showFiltersLeervorm = false;
   showFiltersOrganisator = false;
   showFiltersKnelpuntberoep = false;
@@ -423,6 +452,12 @@ export class OpleidingListComponent {
           return acc;
         }, {})
       ),
+      filterWaarLeerJe: this.fb.group(
+        this.filterWaarLeerJe.reduce((acc: any, category: any) => {
+          acc[category] = false;
+          return acc;
+        }, {})
+      ),
       filterLeervorm: this.fb.group(
         this.filterLeervorm.reduce((acc: any, category: any) => {
           acc[category] = false;
@@ -459,6 +494,9 @@ export class OpleidingListComponent {
   countItemsLesmoment(category: string) {
     return this.items.filter(item => item.filterLesmoment === category).length;
   }
+  countItemsWaarLeerJe(category: string) {
+    return this.items.filter(item => item.filterWaarLeerJe === category).length;
+  }
   countItemsLeervorm(category: string) {
     return this.items.filter(item => item.filterLeervorm === category).length;
   }
@@ -493,6 +531,9 @@ export class OpleidingListComponent {
     const selectedLesmoment = Object.keys(
       this.filterForm.value.filterLesmoment
     ).filter((category) => this.filterForm.value.filterLesmoment[category]);
+    const selectedWaarLeerJe = Object.keys(
+      this.filterForm.value.filterWaarLeerJe
+    ).filter((category) => this.filterForm.value.filterWaarLeerJe[category]);
     const selectedLeervorm = Object.keys(
       this.filterForm.value.filterLeervorm
     ).filter((category) => this.filterForm.value.filterLeervorm[category]);
@@ -525,6 +566,9 @@ export class OpleidingListComponent {
       const matchesLesmoment =
         selectedLesmoment.length === 0 ||
         selectedLesmoment.includes(item.filterLesmoment);
+      const matchesWaarLeerJe =
+        selectedWaarLeerJe.length === 0 ||
+        selectedWaarLeerJe.includes(item.filterWaarLeerJe);
       const matchesLeervorm =
         selectedLeervorm.length === 0 ||
         selectedLeervorm.includes(item.filterLeervorm);
@@ -540,6 +584,7 @@ export class OpleidingListComponent {
         matchesGratis &&
         matchesStartdatum &&
         matchesLesmoment &&
+        matchesWaarLeerJe &&
         matchesLeervorm &&
         matchesOrganisator &&
         matchesKnelpuntberoep &&
@@ -556,6 +601,9 @@ export class OpleidingListComponent {
   }
   toggleFiltersCategorie() {
     this.showFiltersCategorie = !this.showFiltersCategorie;
+  }
+  toggleFiltersWaarLeerJe() {
+    this.showFiltersWaarLeerJe = !this.showFiltersWaarLeerJe;
   }
   toggleFiltersLeervorm() {
     this.showFiltersLeervorm = !this.showFiltersLeervorm;
