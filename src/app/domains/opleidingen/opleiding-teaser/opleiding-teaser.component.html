@@ -20,7 +20,7 @@
     <div class="organisator">{{opleiding.filterOrganisator}} - {{opleiding.filterLeervorm}}</div>
   </div>
   <div class="opleiding__tags">
-    <div class="tag">{{ opleiding.filterGratis === 'Gratis opleidingen voor iedereen' ? 'Gratis voor iedereen' : 'Gratis voor wie geen werk heeft' }}</div>
+    <div class="tag">{{ opleiding.filterGratis === 'Gratis opleidingen voor iedereen' ? 'Gratis voor iedereen' : opleiding.filterGratis === 'Betalend' ? 'Betalend' : 'Gratis voor wie niet werkt of een uitkering onvangt' }}</div>
     <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag">Knelpuntberoep</div>
   </div>
 </div>

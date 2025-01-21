@@ -139,7 +139,7 @@ export class OpleidingListComponent {
       name: 'Verzorgende',
       filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Gezondheid',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Betalend',
       filterStartdatum: 'April 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Fysiek',
@@ -175,7 +175,7 @@ export class OpleidingListComponent {
       name: 'Bekister',
       filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Bouw',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Betalend',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Hybride',
@@ -199,7 +199,7 @@ export class OpleidingListComponent {
       name: 'Leren werken met een computer',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Betalend',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Fysiek',
@@ -248,7 +248,7 @@ export class OpleidingListComponent {
       name: 'Vertaler Russisch - Nederlands',
       filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Communicatie',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Betalend',
       filterStartdatum: 'Januari 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Fysiek',
@@ -308,7 +308,7 @@ export class OpleidingListComponent {
       name: 'Management opleiding',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele vaardigheden',
-      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterGratis: 'Betalend',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Fysiek',
@@ -368,7 +368,7 @@ export class OpleidingListComponent {
       name: 'Nederlands - spelling',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
-      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterGratis: 'Betalend',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Hybride',
@@ -649,6 +649,11 @@ export class OpleidingListComponent {
     cat.hasChildrenChecked = matches?.length ? true : false;
   }
 
+  uncheckAllFilters() {
+    window.location.reload();
+    this.selectedFilters = [];
+  }
+  
   addToSelectedFilters(category: string) {
     const index = this.selectedFilters.indexOf(category);
     if (index > -1) { // only splice array when item is found
@@ -656,10 +661,5 @@ export class OpleidingListComponent {
     } else {
       this.selectedFilters.push(category);
     }
-  }
-
-  uncheckAllFilters() {
-    window.location.reload();
-    this.selectedFilters = [];
   }
 }
