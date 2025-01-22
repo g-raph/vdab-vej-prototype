@@ -69,7 +69,7 @@
                     <span class="custom-checkbox" (click)="toggleExpand(category)" [class.half]="category.hasChildrenChecked"></span>
                     <div (click)="toggleExpand(category)">
                       {{ category.name }}
-                      <span class="c-filter__options-count">({{ countItemsCategorie(category.name) }})</span>
+                      <span class="c-filter__options-count">({{ countResults('filterCategorie', category.name) }})</span>
                     </div>
                   </label>
                 </div>
@@ -80,7 +80,7 @@
                       <span class="custom-checkbox"></span>
                       <div>
                         {{ child.name }}
-                        <span class="c-filter__options-count">({{ countItemsSubCategorie(child.name) }})</span>
+                        <span class="c-filter__options-count">({{ countResults('filterSubCategorie', child.name) }})</span>
                       </div>
                     </label>
                   </div>
@@ -102,7 +102,7 @@
                   <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
-                    <span class="c-filter__options-count">({{ countItemsGratis(category) }})</span>
+                    <span class="c-filter__options-count">({{ countResults('filterGratis', category) }})</span>
                   </div>
                 </label>
               </div>
@@ -121,7 +121,7 @@
                     <span class="custom-checkbox"></span>
                     <div>
                     {{ category }}
-                    <span class="c-filter__options-count">({{ countItemsStartdatum(category) }})</span>
+                    <span class="c-filter__options-count">({{ countResults('filterStartdatum', category) }})</span>
                   </div>
                 </label>
               </div>
@@ -140,7 +140,7 @@
                   <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
-                    <span class="c-filter__options-count">({{ countItemsLesmoment(category) }})</span>
+                    <span class="c-filter__options-count">({{ countResults('filterLesmoment', category) }})</span>
                   </div>
                 </label>
               </div>
@@ -162,7 +162,7 @@
                   <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
-                    <span class="c-filter__options-count">({{ countItemsWaarLeerJe(category) }})</span>
+                    <span class="c-filter__options-count">({{ countResults('filterWaarLeerJe', category) }})</span>
                   </div>
                 </label>
               </div>
@@ -183,7 +183,7 @@
                   <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
-                    <span class="c-filter__options-count">({{ countItemsLeervorm(category) }})</span>
+                    <span class="c-filter__options-count">({{ countResults('filterLeervorm', category) }})</span>
                   </div>
                 </label>
               </div>
@@ -224,7 +224,7 @@
                   <span class="custom-checkbox"></span>
                   <div>
                     {{ category }}
-                    <span class="c-filter__options-count">({{ countItemsKnelpuntberoep(category) }})</span>
+                    <span class="c-filter__options-count">({{ countResults('filterKnelpuntberoep', category) }})</span>
                   </div>
                 </label>
               </div>

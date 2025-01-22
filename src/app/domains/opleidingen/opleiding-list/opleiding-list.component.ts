@@ -13,6 +13,19 @@ export interface TreeNode {
   children?: TreeNode[];
 }
 
+export interface Result {
+  name: string;
+  filterCategorie: string;
+  filterSubCategorie: string;
+  filterGratis: string;
+  filterStartdatum: string;
+  filterLesmoment: string;
+  filterWaarLeerJe: string;
+  filterLeervorm: string;
+  filterOrganisator: string;
+  filterKnelpuntberoep: string;
+}
+
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
@@ -122,7 +135,7 @@ export class OpleidingListComponent {
   filterOrganisator = ['VDAB', 'Andere'];
   filterKnelpuntberoep = ['Ja', 'Nee'];
   filterForm: FormGroup;
-  items = [
+  items: Result[] = [
     {
       name: 'Kapper/Kapster',
       filterCategorie: 'Beroepsopleidingen en bijscholingen',
@@ -479,34 +492,6 @@ export class OpleidingListComponent {
     });
   }
 
-  countItemsCategorie(category: string) {
-    return this.items.filter(item => item.filterCategorie === category).length;
-  }
-  countItemsSubCategorie(category: string) {
-    return this.items.filter(item => item.filterSubCategorie === category).length;
-  }
-  countItemsGratis(category: string) {
-    return this.items.filter(item => item.filterGratis === category).length;
-  }
-  countItemsStartdatum(category: string) {
-    return this.items.filter(item => item.filterStartdatum === category).length;
-  }
-  countItemsLesmoment(category: string) {
-    return this.items.filter(item => item.filterLesmoment === category).length;
-  }
-  countItemsWaarLeerJe(category: string) {
-    return this.items.filter(item => item.filterWaarLeerJe === category).length;
-  }
-  countItemsLeervorm(category: string) {
-    return this.items.filter(item => item.filterLeervorm === category).length;
-  }
-  countItemsOrganisator(category: string) {
-    return this.items.filter(item => item.filterOrganisator === category).length;
-  }
-  countItemsKnelpuntberoep(category: string) {
-    return this.items.filter(item => item.filterKnelpuntberoep === category).length;
-  }
-
   toggleOpenFilters() {
     this.filterboxOpen = !this.filterboxOpen;
     document.body.style.overflow = this.filterboxOpen ? 'hidden' : 'visible';
@@ -547,7 +532,6 @@ export class OpleidingListComponent {
     );
 
     return this.items.filter((item) => {
-      // Filter by category
       const matchesCategory =
         selectedCategories.length === 0 ||
         selectedCategories.includes(item.filterCategorie);
@@ -594,8 +578,6 @@ export class OpleidingListComponent {
     });
   }
 
-  
-
   toggleFiltersGratis() {
     this.showFiltersGratis = !this.showFiltersGratis;
   }
@@ -621,15 +603,12 @@ export class OpleidingListComponent {
     this.showFiltersOrganisator = !this.showFiltersOrganisator;
   }
 
-  // checkbox toggle subset
   toggleExpand(node: TreeNode): void {
     node.expanded = !node.expanded;
   }
 
   toggleCheck(node: TreeNode): void {
     node.checked = !node.checked;
-
-    // Update all children if present
     if (node.children) {
       this.setChildrenChecked(node.children, node.checked);
     }
@@ -656,10 +635,21 @@ export class OpleidingListComponent {
   
   addToSelectedFilters(category: string) {
     const index = this.selectedFilters.indexOf(category);
-    if (index > -1) { // only splice array when item is found
-      this.selectedFilters.splice(index, 1); // 2nd parameter means remove one item only
+    if (index > -1) {
+      this.selectedFilters.splice(index, 1);
     } else {
       this.selectedFilters.push(category);
     }
+  }
+
+  filterObjectsByStrings(objects: Result[], strings: string[]) {
+    return objects.filter(obj =>
+      strings.every(str => Object.values(obj).includes(str))
+    );
+  }
+
+  countResults(filterKey: keyof Result, category: string) {
+    const results = this.filterObjectsByStrings(this.items, this.selectedFilters);
+    return results.filter(item => item[filterKey] === category).length;
   }
 }
