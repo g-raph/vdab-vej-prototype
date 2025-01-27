@@ -102,7 +102,7 @@ export class OpleidingListComponent {
   ];
   filterGratis = [
     'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
-    'Gratis opleidingen voor iedereen',
+    'Gratis voor wie werkt',
   ];
   filterStartdatum = [
     'December 2024',
@@ -200,7 +200,7 @@ export class OpleidingListComponent {
       name: 'Powerpoint voor managers',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele vaardigheden',
-      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterGratis: 'Gratis voor wie werkt',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -236,7 +236,7 @@ export class OpleidingListComponent {
       name: 'Succesvol presenteren',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
-      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterGratis: 'Gratis voor wie werkt',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -357,7 +357,7 @@ export class OpleidingListComponent {
       name: 'Administratieve taken beheer',
       filterCategorie: 'Beroepsopleidingen en bijscholingen',
       filterSubCategorie: 'Administratie',
-      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterGratis: 'Gratis voor wie werkt',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -393,7 +393,7 @@ export class OpleidingListComponent {
       name: 'Nederlands - algemeen',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
-      filterGratis: 'Gratis opleidingen voor iedereen',
+      filterGratis: 'Gratis voor wie werkt',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
