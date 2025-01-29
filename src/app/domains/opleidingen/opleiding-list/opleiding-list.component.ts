@@ -53,7 +53,7 @@ export class OpleidingListComponent {
   filterboxOpen = true;
   filterCategorie: TreeNode[] = [
     {
-      name: 'Beroepsopleidingen en bijscholingen',
+      name: 'Beroepsopleidingen',
       checked: false,
       hasChildrenChecked: false,
       expanded: false,
@@ -88,7 +88,7 @@ export class OpleidingListComponent {
       expanded: false,
       children: [
         { name: 'Talen', checked: false, expanded: false },
-        { name: 'Communiceren', checked: false, expanded: false },
+        { name: 'Communicatie ', checked: false, expanded: false },
         { name: 'Digitale vaardigheden', checked: false, expanded: false },
         { name: 'Persoonlijke vaardigheden', checked: false, expanded: false },
         { name: 'Professionele vaardigheden', checked: false, expanded: false },
@@ -101,8 +101,8 @@ export class OpleidingListComponent {
     }
   ];
   filterGratis = [
-    'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
-    'Gratis voor wie werkt',
+    'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+    'Gratis opleidingen voor wie werkt',
   ];
   filterStartdatum = [
     'December 2024',
@@ -133,14 +133,14 @@ export class OpleidingListComponent {
     'Duaal leren',
   ];
   filterOrganisator = ['VDAB', 'Andere'];
-  filterKnelpuntberoep = ['Ja', 'Nee'];
+  filterKnelpuntberoep = ['Ja'];
   filterForm: FormGroup;
   items: Result[] = [
     {
       name: 'Kapper/Kapster',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Creatief',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -150,7 +150,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Verzorgende',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Gezondheid',
       filterGratis: 'Betalend',
       filterStartdatum: 'April 2025',
@@ -164,7 +164,7 @@ export class OpleidingListComponent {
       name: 'Nederlands - Nederlandse spelling',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Talen',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie en online',
@@ -176,7 +176,7 @@ export class OpleidingListComponent {
       name: 'Assertiviteit in de werksituatie',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Persoonlijke vaardigheden',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -186,7 +186,7 @@ export class OpleidingListComponent {
     },
     {
       name: 'Bekister',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Bouw',
       filterGratis: 'Betalend',
       filterStartdatum: 'Mei 2025',
@@ -200,7 +200,7 @@ export class OpleidingListComponent {
       name: 'Powerpoint voor managers',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele vaardigheden',
-      filterGratis: 'Gratis voor wie werkt',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -222,9 +222,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Leerkracht wiskunde',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Onderwijs',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -236,7 +236,7 @@ export class OpleidingListComponent {
       name: 'Succesvol presenteren',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
-      filterGratis: 'Gratis voor wie werkt',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -246,9 +246,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Poetsvrouw / Poetsman',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Onderhoud',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -259,7 +259,7 @@ export class OpleidingListComponent {
     
     {
       name: 'Vertaler Russisch - Nederlands',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Communicatie',
       filterGratis: 'Betalend',
       filterStartdatum: 'Januari 2025',
@@ -271,9 +271,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Bankbediende KBC',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Financieel',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Mei 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie en online',
@@ -283,9 +283,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Boer verzorging kalveren',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Land- en tuinbouw',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Februari 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -295,9 +295,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Klusjesman Center Parks',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Techniek',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -307,9 +307,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Marketing assistent - social media',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Marketing',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Juni 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -331,9 +331,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Onderzoeken beheren',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Onderzoek en ontwikkeling',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie en online',
@@ -343,9 +343,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Rijbewijs CE',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Logistiek en transport',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Maart 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
@@ -355,9 +355,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Administratieve taken beheer',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Administratie',
-      filterGratis: 'Gratis voor wie werkt',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -367,9 +367,9 @@ export class OpleidingListComponent {
     },
     {
       name: 'Verkopen van stofzuigers',
-      filterCategorie: 'Beroepsopleidingen en bijscholingen',
+      filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Verkoop',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'November 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -393,7 +393,7 @@ export class OpleidingListComponent {
       name: 'Nederlands - algemeen',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
-      filterGratis: 'Gratis voor wie werkt',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
       filterStartdatum: 'Oktober 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
@@ -405,7 +405,7 @@ export class OpleidingListComponent {
       name: 'Nederlands - werkwoorden',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
-      filterGratis: 'Gratis opleidingen voor wie niet werkt of een uitkering onvangt',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'November 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
