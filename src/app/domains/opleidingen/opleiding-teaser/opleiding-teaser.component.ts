@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-opleiding-teaser',
   standalone: true,
-  imports: [NgIf, NgClass, RouterLink],
+  imports: [NgIf, RouterLink],
   templateUrl: './opleiding-teaser.component.html',
   styleUrl: './opleiding-teaser.component.scss'
 })

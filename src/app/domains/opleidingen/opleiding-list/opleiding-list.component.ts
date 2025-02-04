@@ -11,7 +11,7 @@ import { Result, TreeNode } from '../opleidingen';
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent, NgStyle, RouterLink],
+  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent, NgStyle],
   templateUrl: './opleiding-list.component.html',
   styleUrl: './opleiding-list.component.scss',
 })

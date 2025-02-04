@@ -181,9 +181,10 @@ $color-light: #DBECF8;
         border: 1px solid #c9cbce;
         border-radius: .5rem;
         padding: 1.5rem;
-        background: #fafafa;
+        // background: #fafafa;
         &:hover {
-            background-color: #fff;
+            // background-color: #fff;
+            box-shadow: rgba(145, 158, 171, 0.2) 0rem 0rem 0.125rem 0rem, rgba(145, 158, 171, 0.12) 0rem 0.75rem 1.5rem -0.25rem;
         }
         small {
             color: #aaa;
