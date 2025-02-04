@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
+import { Result } from './domains/opleidingen/opleidingen';
 
 @Injectable({
   providedIn: 'root'
@@ -129,13 +130,390 @@ export class ApiService {
       id: 5
     },
   ]);
-  opleidingen$ = new BehaviorSubject<any[]>([
-    { name: 'Apple', filterCategorie: 'Beroepsopleidingen', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'December 2024', filterLesmoment: 'Buiten de kantooruren', filterLeervorm: 'Afstandsleren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Ja' },
-    { name: 'Carrot', filterCategorie: 'Persoonlijke en professionele groei', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'April 2025', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Groepsleren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Ja' },
-    { name: 'Banana', filterCategorie: 'Beroepsopleidingen', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'December 2024', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Duaal leren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Nee' },
-    { name: 'Broccoli', filterCategorie: 'Persoonlijke en professionele groei', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'December 2024', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Groepsleren', filterOrganisator: 'Andere', filterKnelpuntberoep: 'Ja' },
-    { name: 'Chicken', filterCategorie: 'Beroepsopleidingen', filterGratis: 'Gratis opleidingen voor wie geen werk heeft', filterStartdatum: 'Mei 2025', filterLesmoment: 'Tijdens de kantooruren', filterLeervorm: 'Online leren', filterOrganisator: 'VDAB', filterKnelpuntberoep: 'Nee' },
-    { name: 'Beef', filterCategorie: 'Persoonlijke en professionele groei', filterGratis: 'Gratis opleidingen voor iedereen', filterStartdatum: 'September 2025', filterLesmoment: 'Buiten de kantooruren', filterLeervorm: 'Workshop', filterOrganisator: 'Andere', filterKnelpuntberoep: 'Nee' }
+  opleidingen$ = new BehaviorSubject<Result[]>([
+    {
+      id: 1,
+      videoUrl: '/assets/video-kapper.png',
+      saved: false,
+      watJeLeert: [
+        'Je doet grondige theoretische kennis op van huid, haar, materialen en producten',
+        'Je leert alle nodige technieken: knippen, brushings, kleuren, permanenten …',
+        'Je oefent in onze professioneel uitgeruste lokalen: eerst op poppen, daarna op echte modellen',
+        'We hebben aandacht voor het sociale aspect: je leert omgaan met verschillende types klanten',
+        'Je doet praktijkervaring op in verschillende stages',
+      ],
+      modules: [
+        {
+          name: 'Haren knippen',
+          leervorm: 'Groepsleren',
+          duurtijd: '100 uren',
+        },
+        {
+          name: 'Haren wassen',
+          leervorm: 'Groepsleren',
+          duurtijd: '20 uren',
+        },
+        {
+          name: 'Haren brushen',
+          leervorm: 'Online leren',
+          duurtijd: '100 uren',
+        },
+        {
+          name: 'Haren stylen',
+          leervorm: 'Stage',
+          duurtijd: '100 uren',
+        },
+      ],
+      locaties: [
+        {
+          stad: 'Hasselt',
+          adres: 'Demerstraat 12',
+          startdatum: 'September 2025',
+          wachttijd: '1 maand',
+          doelgroep: 'Werkzoekende',
+          leervorm: 'Groepsleren',
+          lesgever: 'VDAB opleidingscentrum',
+          duurtijd: 'Gemiddeld 6 maanden',
+          intensiteit: '20u/week',
+        },
+        {
+          stad: 'Hasselt',
+          adres: 'Langestraat 24',
+          startdatum: 'Januari 2026',
+          wachttijd: '1 maand',
+          doelgroep: 'Werkzoekende',
+          leervorm: 'Groepsleren',
+          lesgever: 'Syntra Hasselt',
+          duurtijd: 'Gemiddeld 6 maanden',
+          intensiteit: '20u/week',
+        },
+        {
+          stad: 'Brugge',
+          adres: 'Stationsstraat 12',
+          startdatum: 'September 2025',
+          wachttijd: '1 maand',
+          doelgroep: 'Open voor iedereen',
+          leervorm: 'Groepsleren',
+          lesgever: 'VDAB opleidingscentrum',
+          duurtijd: 'Gemiddeld 6 maanden',
+          intensiteit: '20u/week',
+        },
+        {
+          stad: 'Antwerpen',
+          adres: 'Leiestraat 24',
+          startdatum: 'Oktober 2025',
+          wachttijd: '1 maand',
+          doelgroep: 'Werkzoekende',
+          leervorm: 'Groepsleren',
+          lesgever: 'Syntra Antwerpen',
+          duurtijd: 'Gemiddeld 6 maanden',
+          intensiteit: '20u/week',
+        },
+      ],
+      toelatingsvoorwaarden: [
+        '18 jaar zijn',
+        'het inschrijvingsgeld betaald hebben',
+        'een rijksregisternummer hebben of een bewijs van wettig verblijf kunnen voorleggen',
+      ],
+      beschrijving: 'Je ziet er graag verzorgd uit en wil leren hoe je je haar het beste hanteert, verzorgt of brusht? Wil je je familieleden een trendy kapsel geven? Of wil je van haarkappen je beroep maken? Dan ben je in onze cursus haartooi op het juiste adres! Je leert eerst de producten en gereedschappen kennen die je nodig hebt in het kappersvak. Verder leer je de basistechnieken van haarverzorging, snit en haarkleuren. Je leert de basistechnieken van de permanent en basissnitten, zowel voor dames als voor heren. In de module kleuren gaan we in de diepte over kleuren en de theoretische achtergrond. Ook modegerichte oproltechniekenen steuntechnieken worden aangeleerd. in de module gelegenheidskapsels leer je trendy opsteektechnieken en ontkrul- en steuntechnieken. Verder leer je in teamverband te werken, je hebt aandacht voor het creatieve en modebewuste en leert probleemoplossend te denken en te handelen. Ook het aanleren van snitten en kapsels voor heren komt aan bod: zowel klassieke als modesnits. Verder leer je specifieke technieken zoals scheren en baardknippen. Dan volgt de salonpraktijk. Je kiest zelf hoeveel modules je volgt, naargelang je tijd en werksituatie. De trajectbegeleider kapper helpt je bij het opstellen van een op maat gemaakt traject.',
+      name: 'Kapper/Kapster',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Creatief',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'December 2024',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Ja',
+    },
+    {
+      id: 2,
+      name: 'Verzorgende',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Gezondheid',
+      filterGratis: 'Betalend',
+      filterStartdatum: 'April 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Ja',
+    },
+    {
+      id: 3,
+      name: 'Nederlands - Nederlandse spelling',
+      filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Talen',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'December 2024',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie en online',
+      filterLeervorm: 'Duaal leren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 4,
+      name: 'Assertiviteit in de werksituatie',
+      filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Persoonlijke vaardigheden',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'December 2024',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'E-cursus',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Ja',
+    },
+    {
+      id: 5,
+      name: 'Bekister',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Bouw',
+      filterGratis: 'Betalend',
+      filterStartdatum: 'Mei 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie en online',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 6,
+      name: 'Powerpoint voor managers',
+      filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Professionele vaardigheden',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
+      filterStartdatum: 'September 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'Workshop',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 7,
+      name: 'Leren werken met een computer',
+      filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Digitale vaardigheden',
+      filterGratis: 'Betalend',
+      filterStartdatum: 'December 2024',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: '1 op 1 (individueel)',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Ja',
+    },
+    {
+      id: 8,
+      name: 'Leerkracht wiskunde',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Onderwijs',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'Mei 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: '1 op 1 (individueel)',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 9,
+      name: 'Succesvol presenteren',
+      filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Digitale vaardigheden',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
+      filterStartdatum: 'September 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Workshop',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 10,
+      name: 'Poetsvrouw / Poetsman',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Onderhoud',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'Mei 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'E-cursus',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+
+    {
+      id: 11,
+      name: 'Vertaler Russisch - Nederlands',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Communicatie',
+      filterGratis: 'Betalend',
+      filterStartdatum: 'Januari 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 12,
+      name: 'Bankbediende KBC',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Financieel',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'Mei 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie en online',
+      filterLeervorm: '1 op 1 (individueel)',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 13,
+      name: 'Boer verzorging kalveren',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Land- en tuinbouw',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'Februari 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Duaal leren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 14,
+      name: 'Klusjesman Center Parks',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Techniek',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'September 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: '1 op 1 (individueel)',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 15,
+      name: 'Marketing assistent - social media',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Marketing',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'Juni 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Ja',
+    },
+    {
+      id: 16,
+      name: 'Management opleiding',
+      filterCategorie: 'Persoonlijke en professionele groei',
+      filterSubCategorie: 'Professionele vaardigheden',
+      filterGratis: 'Betalend',
+      filterStartdatum: 'September 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Workshop',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 17,
+      name: 'Onderzoeken beheren',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Onderzoek en ontwikkeling',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'December 2024',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie en online',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 18,
+      name: 'Rijbewijs CE',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Logistiek en transport',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'Maart 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'E-cursus',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Ja',
+    },
+    {
+      id: 19,
+      name: 'Administratieve taken beheer',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Administratie',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
+      filterStartdatum: 'Oktober 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'Andere',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 20,
+      name: 'Verkopen van stofzuigers',
+      filterCategorie: 'Beroepsopleidingen',
+      filterSubCategorie: 'Verkoop',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'November 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 21,
+      name: 'Nederlands - spelling',
+      filterCategorie: 'Nederlands voor anderstaligen',
+      filterSubCategorie: '',
+      filterGratis: 'Betalend',
+      filterStartdatum: 'Oktober 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie en online',
+      filterLeervorm: 'Duaal leren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 22,
+      name: 'Nederlands - algemeen',
+      filterCategorie: 'Nederlands voor anderstaligen',
+      filterSubCategorie: '',
+      filterGratis: 'Gratis opleidingen voor wie werkt',
+      filterStartdatum: 'Oktober 2025',
+      filterLesmoment: 'Buiten de kantooruren',
+      filterWaarLeerJe: 'Op locatie',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
+    {
+      id: 23,
+      name: 'Nederlands - werkwoorden',
+      filterCategorie: 'Nederlands voor anderstaligen',
+      filterSubCategorie: '',
+      filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
+      filterStartdatum: 'November 2025',
+      filterLesmoment: 'Tijdens de kantooruren',
+      filterWaarLeerJe: 'Online',
+      filterLeervorm: 'Groepsleren',
+      filterOrganisator: 'VDAB',
+      filterKnelpuntberoep: 'Nee',
+    },
   ]);
   opleidingFilters$ = new BehaviorSubject<any[]>([
     {
@@ -180,11 +558,11 @@ export class ApiService {
   getJobs() {
     return this.jobs$;
   }
-  
+
   getOpleidingen() {
     return this.opleidingen$;
   }
-  
+
   getOpleidingFilters() {
     return this.opleidingFilters$;
   }
@@ -194,15 +572,31 @@ export class ApiService {
       map(jobs => jobs.find(job => job.id === id))
     );
   }
+  
+  getOpleiding(id: number) {
+    return this.opleidingen$.pipe(
+      map(opleidingen => opleidingen.find(opleiding => opleiding.id === id))
+    );
+  }
 
   addFavorite(objId: any) {
     const vacatures = this.jobs$.getValue().map(item => {
       if (item.id === objId) {
-        return {...item, saved: !item.saved}
+        return { ...item, saved: !item.saved }
       }
       return item;
     });
     this.jobs$.next(vacatures);
+  }
+  
+  addFavoriteOpleiding(objId: any) {
+    const opleidingen = this.opleidingen$.getValue().map(item => {
+      if (item.id === objId) {
+        return { ...item, saved: !item.saved }
+      }
+      return item;
+    });
+    this.opleidingen$.next(opleidingen);
   }
 
 }

@@ -48,8 +48,26 @@
     h3 {
       margin-top: 0;
     }
+    .parents {
+      display: flex;
+      gap: .25rem;
+      align-items: center;
+      > .material-symbols-outlined {
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: all .2s ease;
+        margin-top: -.5rem;
+        &.open {
+          transform: rotate(90deg);
+        }
+      }
+    }
     .children {
-      padding-left: 2rem;
+      padding-left: 3.6rem;
+      display: none;
+      &.open {
+        display: block;
+      }
     }
     @media screen and (max-width: 990px) {
       position: fixed;
@@ -187,10 +205,10 @@ input[type="checkbox"]:checked + .custom-checkbox {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
-input[type="checkbox"]:checked + .custom-checkbox.half {
-  background-color: #666;
-  border-color: #666;
-}
+// input[type="checkbox"]:checked + .custom-checkbox.half {
+//   background-color: #666;
+//   border-color: #666;
+// }
 
 /* Add a checkmark */
 input[type="checkbox"]:checked + .custom-checkbox::after {

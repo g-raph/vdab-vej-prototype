@@ -1,35 +1,17 @@
-import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';
 import { bottomNavItem } from '../../jobs/job-list/job-list.component';
 import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.component';
-
-export interface TreeNode {
-  name: string;
-  checked: boolean;
-  hasChildrenChecked?: boolean;
-  expanded: boolean;
-  children?: TreeNode[];
-}
-
-export interface Result {
-  name: string;
-  filterCategorie: string;
-  filterSubCategorie: string;
-  filterGratis: string;
-  filterStartdatum: string;
-  filterLesmoment: string;
-  filterWaarLeerJe: string;
-  filterLeervorm: string;
-  filterOrganisator: string;
-  filterKnelpuntberoep: string;
-}
+import { RouterLink } from '@angular/router';
+import { ApiService } from '../../../api.service';
+import { Result, TreeNode } from '../opleidingen';
 
 @Component({
   selector: 'app-opleiding-list',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent],
+  imports: [ReactiveFormsModule, NgFor, OpleidingTeaserComponent, NgIf, BottomNavComponent, NgStyle, RouterLink],
   templateUrl: './opleiding-list.component.html',
   styleUrl: './opleiding-list.component.scss',
 })
@@ -128,7 +110,7 @@ export class OpleidingListComponent {
   filterLeervorm = [
     'Groepsleren',
     'E-cursus',
-    'Workshops',
+    'Workshop',
     '1 op 1 (individueel)',
     'Duaal leren',
   ];
@@ -137,6 +119,8 @@ export class OpleidingListComponent {
   filterForm: FormGroup;
   items: Result[] = [
     {
+      id: 1,
+      saved: false,
       name: 'Kapper/Kapster',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Creatief',
@@ -149,6 +133,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Ja',
     },
     {
+      id: 2,
       name: 'Verzorgende',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Gezondheid',
@@ -161,6 +146,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Ja',
     },
     {
+      id: 3,
       name: 'Nederlands - Nederlandse spelling',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Talen',
@@ -173,6 +159,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 4,
       name: 'Assertiviteit in de werksituatie',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Persoonlijke vaardigheden',
@@ -185,6 +172,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Ja',
     },
     {
+      id: 5,
       name: 'Bekister',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Bouw',
@@ -197,6 +185,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 6,
       name: 'Powerpoint voor managers',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele vaardigheden',
@@ -204,11 +193,12 @@ export class OpleidingListComponent {
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Online',
-      filterLeervorm: 'Workshops',
+      filterLeervorm: 'Workshop',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 7,
       name: 'Leren werken met een computer',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
@@ -221,6 +211,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Ja',
     },
     {
+      id: 8,
       name: 'Leerkracht wiskunde',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Onderwijs',
@@ -233,6 +224,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 9,
       name: 'Succesvol presenteren',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
@@ -240,11 +232,12 @@ export class OpleidingListComponent {
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
-      filterLeervorm: 'Workshops',
+      filterLeervorm: 'Workshop',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 10,
       name: 'Poetsvrouw / Poetsman',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Onderhoud',
@@ -258,6 +251,7 @@ export class OpleidingListComponent {
     },
     
     {
+      id: 11,
       name: 'Vertaler Russisch - Nederlands',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Communicatie',
@@ -270,6 +264,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 12,
       name: 'Bankbediende KBC',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Financieel',
@@ -282,6 +277,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 13,
       name: 'Boer verzorging kalveren',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Land- en tuinbouw',
@@ -294,6 +290,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 14,
       name: 'Klusjesman Center Parks',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Techniek',
@@ -306,6 +303,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 15,
       name: 'Marketing assistent - social media',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Marketing',
@@ -318,6 +316,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Ja',
     },
     {
+      id: 16,
       name: 'Management opleiding',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele vaardigheden',
@@ -325,11 +324,12 @@ export class OpleidingListComponent {
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
-      filterLeervorm: 'Workshops',
+      filterLeervorm: 'Workshop',
       filterOrganisator: 'Andere',
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 17,
       name: 'Onderzoeken beheren',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Onderzoek en ontwikkeling',
@@ -342,6 +342,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 18,
       name: 'Rijbewijs CE',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Logistiek en transport',
@@ -354,6 +355,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Ja',
     },
     {
+      id: 19,
       name: 'Administratieve taken beheer',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Administratie',
@@ -366,6 +368,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 20,
       name: 'Verkopen van stofzuigers',
       filterCategorie: 'Beroepsopleidingen',
       filterSubCategorie: 'Verkoop',
@@ -378,6 +381,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 21,
       name: 'Nederlands - spelling',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
@@ -390,6 +394,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 22,
       name: 'Nederlands - algemeen',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
@@ -402,6 +407,7 @@ export class OpleidingListComponent {
       filterKnelpuntberoep: 'Nee',
     },
     {
+      id: 23,
       name: 'Nederlands - werkwoorden',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
@@ -426,8 +432,10 @@ export class OpleidingListComponent {
   showFiltersLeervorm = false;
   showFiltersOrganisator = false;
   showFiltersKnelpuntberoep = false;
+  showChildrenBeroep = false;
+  showChildrenPersonal = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private api: ApiService) {
     this.filterForm = this.fb.group({
       filterCategorie: this.fb.group(
         this.filterCategorie.reduce((acc: any, category: any) => {
@@ -490,6 +498,14 @@ export class OpleidingListComponent {
         }, {})
       ),
     });
+  }
+
+  toggleChildren(idx: number) {
+    if (idx === 0) {
+      this.showChildrenBeroep = !this.showChildrenBeroep;
+    } else if (idx === 1) {
+      this.showChildrenPersonal = !this.showChildrenPersonal;
+    }
   }
 
   toggleOpenFilters() {
@@ -612,6 +628,23 @@ export class OpleidingListComponent {
     if (node.children) {
       this.setChildrenChecked(node.children, node.checked);
     }
+    console.log(node);
+  }
+  
+  herbereken(category: TreeNode, child: TreeNode) {
+    child.checked = !child.checked;
+    
+    const allChildrenAreCHecked = category.children?.every(child => child.checked);
+    if (!allChildrenAreCHecked) {
+      category.checked = false;
+      const index = this.selectedFilters.indexOf(category.name);
+      if (index > -1) {
+        this.selectedFilters.splice(index, 1);
+      }
+    } else {
+      category.checked = true;
+      this.selectedFilters.push(category.name);
+    }
   }
 
   setChildrenChecked(children: TreeNode[], checked: boolean): void {
@@ -639,6 +672,16 @@ export class OpleidingListComponent {
       this.selectedFilters.splice(index, 1);
     } else {
       this.selectedFilters.push(category);
+    }
+  }
+  
+  addToSelectedTreeFilters(cat: TreeNode) {
+    console.log(cat)
+    const index = this.selectedFilters.indexOf(cat.name);
+    if (index > -1) {
+      this.selectedFilters.splice(index, 1);
+    } else {
+      this.selectedFilters.push(cat.name);
     }
   }
 

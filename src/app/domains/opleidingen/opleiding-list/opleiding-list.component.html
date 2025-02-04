@@ -61,23 +61,24 @@
             <div class="dropdown__body" *ngIf="showFiltersCategorie">
               <div *ngFor="let category of filterCategorie; let i = index">
                 <div class="parents" formGroupName="filterCategorie">
-                  <label class="o-form__label c-checkbox__label" [for]="'veo_categorie_' + i" (click)="toggleExpand(category)">
-                    <input (click)="addToSelectedFilters(category.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
+                  <span [ngStyle]="{'opacity': category.children ? '1' : '0'}" class="material-symbols-outlined" (click)="toggleChildren(i)" [class.open]="i === 0 ? showChildrenBeroep : showChildrenPersonal">chevron_right</span>
+                  <label class="o-form__label c-checkbox__label" [for]="'veo_categorie_' + i" >
+                    <input (click)="addToSelectedTreeFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
                       [formControlName]="category.name"
-                      [checked]="category.checked"
+                      [checked]="category.checked || category.hasChildrenChecked"
                       (change)="toggleCheck(category)" />
-                    <span class="custom-checkbox" (click)="toggleExpand(category)" [class.half]="category.hasChildrenChecked"></span>
+                    <span class="custom-checkbox" [class.half]="category.hasChildrenChecked"></span>
                     <div (click)="toggleExpand(category)">
                       {{ category.name }}
                       <span class="c-filter__options-count">({{ countResults('filterCategorie', category.name) }})</span>
                     </div>
                   </label>
                 </div>
-                <div class="children" *ngIf="category.children && category.expanded" [formGroupName]="i === 0 ? 'filterSubCategorieBeroep' : 'filterSubCategorieGroei'">
+                <div class="children" *ngIf="category.children" [formGroupName]="i === 0 ? 'filterSubCategorieBeroep' : 'filterSubCategorieGroei'" [class.open]="i === 0 ? showChildrenBeroep : showChildrenPersonal">
                   <div *ngFor="let child of category.children; let idx = index" >
                     <label class="o-form__label c-checkbox__label" [for]="'veo_subcategorie_' + i + idx">
-                      <input (change)="checkIfChildrenAreChecked(category)" (click)="addToSelectedFilters(child.name)" type="checkbox" class="c-checkbox__input" [id]="'veo_subcategorie_' + i + idx" [formControlName]="child.name" />
-                      <span class="custom-checkbox"></span>
+                      <input [checked]="child.checked" (change)="checkIfChildrenAreChecked(category)" (click)="addToSelectedTreeFilters(child)" type="checkbox" class="c-checkbox__input" [id]="'veo_subcategorie_' + i + idx" [formControlName]="child.name" />
+                      <span class="custom-checkbox" (click)="herbereken(category, child)"></span>
                       <div>
                         {{ child.name }}
                         <span class="c-filter__options-count">({{ countResults('filterSubCategorie', child.name) }})</span>

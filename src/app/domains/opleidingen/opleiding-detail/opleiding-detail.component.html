@@ -1,1 +1,119 @@
-<p>opleiding-detail works!</p>
+<div class="opleiding-detail" *ngIf="opleiding$ | async as opleiding">
+  <div class="box">
+    <div class="opleiding-detail__title">
+      <div class="opleiding-detail__title--left">
+        <h1>{{ opleiding.name }}</h1>
+        <div class="tag" *ngIf="opleiding.filterKnelpuntberoep === 'Ja'">
+          Knelpuntberoep
+        </div>
+      </div>
+      <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
+    </div>
+    <div class="opleiding-detail__content">
+      <div class="left">
+        <div class="video" *ngIf="opleiding.videoUrl">
+          <img [src]="opleiding.videoUrl" alt="">
+        </div>
+        <div class="beschrijving" *ngIf="opleiding.beschrijving">
+          <h2>Beschrijving</h2>
+          <div>{{ opleiding.beschrijving }}</div>
+        </div>
+        <div class="wat-je-leert" *ngIf="opleiding.watJeLeert">
+          <h2>Wat je leert</h2>
+          <ul>
+            <li *ngFor="let item of opleiding.watJeLeert">{{ item }}</li>
+          </ul>
+        </div>
+        <div class="modules" *ngIf="opleiding.modules">
+          <h2>Modules</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Modules</th>
+                <th>Leervorm</th>
+                <th>Duurtijd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of opleiding.modules">
+                <td>{{ item.name }}</td>
+                <td>{{ item.leervorm }}</td>
+                <td>{{ item.duurtijd }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="toelatingsvoorwaarden"
+          *ngIf="opleiding.toelatingsvoorwaarden"
+        >
+          <h2>Toelatingsvoorwaarden</h2>
+          <ul>
+            <li *ngFor="let item of opleiding.toelatingsvoorwaarden">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right desktop-only--flex">
+        <div class="ctas">
+          <button routerLink="/login" class="btn btn--primary">
+            Kies locatie en vraag opleiding aan
+          </button>
+          <button
+          (click)="setAsFavorite(opleiding.id)"
+          class="btn"
+          [class.btn--secondary]="!opleiding.saved"
+          [class.btn--yellow]="opleiding.saved"
+          >
+          <span class="material-symbols-outlined">star</span
+            ><span>Bewaar opleiding</span>
+          </button>
+          <button routerLink="/opleidingen/vind-een-opleiding" class="btn btn--secondary">
+            Bekijk al onze opleidingen voor kapper
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="locaties" *ngIf="opleiding.locaties">
+      <h2>Locaties</h2>
+      <div class="locatie" *ngFor="let locatie of opleiding.locaties">
+          <div class="top">
+              <div class="left">
+                  <h3 class="link">{{locatie.stad}}</h3>
+                  <small><span>{{locatie.adres}}</span> | <span>Startdatum: {{locatie.startdatum}}</span> | <span>Gemiddelde wachttijd: {{locatie.wachttijd}}</span></small>
+              </div>
+              <div class="right">
+                  <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined">star</span></a>
+                  <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
+                  <button class="btn btn--primary">Opleiding aanvragen</button>
+              </div>
+          </div>
+          <div class="bottom">
+              <div>
+                  <small>Doelgroep</small>
+                  <div>{{locatie.doelgroep}}</div>
+              </div>
+              <div>
+                  <small>Leervorm</small>
+                  <div>{{locatie.leervorm}}</div>
+              </div>
+              <div>
+                  <small>Lesgever</small>
+                  <div>{{locatie.lesgever}}</div>
+              </div>
+              <div>
+                  <small>Duurtijd</small>
+                  <div>{{locatie.duurtijd}}</div>
+              </div>
+              <div>
+                  <small>Intensiteit</small>
+                  <div>{{locatie.intensiteit}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>

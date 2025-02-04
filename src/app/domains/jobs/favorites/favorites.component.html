@@ -1,11 +1,25 @@
-<div class="favorite-page" *ngIf="(favorites$ | async) as favorites">
-    <div class="box">
+<div class="favorite-page">
+    <div class="page-title box">
+        <h1>Bewaard</h1>
+        <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
+    </div>
+    <div class="box" *ngIf="(favorites$ | async) as favorites">
         <div class="favorite-page__top">
-            <h1>Bewaarde vacatures</h1>
-            <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
+            <h2>Bewaarde vacatures</h2>
         </div>
         <div *ngIf="favorites.length" class="favorites">
             <app-job-teaser *ngFor="let job of favorites" [job]="job" [routerLink]="['/jobs', 'vind-een-job', job.id]"></app-job-teaser>
+        </div>
+        <div *ngIf="!favorites.length" class="favorites">
+            Er zijn momenteel geen bewaarde vacatures.
+        </div>
+    </div>
+    <div class="box" *ngIf="(favoriteOpleidingen$ | async) as favorites">
+        <div class="favorite-page__top">
+            <h2>Bewaarde opleidingen</h2>
+        </div>
+        <div *ngIf="favorites.length" class="favorites">
+            <app-opleiding-teaser *ngFor="let opleiding of favorites" [opleiding]="opleiding" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]"></app-opleiding-teaser>
         </div>
         <div *ngIf="!favorites.length" class="favorites">
             Er zijn momenteel geen bewaarde vacatures.

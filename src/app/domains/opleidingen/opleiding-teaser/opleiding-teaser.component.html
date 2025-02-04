@@ -1,26 +1,49 @@
-<div class="opleiding">
-  <div *ngIf="opleiding.new" class="new">Nieuw</div>
-  <div class="titlebox">
-    <div class="left">
-      <div *ngIf="opleiding.filterLeervorm === 'Workshop'" class="tag">
-        Workshop
-      </div>
-      <h3 class="opleiding__title">{{ opleiding.name }}</h3>
-    </div>
-    <div class="right">
-        <span
-          (click)="setAsFavorite(opleiding.id)"
-          [ngClass]="{ 'active fill': opleiding.saved }"
-          class="material-symbols-outlined star"
-          >star</span
+<div class="opleiding__container">
+  <div class="opleiding" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]">
+    <div *ngIf="opleiding.new" class="new">Nieuw</div>
+    <div class="titlebox">
+      <div class="left">
+        <div
+          *ngIf="opleiding.filterLeervorm === 'Workshop'"
+          class="tag tag--warning"
         >
+          Workshop
+        </div>
+        <div
+          *ngIf="opleiding.filterLeervorm === 'E-cursus'"
+          class="tag tag--error"
+        >
+          Online cursus
+        </div>
+        <h3 class="opleiding__title">{{ opleiding.name }}</h3>
+      </div>
+      <div class="right"></div>
+    </div>
+    <div class="contentbox">
+      <div class="organisator">{{ opleiding.filterLeervorm }}</div>
+    </div>
+    <div class="footerbox">
+      <div class="opleiding__tags">
+        <div class="tag">
+          {{
+            opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
+              ? "Gratis voor wie werkt"
+              : opleiding.filterGratis === "Betalend"
+              ? "Betalend"
+              : "Gratis voor wie geen werk heeft of een uitkering onvangt"
+          }}
+        </div>
+        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag">
+          Knelpuntberoep
+        </div>
+      </div>
+      <div class="duurtijd">Duurtijd: <span>tussen 3 en 6 maanden</span></div>
     </div>
   </div>
-  <div class="contentbox">
-    <div class="organisator">{{opleiding.filterOrganisator}} - {{opleiding.filterLeervorm}}</div>
-  </div>
-  <div class="opleiding__tags">
-    <div class="tag">{{ opleiding.filterGratis === 'Gratis opleidingen voor wie werkt' ? 'Gratis voor wie werkt' : opleiding.filterGratis === 'Betalend' ? 'Betalend' : 'Gratis voor wie geen werk heeft of een uitkering onvangt' }}</div>
-    <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag">Knelpuntberoep</div>
-  </div>
+  <span
+    (click)="setAsFavoriteOpleiding(opleiding.id)"
+    [class.active]="opleiding.saved"
+    class="material-symbols-outlined star"
+    >star</span
+  >
 </div>

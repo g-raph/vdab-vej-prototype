@@ -96,7 +96,7 @@ export const routes: Routes = [
         ]
     },
     {path:'login', component: LoginComponent, data: { breadcrumb: 'Login'} },
-    {path:'favorites', component: FavoritesComponent, data: { breadcrumb: 'Bewaarde vacatures'} },
+    {path:'favorites', component: FavoritesComponent, data: { breadcrumb: 'Bewaarde vacatures / opleidingen'} },
     {path:'studieboom', component: StudieboomComponent, data: { breadcrumb: 'Studieboom'} },
     {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'} },
     {path:'**', redirectTo:'vind-een-job'},

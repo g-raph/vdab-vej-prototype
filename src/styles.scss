@@ -164,6 +164,14 @@ button {
   border-radius: .25rem;
   line-height: 1;
   font-size: 1rem;
+  &--warning {
+    background-color: rgb(242, 205, 42);
+    color: #fff;
+  }
+  &--error {
+    background-color: rgb(242, 139, 42);
+    color: #fff;
+  }
 }
 
 .new {

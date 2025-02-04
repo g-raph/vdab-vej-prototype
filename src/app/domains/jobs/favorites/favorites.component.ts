@@ -6,11 +6,12 @@ import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 import { map } from 'rxjs';
 import { bottomNavItem } from '../job-list/job-list.component';
 import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';
+import { OpleidingTeaserComponent } from '../../opleidingen/opleiding-teaser/opleiding-teaser.component';
 
 @Component({
   selector: 'app-favorites',
   standalone: true,
-  imports: [BottomNavComponent, JobTeaserComponent, RouterLink, NgForOf, NgIf, AsyncPipe],
+  imports: [BottomNavComponent, JobTeaserComponent, RouterLink, NgForOf, NgIf, AsyncPipe, OpleidingTeaserComponent],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.scss'
 })
@@ -39,6 +40,9 @@ export class FavoritesComponent {
         },
     ];
   favorites$ = this.api.getJobs().pipe(
+    map(items => items.filter(item => item.saved))
+  );
+  favoriteOpleidingen$ = this.api.getOpleidingen().pipe(
     map(items => items.filter(item => item.saved))
   );
   constructor(private api: ApiService){
