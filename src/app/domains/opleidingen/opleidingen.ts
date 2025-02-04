@@ -29,6 +29,10 @@ export interface TreeNode {
     id: number;
     name: string;
     saved?: boolean;
+    duurtijd?: string;
+    leerbewijs?: string;
+    intensiteit?: string;
+    prijs?: number;
     videoUrl?: string;
     watJeLeert?: string[];
     modules?: Module[];
