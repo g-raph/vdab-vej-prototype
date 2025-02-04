@@ -15,10 +15,17 @@ export class OpleidingTeaserComponent {
 
   constructor(private api: ApiService) { 
 
-    console.log(this.opleiding);
   }
-
+  
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log(this.opleiding);
+    
+  }
+  
   setAsFavoriteOpleiding(opleiding: any) {
     this.api.addFavoriteOpleiding(opleiding);
+    console.log(this.opleiding);
   }
 }
