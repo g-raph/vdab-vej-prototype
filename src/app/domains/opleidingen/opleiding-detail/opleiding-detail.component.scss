@@ -192,10 +192,7 @@ $color-light: #DBECF8;
             color: #1769A4;
         }
     }
-    &--gratis {
-        width: 100%;
-    }
-    &--locaties {
+    &--locaties, &--toelatingsvoorwaarden {
         > span:last-child {
             color: #1769A4;
             text-decoration: underline;
@@ -215,6 +212,14 @@ $color-light: #DBECF8;
     margin-top: 2rem;
     h2 {
         margin-bottom: 0;
+    }
+    .infobox {
+        background-color: #eff7fe;
+        padding: 1rem 2rem;
+        border-radius: .5rem;
+        h3 {
+            margin-top: 0;
+        }
     }
     .locatie {
         border: 1px solid #c9cbce;

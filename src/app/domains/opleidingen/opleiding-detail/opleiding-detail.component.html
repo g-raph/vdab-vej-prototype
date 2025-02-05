@@ -19,6 +19,7 @@
           <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>{{opleiding.intensiteit}}</span></div>
           <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
           <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span>{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></div>
+          <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span>Bekijk toelatingsvoorwaarden</span></div>
           <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span>{{opleiding.filterGratis}}</span></div>
         </div>
         <div class="video" *ngIf="opleiding.videoUrl">
@@ -88,7 +89,21 @@
   </div>
   <div class="box">
     <div class="locaties" *ngIf="opleiding.locaties">
-      <h2>Locaties</h2>
+      <h2>Locaties waar je kan inschrijven</h2>
+      <div class="infobox">
+        <h3>Opleiding aangevraagd: wat nu?</h3>
+        <ul>
+          <li>Je krijgt een bevestigingsmail met meer info.</li>
+          <li>We nodigen je via mail uit voor een fysiek of online gesprek en leggen uit hoe je je hierop kan voorbereiden.</li>
+          <li>
+            Tijdens het gesprek bekijken we of de opleiding past in je zoektocht naar werk en haalbaar is. We houden rekening met je motivatie, vaardigheden, werkervaring, kennis Nederlands en wanneer je beschikbaar bent.
+            <ul>
+              <li>Past de opleiding? Dan bespreken we wat de volgende stappen zijn.</li>
+              <li>Past de opleiding niet? Dan bekijken we welke opleiding wel past.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
       <div class="locatie" *ngFor="let locatie of opleiding.locaties">
           <div class="top">
               <div class="left">

@@ -35,7 +35,7 @@ export class OpleidingListComponent {
   filterboxOpen = true;
   filterCategorie: TreeNode[] = [
     {
-      name: 'Beroepsopleidingen',
+      name: 'Beroepsopleidingen en specialisatie',
       checked: false,
       hasChildrenChecked: false,
       expanded: false,
@@ -72,8 +72,8 @@ export class OpleidingListComponent {
         { name: 'Talen', checked: false, expanded: false },
         { name: 'Communicatie ', checked: false, expanded: false },
         { name: 'Digitale vaardigheden', checked: false, expanded: false },
-        { name: 'Persoonlijke vaardigheden', checked: false, expanded: false },
-        { name: 'Professionele vaardigheden', checked: false, expanded: false },
+        { name: 'Zelfontplooiing', checked: false, expanded: false },
+        { name: 'Professionele ontplooiing', checked: false, expanded: false },
       ]
     },
     {

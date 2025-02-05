@@ -215,9 +215,9 @@ export class ApiService {
         },
       ],
       toelatingsvoorwaarden: [
-        '18 jaar zijn',
-        'het inschrijvingsgeld betaald hebben',
-        'een rijksregisternummer hebben of een bewijs van wettig verblijf kunnen voorleggen',
+        'je moet minstens 18 jaar zijn',
+        'je moet het inschrijvingsgeld betaald hebben',
+        'je moet een rijksregisternummer hebben of een bewijs van wettig verblijf kunnen voorleggen',
         'je hebt geen werk en bent ingeschreven als (deeltijds) werkzoekende, of',
         'je bent ingeschreven als tijdelijk werkloze, of',
         'je zit in je opzegperiode, of',
@@ -226,7 +226,7 @@ export class ApiService {
       ],
       beschrijving: 'Je ziet er graag verzorgd uit en wil leren hoe je je haar het beste hanteert, verzorgt of brusht? Wil je je familieleden een trendy kapsel geven? Of wil je van haarkappen je beroep maken? Dan ben je in onze cursus haartooi op het juiste adres! Je leert eerst de producten en gereedschappen kennen die je nodig hebt in het kappersvak. Verder leer je de basistechnieken van haarverzorging, snit en haarkleuren. Je leert de basistechnieken van de permanent en basissnitten, zowel voor dames als voor heren. In de module kleuren gaan we in de diepte over kleuren en de theoretische achtergrond. Ook modegerichte oproltechniekenen steuntechnieken worden aangeleerd. in de module gelegenheidskapsels leer je trendy opsteektechnieken en ontkrul- en steuntechnieken. Verder leer je in teamverband te werken, je hebt aandacht voor het creatieve en modebewuste en leert probleemoplossend te denken en te handelen. Ook het aanleren van snitten en kapsels voor heren komt aan bod: zowel klassieke als modesnits. Verder leer je specifieke technieken zoals scheren en baardknippen. Dan volgt de salonpraktijk. Je kiest zelf hoeveel modules je volgt, naargelang je tijd en werksituatie. De trajectbegeleider kapper helpt je bij het opstellen van een op maat gemaakt traject.',
       name: 'Kapper/Kapster',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Creatief',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
@@ -239,7 +239,7 @@ export class ApiService {
     {
       id: 2,
       name: 'Verzorgende',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Gezondheid',
       filterGratis: 'Betalend',
       filterStartdatum: 'April 2025',
@@ -266,7 +266,7 @@ export class ApiService {
       id: 4,
       name: 'Assertiviteit in de werksituatie',
       filterCategorie: 'Persoonlijke en professionele groei',
-      filterSubCategorie: 'Persoonlijke vaardigheden',
+      filterSubCategorie: 'Zelfontplooiing',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
       filterLesmoment: 'Tijdens de kantooruren',
@@ -278,7 +278,7 @@ export class ApiService {
     {
       id: 5,
       name: 'Bekister',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Bouw',
       filterGratis: 'Betalend',
       filterStartdatum: 'Mei 2025',
@@ -292,7 +292,7 @@ export class ApiService {
       id: 6,
       name: 'Powerpoint voor managers',
       filterCategorie: 'Persoonlijke en professionele groei',
-      filterSubCategorie: 'Professionele vaardigheden',
+      filterSubCategorie: 'Professionele ontplooiing',
       filterGratis: 'Gratis opleidingen voor wie werkt',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
@@ -317,7 +317,7 @@ export class ApiService {
     {
       id: 8,
       name: 'Leerkracht wiskunde',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderwijs',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Mei 2025',
@@ -343,7 +343,7 @@ export class ApiService {
     {
       id: 10,
       name: 'Poetsvrouw / Poetsman',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderhoud',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Mei 2025',
@@ -357,7 +357,7 @@ export class ApiService {
     {
       id: 11,
       name: 'Vertaler Russisch - Nederlands',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Communicatie',
       filterGratis: 'Betalend',
       filterStartdatum: 'Januari 2025',
@@ -370,7 +370,7 @@ export class ApiService {
     {
       id: 12,
       name: 'Bankbediende KBC',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Financieel',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Mei 2025',
@@ -383,7 +383,7 @@ export class ApiService {
     {
       id: 13,
       name: 'Boer verzorging kalveren',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Land- en tuinbouw',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Februari 2025',
@@ -396,7 +396,7 @@ export class ApiService {
     {
       id: 14,
       name: 'Klusjesman Center Parks',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Techniek',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'September 2025',
@@ -409,7 +409,7 @@ export class ApiService {
     {
       id: 15,
       name: 'Marketing assistent - social media',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Marketing',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Juni 2025',
@@ -423,7 +423,7 @@ export class ApiService {
       id: 16,
       name: 'Management opleiding',
       filterCategorie: 'Persoonlijke en professionele groei',
-      filterSubCategorie: 'Professionele vaardigheden',
+      filterSubCategorie: 'Professionele ontplooiing',
       filterGratis: 'Betalend',
       filterStartdatum: 'September 2025',
       filterLesmoment: 'Buiten de kantooruren',
@@ -435,7 +435,7 @@ export class ApiService {
     {
       id: 17,
       name: 'Onderzoeken beheren',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderzoek en ontwikkeling',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'December 2024',
@@ -448,7 +448,7 @@ export class ApiService {
     {
       id: 18,
       name: 'Rijbewijs CE',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Logistiek en transport',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'Maart 2025',
@@ -461,7 +461,7 @@ export class ApiService {
     {
       id: 19,
       name: 'Administratieve taken beheer',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Administratie',
       filterGratis: 'Gratis opleidingen voor wie werkt',
       filterStartdatum: 'Oktober 2025',
@@ -474,7 +474,7 @@ export class ApiService {
     {
       id: 20,
       name: 'Verkopen van stofzuigers',
-      filterCategorie: 'Beroepsopleidingen',
+      filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Verkoop',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
       filterStartdatum: 'November 2025',
@@ -528,7 +528,7 @@ export class ApiService {
     {
       title: 'Categorie',
       groupName: 'filterCategorie',
-      filters: ['Beroepsopleidingen', 'Persoonlijke en professionele groei']
+      filters: ['Beroepsopleidingen en specialisatie', 'Persoonlijke en professionele groei']
     },
     {
       title: 'Gratis',
