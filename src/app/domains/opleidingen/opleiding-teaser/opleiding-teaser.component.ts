@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { NgClass, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { ApiService } from '../../../api.service';
 import { RouterLink } from '@angular/router';
+import { OpleidingLocatie } from '../opleidingen';
 
 @Component({
   selector: 'app-opleiding-teaser',
@@ -13,19 +14,14 @@ import { RouterLink } from '@angular/router';
 export class OpleidingTeaserComponent {
   @Input() opleiding: any;
 
-  constructor(private api: ApiService) { 
+  constructor(private api: ApiService) {}
 
-  }
-  
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log(this.opleiding);
-    
+  getLocationsString(locations: OpleidingLocatie[]) {
+    const str = locations.map(location => location.stad).join(', ');
+    return str;
   }
   
   setAsFavoriteOpleiding(opleiding: any) {
     this.api.addFavoriteOpleiding(opleiding);
-    console.log(this.opleiding);
   }
 }

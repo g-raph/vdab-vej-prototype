@@ -24,6 +24,9 @@ $color-light: #DBECF8;
         width: 100%;
         align-items: center;
         justify-content: space-between;
+        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
         &--left {
             display: flex;
             flex-flow: column;

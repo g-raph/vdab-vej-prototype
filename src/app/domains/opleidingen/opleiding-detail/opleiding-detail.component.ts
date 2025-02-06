@@ -52,7 +52,6 @@ export class OpleidingDetailComponent {
   constructor(private api: ApiService, private router: ActivatedRoute, private el: ElementRef, private sanitizer: DomSanitizer) {
     this.opleidingId = this.router.snapshot.params['id'];
     this.opleiding$ = this.api.getOpleiding(parseInt(this.opleidingId));
-    this.opleiding$.subscribe(console.log);
   }
   setAsFavorite(opleiding: any) {
     this.api.addFavoriteOpleiding(opleiding);

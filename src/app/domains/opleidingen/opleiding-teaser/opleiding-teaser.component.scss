@@ -55,6 +55,13 @@ $color-primary: #1769A4;
             gap: .5rem;
         }
     }
+    .contentbox {
+        .locations {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 .5rem;
+        }
+    }
     .footerbox {
         display: flex;
         gap: .5rem;

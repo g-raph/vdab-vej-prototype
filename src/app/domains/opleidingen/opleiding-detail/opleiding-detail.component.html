@@ -14,9 +14,9 @@
       <div class="left">
         <div class="tldr">
           <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div>
-          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>{{opleiding.duurtijd}}</span></div>
+          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
-          <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>{{opleiding.intensiteit}}</span></div>
+          <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div>
           <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
           <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span>{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></div>
           <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span>Bekijk toelatingsvoorwaarden</span></div>
@@ -42,14 +42,14 @@
               <tr>
                 <th>Modules</th>
                 <th>Leervorm</th>
-                <th>Duurtijd</th>
+                <th>Intensiteit</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of opleiding.modules">
                 <td>{{ item.name }}</td>
                 <td>{{ item.leervorm }}</td>
-                <td>{{ item.duurtijd }}</td>
+                <td>{{ item.intensiteit }}</td>
               </tr>
             </tbody>
           </table>

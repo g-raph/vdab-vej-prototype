@@ -20,7 +20,8 @@
       <div class="right"></div>
     </div>
     <div class="contentbox">
-      <div class="organisator">{{ opleiding.filterLeervorm }}</div>
+      <div class="locations" *ngIf="opleiding.locaties">{{getLocationsString(opleiding.locaties)}}</div>
+      <div class="summary" *ngIf="opleiding.beschrijving">{{opleiding.beschrijving.substring(0, 200)}}...</div>
     </div>
     <div class="footerbox">
       <div class="opleiding__tags">
@@ -37,7 +38,7 @@
           Knelpuntberoep
         </div>
       </div>
-      <div class="duurtijd">Duurtijd: <span>tussen 3 en 6 maanden</span></div>
+      <div class="duurtijd" *ngIf="opleiding.duurtijd">Duurtijd: <span>{{opleiding.duurtijd}}</span></div>
     </div>
   </div>
   <span
