@@ -58,18 +58,16 @@
           class="toelatingsvoorwaarden"
           *ngIf="opleiding.toelatingsvoorwaarden"
         >
-          <h2>Toelatingsvoorwaarden</h2>
+          <h2><span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Benodigdheden</span></h2>
           <ul>
             <li *ngFor="let item of opleiding.toelatingsvoorwaarden">
               {{ item }}
             </li>
           </ul>
         </div>
-      </div>
-      <div class="right desktop-only--flex">
-        <div class="ctas">
-          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary">
-            Kies locatie en vraag opleiding aan
+        <div class="online-ctas" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <button class="btn btn--primary">
+            Start opleiding
           </button>
           <button
           (click)="setAsFavorite(opleiding.id)"
@@ -80,8 +78,27 @@
           <span class="material-symbols-outlined">star</span
             ><span>Bewaar opleiding</span>
           </button>
-          <button routerLink="/opleidingen/vind-een-opleiding" class="btn btn--secondary">
-            Bekijk al onze opleidingen voor kapper
+        </div>
+      </div>
+      <div class="right desktop-only--flex">
+        <div class="ctas">
+          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
+          </div>
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary">
+            Kies locatie en vraag opleiding aan
+          </button>
+          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+            <span>Contacteer opleidingsaanbieder</span>
+          </button>
+          <button
+          (click)="setAsFavorite(opleiding.id)"
+          class="btn"
+          [class.btn--secondary]="!opleiding.saved"
+          [class.btn--yellow]="opleiding.saved"
+          >
+          <span class="material-symbols-outlined">star</span
+            ><span>Bewaar opleiding</span>
           </button>
         </div>
       </div>

@@ -67,6 +67,15 @@ $color-light: #DBECF8;
     }
 }
 
+.notification {
+    background-color: #eff7fe;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    &.warning {
+        background-color: rgba(254,157,5,.23);
+    }
+}
+
 .opleiding {
     &__location {
         color: #1769A4;
@@ -91,6 +100,15 @@ $color-light: #DBECF8;
     display: flex;
     flex-flow: column;
     gap: .5rem;
+    @media screen and (max-width: 990px) {
+        flex-flow: column;
+    }
+}
+
+.online-ctas {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
     @media screen and (max-width: 990px) {
         flex-flow: column;
     }
@@ -191,6 +209,9 @@ $color-light: #DBECF8;
         align-items: flex-start;
         gap: .5rem;
         width: calc(50% - 2rem);
+        @media screen and (max-width: 990px) {
+            width: 100%;
+        }
         > span:first-child {
             color: #1769A4;
         }

@@ -1,20 +1,21 @@
-<div class="footernav">
-  <div class="footernav__item" routerLink="/vind-een-job/zoekresultaten" routerLinkActive="active">
-    <span *ngIf="!backIcon" class="material-symbols-outlined"> search </span>
-    <span *ngIf="backIcon" class="material-symbols-outlined"> chevron_left </span>
-    <span>Jobs</span>
-  </div>
-  <div class="footernav__item">
-    <span class="material-symbols-outlined"> task </span>
-    <span>Jobsuggesties</span>
-  </div>
-  <div class="footernav__item">
-    <span class="material-symbols-outlined"> notifications </span>
-    <span>Job alert</span>
-  </div>
-  <div class="footernav__item" routerLink="/favorites" routerLinkActive="active">
-    <span class="material-symbols-outlined"> star </span>
-    <span>Bewaarde vacatures</span>
-    <ng-container *ngIf="(favorites$ | async) as favs"><span *ngIf="favs.length" class="badge">{{favs.length}}</span></ng-container>
+<div class="footer">
+  <div class="box">
+    <div class="footer__top">
+      <a href="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+    <div class="footer__bottom">
+      <a>Jobs</a>
+      <a>Opleidingen</a>
+      <a>Oriënteren</a>
+      <a>Over VDAB</a>
+      <a>Werken bij VDAB</a>
+      <a>Getuigenissen</a>
+      <a>Contact</a>
+      <a>Evenementen</a>
+      <a>Cijfers</a>
+      <a>Pers</a>
+      <a>Nieuwsbrief</a>
+    </div>
   </div>
 </div>
