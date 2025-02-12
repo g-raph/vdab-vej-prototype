@@ -23,6 +23,7 @@ export interface TreeNode {
     lesgever: string;
     duurtijd: string;
     intensiteit: string;
+    beschikbareplaatsen?: string;
   }
   
   export interface Result {

@@ -16,10 +16,10 @@
           <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div>
           <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
-          <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div>
+          <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
           <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
           <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span>{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></div>
-          <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span>Bekijk toelatingsvoorwaarden</span></div>
+          <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Bekijk benodigdheden</span></div>
           <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span>{{opleiding.filterGratis}}</span></div>
         </div>
         <div class="video" *ngIf="opleiding.videoUrl">
@@ -42,7 +42,7 @@
               <tr>
                 <th>Modules</th>
                 <th>Leervorm</th>
-                <th>Intensiteit</th>
+                <th>Duurtijd</th>
               </tr>
             </thead>
             <tbody>
@@ -85,8 +85,11 @@
           <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
             Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
           </div>
-          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary">
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'E-cursus'">
             Kies locatie en vraag opleiding aan
+          </button>
+          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+            Start opleiding
           </button>
           <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
             <span>Contacteer opleidingsaanbieder</span>
@@ -145,10 +148,6 @@
               <div>
                   <small>Lesgever</small>
                   <div>{{locatie.lesgever}}</div>
-              </div>
-              <div>
-                  <small>Duurtijd</small>
-                  <div>{{locatie.duurtijd}}</div>
               </div>
               <div>
                   <small>Intensiteit</small>
