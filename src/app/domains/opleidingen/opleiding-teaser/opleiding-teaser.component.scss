@@ -65,6 +65,11 @@ $color-primary: #1769A4;
             font-weight: 700;
             margin: 0 0 .5rem;
         }
+        @media screen and (max-width: 990px) {
+            .summary {
+                display: none;
+            }
+        }
     }
     .footerbox {
         display: flex;
