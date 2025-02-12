@@ -22,6 +22,29 @@
           <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Bekijk benodigdheden</span></div>
           <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span>{{opleiding.filterGratis}}</span></div>
         </div>
+        <div class="ctas mobile-only">
+          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
+          </div>
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'E-cursus'">
+            Kies locatie en vraag opleiding aan
+          </button>
+          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+            Start opleiding
+          </button>
+          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+            <span>Contacteer opleidingsaanbieder</span>
+          </button>
+          <button
+          (click)="setAsFavorite(opleiding.id)"
+          class="btn"
+          [class.btn--secondary]="!opleiding.saved"
+          [class.btn--yellow]="opleiding.saved"
+          >
+          <span class="material-symbols-outlined">star</span
+            ><span>Bewaar opleiding</span>
+          </button>
+        </div>
         <div class="video" *ngIf="opleiding.videoUrl">
           <img [src]="opleiding.videoUrl" alt="">
         </div>

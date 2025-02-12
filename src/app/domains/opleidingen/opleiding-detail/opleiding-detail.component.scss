@@ -326,3 +326,10 @@ $color-light: #DBECF8;
         }
     }
  }
+
+ .mobile-only {
+    display: none;
+    @media screen and (max-width: 990px) {
+        display: flex;
+    }
+ }
