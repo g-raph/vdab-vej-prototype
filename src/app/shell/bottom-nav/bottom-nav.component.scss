@@ -1,6 +1,6 @@
 .bottomnav {
     position: relative;
-    z-index: 9;
+    z-index: 999;
     bottom: 0;
     left: 0;
     box-sizing: border-box;
@@ -24,7 +24,7 @@
         flex: 1;
         position: relative;
         text-align: center;
-        line-height: .8;
+        line-height: 1;
         cursor: pointer;
         .material-symbols-outlined {
             font-size: 1.5rem;

@@ -5,7 +5,7 @@
         <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a><span> &gt;</span>
       </ng-container>
       <ng-container *ngIf="last">
-        <span>{{ breadcrumb.label }}</span>
+        <span class="last">{{ breadcrumb.label }}</span>
       </ng-container>
     </ng-container>
   </nav>

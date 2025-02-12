@@ -7,4 +7,9 @@
         font-size: 1rem;
         display: block;
     }
+    .last {
+        @media screen and (max-width: 990px) {
+            display: none;
+        }
+    }
 }

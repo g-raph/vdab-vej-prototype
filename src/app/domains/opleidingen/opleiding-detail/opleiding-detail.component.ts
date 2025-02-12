@@ -23,7 +23,7 @@ export class OpleidingDetailComponent {
   navConfig: bottomNavItem[] = [
     {
       id: 1,
-      icon: 'search',
+      icon: 'workspace_premium',
       label: 'Opleidingen',
       routerlink: '/opleidingen/vind-een-opleiding',
       hasBadge: false
@@ -31,7 +31,7 @@ export class OpleidingDetailComponent {
     {
       id: 2,
       icon: 'star',
-      label: 'Bewaard',
+      label: 'Bewaarde opleidingen',
       routerlink: '/favorites',
       hasBadge: true
     },

@@ -53,6 +53,10 @@ $color-primary: #1769A4;
             display: flex;
             align-items: center;
             gap: .5rem;
+            @media screen and (max-width: 990px) {
+                flex-flow: column;
+                align-items: flex-start;
+            }
         }
     }
     .contentbox {
@@ -66,6 +70,10 @@ $color-primary: #1769A4;
         display: flex;
         gap: .5rem;
         justify-content: space-between;
+        @media screen and (max-width: 990px) {
+            flex-flow: column;
+            align-items: flex-start;
+        }
         .duurtijd {
             span {
                 font-weight: 700;

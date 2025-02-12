@@ -10,7 +10,7 @@ $color-light: #DBECF8;
 }
 
 .opleiding-detail {
-    padding: 1rem 0 6rem;
+    padding: 1rem 0;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -280,6 +280,9 @@ $color-light: #DBECF8;
                 flex-flow: row;
                 flex: 1;
                 margin: 0;
+                @media screen and (max-width: 990px) {
+                    display: none;
+                }
                 > * {
                     white-space: nowrap;
                     display: flex;
@@ -296,6 +299,30 @@ $color-light: #DBECF8;
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid #c9cbce;
+            @media screen and (max-width: 990px) {
+                flex-flow: row wrap;
+            }
+        }
+        .footer {
+            display: none;
+            align-items: center;
+            gap: 1rem;
+            flex-flow: row;
+            flex: 1;
+            margin: 0;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #c9cbce;
+            @media screen and (max-width: 990px) {
+                display: flex;
+            }
+            > * {
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                cursor: pointer;
+            }
         }
     }
  }
