@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../../api.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { bottomNavItem } from '../../jobs/job-list/job-list.component';
@@ -11,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-opleiding-detail',
   standalone: true,
-  imports: [RouterLink, NgIf, AsyncPipe, BottomNavComponent, NgFor, CurrencyPipe],
+  imports: [NgIf, AsyncPipe, BottomNavComponent, NgFor, CurrencyPipe],
   templateUrl: './opleiding-detail.component.html',
   styleUrl: './opleiding-detail.component.scss'
 })
