@@ -87,7 +87,6 @@ export class OpleidingListComponent {
     'Gratis opleidingen voor wie werkt',
   ];
   filterStartdatum = [
-    'December 2024',
     'Januari 2025',
     'Februari 2025',
     'Maart 2025',
@@ -100,6 +99,7 @@ export class OpleidingListComponent {
     'Oktober 2025',
     'November 2025',
     'December 2025',
+    'Januari 2026',
   ];
   filterLesmoment = ['Buiten de kantooruren', 'Tijdens de kantooruren'];
   filterWaarLeerJe = [

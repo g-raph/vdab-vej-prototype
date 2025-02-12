@@ -229,7 +229,7 @@ export class ApiService {
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Creatief',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
-      filterStartdatum: 'December 2024',
+      filterStartdatum: 'December 2025',
       filterLesmoment: 'Buiten de kantooruren',
       filterWaarLeerJe: 'Op locatie',
       filterLeervorm: 'Groepsleren',
@@ -408,7 +408,7 @@ export class ApiService {
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Talen',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
-      filterStartdatum: 'December 2024',
+      filterStartdatum: 'December 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie en online',
       filterLeervorm: 'Duaal leren',
@@ -471,7 +471,7 @@ export class ApiService {
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Zelfontplooiing',
       filterGratis: 'Gratis voor iedereen',
-      filterStartdatum: 'December 2024',
+      filterStartdatum: 'December 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Online',
       filterLeervorm: 'E-cursus',
@@ -634,7 +634,7 @@ export class ApiService {
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
       filterGratis: 'Betalend',
-      filterStartdatum: 'December 2024',
+      filterStartdatum: 'December 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie',
       filterLeervorm: '1 op 1 (individueel)',
@@ -752,7 +752,7 @@ export class ApiService {
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderzoek en ontwikkeling',
       filterGratis: 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
-      filterStartdatum: 'December 2024',
+      filterStartdatum: 'December 2025',
       filterLesmoment: 'Tijdens de kantooruren',
       filterWaarLeerJe: 'Op locatie en online',
       filterLeervorm: 'Groepsleren',
@@ -852,7 +852,7 @@ export class ApiService {
     {
       title: 'Startdatum',
       groupName: 'filterStartdatum',
-      filters: ['December 2024', 'Januari 2025', 'Februari 2025', 'Maart 2025', 'April 2025', 'Mei 2025', 'Juni 2025', 'Juli 2025', 'Augustus 2025', 'September 2025', 'Oktober 2025', 'November 2025', 'December 2025']
+      filters: ['December 2025', 'Januari 2025', 'Februari 2025', 'Maart 2025', 'April 2025', 'Mei 2025', 'Juni 2025', 'Juli 2025', 'Augustus 2025', 'September 2025', 'Oktober 2025', 'November 2025', 'December 2025']
     },
     {
       title: 'Lesmoment',
