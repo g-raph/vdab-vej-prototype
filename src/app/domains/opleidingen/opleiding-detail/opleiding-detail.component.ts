@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../../api.service';
+import { ApiService } from '../../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';
 import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';

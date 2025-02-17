@@ -1,9 +1,9 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { ApiService } from '../../../api.service';
+import { ApiService } from '../../../services/api.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FooterComponent } from '../../../shell/footer/footer.component';
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
-import { FavoriteService } from '../../../favorite.service';
+import { FavoriteService } from '../../../services/favorite.service';
 import { Observable } from 'rxjs';
 import { bottomNavItem } from '../job-list/job-list.component';
 import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.component';

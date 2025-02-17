@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shell/header/header.component';
 import { CommonModule } from '@angular/common';
-import { FilterModalService } from './filter-modal.service';
+import { FilterModalService } from './services/filter-modal.service';
 import { ScrollTopComponent } from './shell/scroll-top/scroll-top.component';
 import { FooterComponent } from './shell/footer/footer.component';
 

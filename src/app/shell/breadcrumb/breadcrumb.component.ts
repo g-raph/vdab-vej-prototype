@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BreadcrumbService } from '../../breadcrumb.service';
+import { BreadcrumbService } from '../../services/breadcrumb.service';
 import { RouterLink } from '@angular/router';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
 

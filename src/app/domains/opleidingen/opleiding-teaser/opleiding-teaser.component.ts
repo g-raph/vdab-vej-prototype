@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { ApiService } from '../../../api.service';
+import { ApiService } from '../../../services/api.service';
 import { RouterLink } from '@angular/router';
 import { OpleidingLocatie } from '../opleidingen';
 

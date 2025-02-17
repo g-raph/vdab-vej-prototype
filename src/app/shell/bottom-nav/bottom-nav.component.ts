@@ -2,7 +2,7 @@ import { AsyncPipe, NgFor, NgForOf, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { BehaviorSubject, combineLatest, map, mergeMap, of } from 'rxjs';
-import { ApiService } from '../../api.service';
+import { ApiService } from '../../services/api.service';
 import { bottomNavItem } from '../../domains/jobs/job-list/job-list.component';
 
 @Component({

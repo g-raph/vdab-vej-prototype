@@ -5,7 +5,7 @@ import { BottomNavComponent } from '../../../shell/bottom-nav/bottom-nav.compone
 import { bottomNavItem } from '../../jobs/job-list/job-list.component';
 import { OpleidingTeaserComponent } from '../opleiding-teaser/opleiding-teaser.component';
 import { RouterLink } from '@angular/router';
-import { ApiService } from '../../../api.service';
+import { ApiService } from '../../../services/api.service';
 import { Result, TreeNode } from '../opleidingen';
 
 @Component({

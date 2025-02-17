@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../../api.service';
+import { ApiService } from '../../../services/api.service';
 import { JobTeaserComponent } from '../job-teaser/job-teaser.component';
 import { RouterLink } from '@angular/router';
 import { AsyncPipe, NgForOf, NgIf } from '@angular/common';
