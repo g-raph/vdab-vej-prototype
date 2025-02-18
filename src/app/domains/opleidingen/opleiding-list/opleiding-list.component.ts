@@ -369,7 +369,8 @@ export class OpleidingListComponent {
   }
 
   toggleCheck(node: TreeNode): void {
-    node.checked = !node.checked;
+    const index = this.selectedFilters.indexOf(node.name);
+    node.checked = index > -1;
     if (node.children) {
       this.setChildrenChecked(node.children, node.checked);
     }
@@ -427,8 +428,15 @@ export class OpleidingListComponent {
     const index = this.selectedFilters.indexOf(cat.name);
     if (index > -1) {
       this.selectedFilters.splice(index, 1);
+      cat.children?.forEach(child => {
+        const idx = this.selectedFilters.indexOf(child.name);
+        this.selectedFilters.splice(idx, 1);
+      });
     } else {
       this.selectedFilters.push(cat.name);
+      cat.children?.forEach(child => {
+        this.selectedFilters.push(child.name);
+      });
     }
     this.saveFilters();
   }
