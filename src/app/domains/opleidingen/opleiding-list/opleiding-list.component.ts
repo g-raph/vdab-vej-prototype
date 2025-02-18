@@ -200,6 +200,49 @@ export class OpleidingListComponent {
       ),
     });
     this.opleidingen$.subscribe(items => this.items = items);
+    this.loadFilters();
+  }
+
+  private saveFilters() {
+    localStorage.setItem('selectedFilters', JSON.stringify(this.selectedFilters));
+  }
+
+  private loadFilters() {
+    const storedFilters = localStorage.getItem('selectedFilters');
+    if (storedFilters) {
+      this.selectedFilters = JSON.parse(storedFilters);
+      this.updateFormValues();
+    }
+  }
+
+  private updateFormValues() {
+    this.selectedFilters.forEach(filter => {
+      if (this.filterCategorie.some(category => category.name === filter)) {
+        this.filterForm.get('filterCategorie')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterCategorie.some(category => category.children?.some(child => child.name === filter))) {
+        const parentCategory = this.filterCategorie.find(category => category.children?.some(child => child.name === filter));
+        this.filterForm.get(parentCategory?.name === 'Beroepsopleidingen en specialisatie'? 'filterSubCategorieBeroep': 'filterSubCategorieGroei')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterGratis.includes(filter)) {
+        this.filterForm.get('filterGratis')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterStartdatum.includes(filter)) {
+        this.filterForm.get('filterStartdatum')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterLesmoment.includes(filter)) {
+        this.filterForm.get('filterLesmoment')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterWaarLeerJe.includes(filter)) {
+        this.filterForm.get('filterWaarLeerJe')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterKnelpuntberoep.includes(filter)) {
+        this.filterForm.get('filterKnelpuntberoep')?.get(filter)?.setValue(true);
+      }
+      else if (this.filterLeervorm.includes(filter)) {
+        this.filterForm.get('filterLeervorm')?.get(filter)?.setValue(true);
+      }
+    });
   }
 
   toggleChildren(idx: number) {
@@ -366,6 +409,7 @@ export class OpleidingListComponent {
   uncheckAllFilters() {
     window.location.reload();
     this.selectedFilters = [];
+    localStorage.removeItem('selectedFilters');
   }
   
   addToSelectedFilters(category: string) {
@@ -375,6 +419,7 @@ export class OpleidingListComponent {
     } else {
       this.selectedFilters.push(category);
     }
+    this.saveFilters();
   }
   
   addToSelectedTreeFilters(cat: TreeNode) {
@@ -385,6 +430,7 @@ export class OpleidingListComponent {
     } else {
       this.selectedFilters.push(cat.name);
     }
+    this.saveFilters();
   }
 
   filterObjectsByStrings(objects: Result[], strings: string[]) {
