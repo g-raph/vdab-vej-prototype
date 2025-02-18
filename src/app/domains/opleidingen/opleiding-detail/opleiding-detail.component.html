@@ -18,7 +18,7 @@
       <div class="left">
         <div class="tldr">
           <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
-          <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span><span *ngIf="opleiding.filterGratis !== 'Gratis voor iedereen'">{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft, </span>{{
+          <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span><span *ngIf="opleiding.prijs">{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft, </span>{{
             opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
               ? "gratis voor wie werkt"
               : opleiding.filterGratis === "Gratis voor iedereen"
