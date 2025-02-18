@@ -3,8 +3,13 @@
     <div class="opleiding-detail__title">
       <div class="opleiding-detail__title--left">
         <h1>{{ opleiding.name }}</h1>
-        <div class="tag" *ngIf="opleiding.filterKnelpuntberoep === 'Ja'">
-          Knelpuntberoep
+        <div class="tags">
+          <div class="tag">
+            {{opleiding.filterLeervorm}}
+          </div>
+          <div class="tag" *ngIf="opleiding.filterKnelpuntberoep === 'Ja'">
+            Knelpuntberoep
+          </div>
         </div>
       </div>
       <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
@@ -13,13 +18,13 @@
     <div class="opleiding-detail__content">
       <div class="left">
         <div class="tldr">
-          <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div>
-          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
+          <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
+          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Gemiddelde duurtijd: {{opleiding.duurtijd}}</span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
           <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
-          <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
+          <!-- <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div> -->
           <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span>{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></div>
-          <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Bekijk benodigdheden</span></div>
+          <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Bekijk benodigdheden</span></div> -->
           <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span>{{opleiding.filterGratis}}</span></div>
         </div>
         <div class="ctas mobile-only">
