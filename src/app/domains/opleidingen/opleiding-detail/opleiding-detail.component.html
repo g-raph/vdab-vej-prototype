@@ -8,7 +8,6 @@
             {{opleiding.filterLeervorm}}
           </div>
           <div class="tag" *ngIf="opleiding.filterKnelpuntberoep === 'Ja'">
-            Knelpuntberoep
           </div>
         </div>
       </div>
@@ -19,25 +18,31 @@
       <div class="left">
         <div class="tldr">
           <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
-          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Gemiddelde duurtijd: {{opleiding.duurtijd}}</span></div>
+          <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span><span *ngIf="opleiding.filterGratis !== 'Gratis voor iedereen'">{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft, </span>{{
+            opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
+              ? "gratis voor wie werkt"
+              : opleiding.filterGratis === "Gratis voor iedereen"
+              ? "Gratis voor iedereen"
+              : "gratis voor wie geen werk heeft of een uitkering onvangt"
+          }}</span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
           <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
           <!-- <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div> -->
-          <div class="tldr__item tldr--prijs" *ngIf="opleiding.prijs"><span class="material-symbols-outlined">euro</span> <span>{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></div>
-          <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Bekijk benodigdheden</span></div> -->
-          <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span>{{opleiding.filterGratis}}</span></div>
+          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
+          <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding'">Bekijk benodigdheden</span></div> -->
+          <!-- <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span></span></div> -->
         </div>
         <div class="ctas mobile-only">
-          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
           </div>
-          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'E-cursus'">
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">
             Kies locatie en vraag opleiding aan
           </button>
-          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             Start opleiding
           </button>
-          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             <span>Contacteer opleidingsaanbieder</span>
           </button>
           <button
@@ -57,12 +62,12 @@
           <h2>Beschrijving</h2>
           <div>{{ opleiding.beschrijving }}</div>
         </div>
-        <div class="wat-je-leert" *ngIf="opleiding.watJeLeert">
+        <!-- <div class="wat-je-leert" *ngIf="opleiding.watJeLeert">
           <h2>Wat je leert</h2>
           <ul>
             <li *ngFor="let item of opleiding.watJeLeert">{{ item }}</li>
           </ul>
-        </div>
+        </div> -->
         <div class="modules" *ngIf="opleiding.modules">
           <h2>Modules</h2>
           <table>
@@ -86,14 +91,14 @@
           class="toelatingsvoorwaarden"
           *ngIf="opleiding.toelatingsvoorwaarden"
         >
-          <h2><span *ngIf="opleiding.filterLeervorm !== 'E-cursus'">Toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'E-cursus'">Benodigdheden</span></h2>
+          <h2><span *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">Toelatingsvoorwaarden voor werkzoekenden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">Benodigdheden</span></h2>
           <ul>
             <li *ngFor="let item of opleiding.toelatingsvoorwaarden">
               {{ item }}
             </li>
           </ul>
         </div>
-        <div class="online-ctas" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+        <div class="online-ctas" *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
           <button class="btn btn--primary">
             Start opleiding
           </button>
@@ -110,16 +115,16 @@
       </div>
       <div class="right desktop-only--flex">
         <div class="ctas">
-          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
           </div>
-          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'E-cursus'">
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
             Kies locatie en vraag opleiding aan
           </button>
-          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             Start opleiding
           </button>
-          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'E-cursus'">
+          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             <span>Contacteer opleidingsaanbieder</span>
           </button>
           <button
@@ -138,7 +143,7 @@
   <div class="box">
     <div class="locaties" *ngIf="opleiding.locaties">
       
-      <div class="infobox">
+      <div class="infobox" *ngIf="opleiding.filterLeervorm !== 'Workshop'">
         <h3>Opleiding aangevraagd: wat nu?</h3>
         <ul>
           <li>Je krijgt meer info via mail.</li>
@@ -162,7 +167,8 @@
               <div class="right">
                   <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined">star</span></a>
                   <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
-                  <button class="btn btn--primary">Opleiding aanvragen</button>
+                  <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding aanvragen</button>
+                  <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Workshop'">Start opleiding</button>
               </div>
           </div>
           <div class="bottom">
