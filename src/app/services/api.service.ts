@@ -401,6 +401,7 @@ export class ApiService {
     },
     {
       id: 3,
+      duurtijd: 'tussen 3 en 6 maanden',
       name: 'Nederlands - Nederlandse spelling',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Talen',
@@ -477,6 +478,7 @@ export class ApiService {
     },
     {
       id: 5,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Bekister',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Bouw',
@@ -614,6 +616,7 @@ export class ApiService {
     },
     {
       id: 6,
+      duurtijd: '4 uren',
       name: 'Powerpoint voor managers',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele ontplooiing',
@@ -627,6 +630,7 @@ export class ApiService {
     },
     {
       id: 7,
+      duurtijd: '1 dag',
       name: 'Leren werken met een computer',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Digitale vaardigheden',
@@ -640,6 +644,7 @@ export class ApiService {
     },
     {
       id: 8,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Leerkracht wiskunde',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderwijs',
@@ -653,6 +658,7 @@ export class ApiService {
     },
     {
       id: 10,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Poetsvrouw / Poetsman',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderhoud',
@@ -664,9 +670,9 @@ export class ApiService {
       filterOrganisator: 'VDAB',
       filterKnelpuntberoep: 'Nee',
     },
-
     {
       id: 11,
+      duurtijd: 'tussen 1 en 2 maanden',
       name: 'Vertaler Russisch - Nederlands',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Communicatie',
@@ -680,6 +686,7 @@ export class ApiService {
     },
     {
       id: 12,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Bankbediende KBC',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Financieel',
@@ -693,6 +700,7 @@ export class ApiService {
     },
     {
       id: 13,
+      duurtijd: 'tussen 2 en 4 maanden',
       name: 'Boer verzorging kalveren',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Land- en tuinbouw',
@@ -706,6 +714,7 @@ export class ApiService {
     },
     {
       id: 14,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Klusjesman Center Parks',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Techniek',
@@ -719,6 +728,7 @@ export class ApiService {
     },
     {
       id: 15,
+      duurtijd: '6 uren',
       name: 'Marketing assistent - social media',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Marketing',
@@ -732,6 +742,7 @@ export class ApiService {
     },
     {
       id: 16,
+      duurtijd: '4 uren',
       name: 'Management opleiding',
       filterCategorie: 'Persoonlijke en professionele groei',
       filterSubCategorie: 'Professionele ontplooiing',
@@ -745,6 +756,7 @@ export class ApiService {
     },
     {
       id: 17,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Onderzoeken beheren',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Onderzoek en ontwikkeling',
@@ -758,6 +770,7 @@ export class ApiService {
     },
     {
       id: 18,
+      duurtijd: 'tussen 1 en 2 maanden',
       name: 'Rijbewijs CE',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Logistiek en transport',
@@ -771,6 +784,7 @@ export class ApiService {
     },
     {
       id: 19,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Administratieve taken beheer',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Administratie',
@@ -784,6 +798,7 @@ export class ApiService {
     },
     {
       id: 20,
+      duurtijd: '5 dagen',
       name: 'Verkopen van stofzuigers',
       filterCategorie: 'Beroepsopleidingen en specialisatie',
       filterSubCategorie: 'Verkoop',
@@ -797,6 +812,7 @@ export class ApiService {
     },
     {
       id: 21,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Nederlands - spelling',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
@@ -810,6 +826,7 @@ export class ApiService {
     },
     {
       id: 22,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Nederlands - algemeen',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
@@ -823,6 +840,7 @@ export class ApiService {
     },
     {
       id: 23,
+      duurtijd: 'tussen 6 en 12 maanden',
       name: 'Nederlands - werkwoorden',
       filterCategorie: 'Nederlands voor anderstaligen',
       filterSubCategorie: '',
