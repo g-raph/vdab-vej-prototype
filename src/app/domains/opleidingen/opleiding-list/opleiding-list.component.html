@@ -237,7 +237,16 @@
     <div class="opleiding-list__results">
       <div class="info">
         <div class="left">{{ filteredItems.length }} opleidingen gevonden</div>
-        <div class="right">Sorteren op: x x x</div>
+        <div class="right">
+          <span>Sorteren op</span>
+          <select name="sortResults" id="sort-results">
+            <option style="color: #888;" value="" disabled selected>Maak je keuze</option>
+            <option value="1">Duurtijd oplopend</option>
+            <option value="2">Duurtijd aflopend</option>
+            <option value="3">Intensiteit oplopend</option>
+            <option value="4">Intensiteit aflopend</option>
+          </select>
+        </div>
       </div>
       <div class="results">
         <app-opleiding-teaser *ngFor="let opleiding of filteredItems" [opleiding]="opleiding"></app-opleiding-teaser>
