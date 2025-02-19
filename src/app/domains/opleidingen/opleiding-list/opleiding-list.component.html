@@ -66,7 +66,7 @@
                     <input (click)="addToSelectedTreeFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
                       [formControlName]="category.name"
                       [checked]="category.checked || category.hasChildrenChecked"
-                      (change)="toggleCheck(category)" />
+                      (change)="toggleCheck(category, i + 1)" />
                     <span class="custom-checkbox" [class.half]="category.hasChildrenChecked"></span>
                     <div (click)="toggleExpand(category)">
                       {{ category.name }}
@@ -102,7 +102,7 @@
                     [formControlName]="category" />
                   <span class="custom-checkbox"></span>
                   <div>
-                    {{ category }}
+                    {{ category }} <a *ngIf="i === 0" target="_blank" href="https://www.vdab.be/opleidingen/gratis-en-voordelig-leren/geen-werk/erkend" class="material-symbols-outlined info" style="margin-right: .25rem;">info</a>
                     <span class="c-filter__options-count">({{ countResults('filterGratis', category) }})</span>
                   </div>
                 </label>

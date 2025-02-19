@@ -84,7 +84,7 @@ export class OpleidingListComponent {
   ];
   filterGratis = [
     'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt',
-    'Gratis opleidingen voor wie werkt',
+    'Gratis opleidingen voor wie werk heeft',
   ];
   filterStartdatum = [
     'Januari 2025',
@@ -368,13 +368,15 @@ export class OpleidingListComponent {
     node.expanded = !node.expanded;
   }
 
-  toggleCheck(node: TreeNode): void {
+  toggleCheck(node: TreeNode, idx?: number): void {
     const index = this.selectedFilters.indexOf(node.name);
     node.checked = index > -1;
+    if (idx) {
+      this.toggleChildren(idx - 1);
+    }
     if (node.children) {
       this.setChildrenChecked(node.children, node.checked);
     }
-    console.log(node);
   }
   
   herbereken(category: TreeNode, child: TreeNode) {
@@ -424,7 +426,6 @@ export class OpleidingListComponent {
   }
   
   addToSelectedTreeFilters(cat: TreeNode) {
-    console.log(cat)
     const index = this.selectedFilters.indexOf(cat.name);
     if (index > -1) {
       this.selectedFilters.splice(index, 1);

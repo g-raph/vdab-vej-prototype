@@ -16,8 +16,8 @@
         <div class="tag"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
         <div class="tag">
           {{
-            opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
-              ? "Gratis voor wie werkt"
+            opleiding.filterGratis === "Gratis opleidingen voor wie werk heeft"
+              ? "Gratis opleidingen voor wie werk heeft"
               : opleiding.filterGratis === "Betalend"
               ? "Betalend"
               : opleiding.filterGratis === "Gratis voor iedereen"

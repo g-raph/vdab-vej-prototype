@@ -129,7 +129,7 @@
             &__bottom {
               display: flex;
               flex-flow: row wrap;
-              gap: 1rem;
+              gap: .5rem;
             }
           }
         }
@@ -315,6 +315,7 @@ label {
   }
   &__bottom {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     margin-top: 1rem;
     gap: .5rem;
