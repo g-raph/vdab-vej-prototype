@@ -1,0 +1,6 @@
+<div class="modal-backdrop" *ngIf="modalService.modalState$ | async">
+  <div class="modal">
+    <span (click)="close()" class="material-symbols-outlined close">close</span>
+    <ng-container *ngTemplateOutlet="modalService.modalContent"></ng-container>
+  </div>
+</div>

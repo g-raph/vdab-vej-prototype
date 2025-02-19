@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { FilterModalService } from './services/filter-modal.service';
 import { ScrollTopComponent } from './shell/scroll-top/scroll-top.component';
 import { FooterComponent } from './shell/footer/footer.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, HeaderComponent, ScrollTopComponent, FooterComponent],
+  imports: [RouterOutlet, CommonModule, HeaderComponent, ScrollTopComponent, FooterComponent, ModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

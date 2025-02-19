@@ -1,31 +1,19 @@
 <div class="opleiding__container">
-  <div class="opleiding" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]">
+  <div class="opleiding">
     <div *ngIf="opleiding.new" class="new">Nieuw</div>
-    <div class="titlebox">
+    <div class="titlebox" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]">
       <div class="left">
-        <!-- <div
-          *ngIf="opleiding.filterLeervorm === 'Workshop'"
-          class="tag tag--warning"
-        >
-          Workshop
-        </div>
-        <div
-          *ngIf="opleiding.filterLeervorm === 'E-cursus'"
-          class="tag tag--error"
-        >
-          Online cursus
-        </div> -->
         <h3 class="opleiding__title">{{ opleiding.name }}</h3>
       </div>
       <div class="right"></div>
     </div>
-    <div class="contentbox">
+    <div class="contentbox" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]">
       <div class="locations" *ngIf="opleiding.locaties">{{getLocationsString(opleiding.locaties)}}</div>
       <div class="summary" *ngIf="opleiding.beschrijving">{{opleiding.beschrijving.substring(0, 200)}}...</div>
     </div>
     <div class="footerbox">
       <div class="opleiding__tags">
-        <div class="tag">{{opleiding.filterLeervorm}}</div>
+        <div class="tag"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
         <div class="tag">
           {{
             opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
@@ -37,9 +25,7 @@
               : "Gratis voor wie geen werk heeft of een uitkering onvangt"
           }}
         </div>
-        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag">
-          Knelpuntberoep
-        </div>
+        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag"><span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
       </div>
       <div class="duurtijd" *ngIf="opleiding.duurtijd">Duurtijd: <span>{{opleiding.duurtijd}}</span></div>
     </div>
@@ -51,3 +37,22 @@
     >star</span
   >
 </div>
+
+<ng-template #leervormModalTemplate>
+  <h2>Leervorm</h2>
+  <h4>Afstandsleren</h4>
+  <p>Je leert waar en wanneer je wil. Je krijgt de cursus en je neemt hem zelfstandig door. Je kan bij een instructeur terecht met vragen.</p>
+  <h4>Duaal leren</h4>
+  <p>Je leert een beroep aan. Dit zal deels op de werkvloer en deels bij een opleidingsverstrekker gebeuren.</p>
+  <h4>Groepsleren</h4>
+  <p>Je volgt de cursus in een opleidingscentrum. Soms volg je ook een deel thuis. Je wordt begeleid door een instructeur en krijgt toegang tot het nodige leermateriaal.</p>
+  <h4>Online leren</h4>
+  <p>Je leert waar en wanneer je wil. De cursus staat online en je neemt hem zelfstandig door. Je kan bij een instructeur terecht met vragen.</p>
+  <h4>Workshop</h4>
+  <p>Je volgt een korte praktijkgerichte trainingssessie in groep. Dit kan zowel online als in een opleidingscentrum.</p>
+</ng-template>
+
+<ng-template #knelpuntModalTemplate>
+  <h2>Knelpuntberoep</h2>
+  <p>Knelpuntberoepen zijn jobs waar altijd vraag naar is. Kies je een knelpuntberoep, dan heb je een grote kans op werk.</p>
+</ng-template>

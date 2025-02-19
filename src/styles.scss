@@ -164,6 +164,17 @@ button {
   border-radius: .25rem;
   line-height: 1;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .125rem;
+  .info {
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all .2s ease;
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
   &--warning {
     background-color: rgb(242, 205, 42);
     color: #fff;
@@ -258,5 +269,23 @@ input[type=text] {
   display: flex;
   @media screen and (max-width: 990px) {
     display: none;
+  }
+}
+
+.modal {
+  h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+    color: var(--color-primary-light);
+  }
+  h4 {
+    color: #041847;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  p {
+    margin: 0 0 0.75rem;
   }
 }
