@@ -125,11 +125,15 @@
             Kies locatie en vraag opleiding aan
           </button>
           <button class="btn btn--primary"
-            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
             Start opleiding
           </button>
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary"
+            *ngIf="opleiding.filterLeervorm === 'Workshop'">
+            Schrijf je in
+          </button>
           <button class="btn btn--secondary"
-            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
             <span>Contacteer opleidingsaanbieder</span>
           </button>
           <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
@@ -152,7 +156,7 @@
     </div>
   </div>
   <div class="box">
-    <div class="infobox watnu" *ngIf="opleiding.filterLeervorm !== 'Workshop'">
+    <div class="infobox watnu" *ngIf="opleiding.filterLeervorm !== 'Workshop' && opleiding.filterLeervorm !== 'Online opleiding'">
       <h3>Opleiding aangevraagd: wat nu?</h3>
       <ul>
         <li>Je krijgt meer info via mail.</li>
@@ -169,7 +173,9 @@
     </div>
     <div class="locaties" *ngIf="opleiding.locaties">
 
-      <h2>Locaties waar je kan inschrijven</h2>
+      <h2 *ngIf="opleiding.filterLeervorm !== 'Workshop'">Locaties waar je kan inschrijven</h2>
+      <h2 *ngIf="opleiding.filterLeervorm === 'Workshop'">Waar en wanneer kan je deze workshop volgen?</h2>
+      <p style="margin-top: 0" *ngIf="opleiding.filterLeervorm === 'Workshop'">Bij workshops van meerdere dagen is het belangrijk dat je alle dagen aanwezig bent.</p>
       <div class="locatie" *ngFor="let locatie of opleiding.locaties">
         <div class="top">
           <div class="left">
@@ -182,10 +188,10 @@
             <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
             <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding
               aanvragen</button>
-            <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Workshop'">Start opleiding</button>
+            <!-- <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Workshop'">Start opleiding</button> -->
           </div>
         </div>
-        <div class="bottom">
+        <div class="bottom" *ngIf="opleiding.filterLeervorm !== 'Workshop'">
           <div>
             <small>Doelgroep</small>
             <div>{{locatie.doelgroep}}</div>
@@ -203,10 +209,105 @@
             <div>{{locatie.intensiteit}}</div>
           </div>
         </div>
+        <div class="bottom workshop" *ngIf="opleiding.filterLeervorm === 'Workshop'">
+          <div class="row">
+            <div>
+              <small>Startdatum</small>
+              <div>5 maart 2025</div>
+            </div>
+            <div>
+              <small>Lesmoment</small>
+              <div>08:45 - 15:45</div>
+            </div>
+            <div>
+              <small>Organisator</small>
+              <div>VDAB</div>
+            </div>
+            <div>
+              <small>Beschikbare plaatsen</small>
+              <div>2 (van 15)</div>
+            </div>
+            <button class="btn btn--primary btn--small">Schrijf je in</button>
+          </div>
+          <div class="row">
+            <div>
+              <small>Startdatum</small>
+              <div>10 maart 2025</div>
+            </div>
+            <div>
+              <small>Lesmoment</small>
+              <div>08:45 - 15:45</div>
+            </div>
+            <div>
+              <small>Organisator</small>
+              <div>VDAB</div>
+            </div>
+            <div>
+              <small>Beschikbare plaatsen</small>
+              <div>Volzet</div>
+            </div>
+            <button class="btn btn--secondary btn--small">Zet je op de wachtlijst</button>
+          </div>
+          <div class="row">
+            <div>
+              <small>Startdatum</small>
+              <div>15 + 16 + 17 maart 2025</div>
+            </div>
+            <div>
+              <small>Lesmoment</small>
+              <div>08:45 - 15:45</div>
+            </div>
+            <div>
+              <small>Organisator</small>
+              <div>VDAB</div>
+            </div>
+            <div>
+              <small>Beschikbare plaatsen</small>
+              <div>12 (van 15)</div>
+            </div>
+            <button class="btn btn--primary btn--small">Schrijf je in</button>
+          </div>
+          <div class="row">
+            <div>
+              <small>Startdatum</small>
+              <div>20 maart 2025</div>
+            </div>
+            <div>
+              <small>Lesmoment</small>
+              <div>08:45 - 15:45</div>
+            </div>
+            <div>
+              <small>Organisator</small>
+              <div>VDAB</div>
+            </div>
+            <div>
+              
+            </div>
+            <div style="color: #888; font-style: italic;">Inschrijven vanaf 10 maart 2025</div>
+          </div>
+          <div class="row">
+            <div>
+              <small>Startdatum</small>
+              <div>25 maart 2025</div>
+            </div>
+            <div>
+              <small>Lesmoment</small>
+              <div>08:45 - 15:45</div>
+            </div>
+            <div>
+              <small>Organisator</small>
+              <div>VDAB</div>
+            </div>
+            <div>
+              
+            </div>
+            <div style="color: #888; font-style: italic;">Inschrijven vanaf 15 maart 2025</div>
+          </div>
+        </div>
         <div class="footer">
           <a class="bewaar"><span class="material-symbols-outlined">star</span></a>
           <button class="btn btn--secondary">Contact</button>
-          <button class="btn btn--primary">Aanvragen</button>
+          <button *ngIf="opleiding.filterLeervorm !== 'Workshop'" class="btn btn--primary">Aanvragen</button>
         </div>
       </div>
       <div class="map" *ngIf="opleiding.mapImg">

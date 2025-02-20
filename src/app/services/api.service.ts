@@ -237,6 +237,7 @@ export class ApiService {
     {
       id: 2,
       videoUrl: '/assets/video-verzorgende.png',
+      mapImg: '/assets/detail-map.png',
       saved: false,
       prijs: 1250,
       duurtijd: 'tussen 11 en 13 maanden',
@@ -491,6 +492,7 @@ export class ApiService {
     {
       id: 9,
       saved: false,
+      mapImg: '/assets/detail-map.png',
       duurtijd: '5 uren',
       leerbewijs: 'Erkend bekwaamheidsattest',
       intensiteit: '1 dag',
