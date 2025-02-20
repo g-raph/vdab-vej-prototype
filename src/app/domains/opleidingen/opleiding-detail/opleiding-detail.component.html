@@ -18,13 +18,13 @@
       <div class="left">
         <div class="tldr">
           <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
-          <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span><span *ngIf="opleiding.prijs">{{opleiding.prijs | currency:'EUR' }} voor wie werk heeft, </span>{{
+          <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span>{{
             opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
-              ? "gratis voor wie werkt"
+              ? "Gratis voor wie werkt"
               : opleiding.filterGratis === "Gratis voor iedereen"
               ? "Gratis voor iedereen"
-              : "gratis voor wie geen werk heeft of een uitkering onvangt"
-          }}</span></div>
+              : "Gratis voor wie geen werk heeft of een uitkering onvangt"
+          }} <span *ngIf="opleiding.prijs">, {{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
           <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
           <!-- <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div> -->
@@ -52,7 +52,7 @@
           [class.btn--yellow]="opleiding.saved"
           >
           <span class="material-symbols-outlined">star</span
-            ><span>Bewaar opleiding</span>
+            ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
         <div class="video" *ngIf="opleiding.videoUrl">
@@ -109,7 +109,7 @@
           [class.btn--yellow]="opleiding.saved"
           >
           <span class="material-symbols-outlined">star</span
-            ><span>Bewaar opleiding</span>
+            ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
       </div>
@@ -134,7 +134,7 @@
           [class.btn--yellow]="opleiding.saved"
           >
           <span class="material-symbols-outlined">star</span
-            ><span>Bewaar opleiding</span>
+            ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
       </div>

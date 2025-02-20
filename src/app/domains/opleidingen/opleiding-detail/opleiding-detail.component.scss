@@ -214,6 +214,7 @@ $color-light: #DBECF8;
         align-items: flex-start;
         gap: .5rem;
         width: calc(50% - 2rem);
+        width: 100%;
         @media screen and (max-width: 990px) {
             width: 100%;
         }

@@ -12,6 +12,9 @@ $color-primary: #1769A4;
     &:hover {
         box-shadow: rgba(145, 158, 171, 0.2) 0rem 0rem 0.125rem 0rem, rgba(145, 158, 171, 0.12) 0rem 0.75rem 1.5rem -0.25rem;
     }
+    @media screen and (max-width: 990px) {
+        box-shadow: rgba(145, 158, 171, 0.2) 0rem 0rem 0.125rem 0rem, rgba(145, 158, 171, 0.12) 0rem 0.75rem 1.5rem -0.25rem;
+    }
     &__container {
         position: relative;
     }
