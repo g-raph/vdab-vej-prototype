@@ -234,6 +234,16 @@ $color-light: #DBECF8;
     }
  }
 
+ .watnu {
+     background-color: #eff7fe;
+     padding: 1rem 2rem;
+     border-radius: .5rem;
+     margin-top: 2rem;
+     h3 {
+         margin-top: 0;
+     }
+ }
+
  .locaties {
     display: flex;
     flex-flow: column;
@@ -241,14 +251,6 @@ $color-light: #DBECF8;
     margin-top: 2rem;
     h2 {
         margin-bottom: 0;
-    }
-    .infobox {
-        background-color: #eff7fe;
-        padding: 1rem 2rem;
-        border-radius: .5rem;
-        h3 {
-            margin-top: 0;
-        }
     }
     .locatie {
         border: 1px solid #c9cbce;

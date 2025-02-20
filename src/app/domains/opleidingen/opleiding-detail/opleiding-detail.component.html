@@ -141,22 +141,22 @@
     </div>
   </div>
   <div class="box">
+    <div class="infobox watnu" *ngIf="opleiding.filterLeervorm !== 'Workshop'">
+      <h3>Opleiding aangevraagd: wat nu?</h3>
+      <ul>
+        <li>Je krijgt meer info via mail.</li>
+        <li>Je krijgt een uitnodiging voor een fysiek of online gesprek, en tips om je hierop voor te bereiden.</li>
+        <li>
+          Tijdens het gesprek bespreken we of de opleiding past in je zoektocht naar werk. We kijken naar je motivatie, vaardigheden, werkervaring, kennis Nederlands en wanneer je kan starten.
+          <ul>
+            <li>Past de opleiding? Dan bespreken we de volgende stappen.</li>
+            <li>Past de opleiding niet? Dan bekijken we de andere mogelijkheden.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <div class="locaties" *ngIf="opleiding.locaties">
       
-      <div class="infobox" *ngIf="opleiding.filterLeervorm !== 'Workshop'">
-        <h3>Opleiding aangevraagd: wat nu?</h3>
-        <ul>
-          <li>Je krijgt meer info via mail.</li>
-          <li>Je krijgt een uitnodiging voor een fysiek of online gesprek, en tips om je hierop voor te bereiden.</li>
-          <li>
-            Tijdens het gesprek bespreken we of de opleiding past in je zoektocht naar werk. We kijken naar je motivatie, vaardigheden, werkervaring, kennis Nederlands en wanneer je kan starten.
-            <ul>
-              <li>Past de opleiding? Dan bespreken we de volgende stappen.</li>
-              <li>Past de opleiding niet? Dan bekijken we de andere mogelijkheden.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
       <h2>Locaties waar je kan inschrijven</h2>
       <div class="locatie" *ngFor="let locatie of opleiding.locaties">
           <div class="top">
