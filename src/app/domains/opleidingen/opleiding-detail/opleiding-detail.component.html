@@ -34,22 +34,26 @@
           <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding'">Bekijk benodigdheden</span></div> -->
           <!-- <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span></span></div> -->
         </div>
+        <div class="notification warning"
+          *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
+          VDAB-account aan
+        </div>
         <div class="ctas mobile-only">
-          <div class="notification warning"
-            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
-            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
-            VDAB-account aan
-          </div>
           <button (click)="scrollToPosition('.locaties')" class="btn btn--primary"
-            *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">
+            *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
             Kies locatie en vraag opleiding aan
           </button>
           <button class="btn btn--primary"
-            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
             Start opleiding
           </button>
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary"
+            *ngIf="opleiding.filterLeervorm === 'Workshop'">
+            Schrijf je in
+          </button>
           <button class="btn btn--secondary"
-            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
             <span>Contacteer opleidingsaanbieder</span>
           </button>
           <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
@@ -114,12 +118,12 @@
         </div>
       </div>
       <div class="right desktop-only--flex">
+        <div class="notification warning"
+          *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
+          VDAB-account aan
+        </div>
         <div class="ctas">
-          <div class="notification warning"
-            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
-            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
-            VDAB-account aan
-          </div>
           <button (click)="scrollToPosition('.locaties')" class="btn btn--primary"
             *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
             Kies locatie en vraag opleiding aan
