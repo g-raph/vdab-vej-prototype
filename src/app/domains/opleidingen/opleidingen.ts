@@ -10,7 +10,7 @@ export interface TreeNode {
   export interface Module {
     name: string;
     leervorm: string;
-    intensiteit: string;
+    duurtijd: string;
   }
 
   export interface OpleidingLocatie {

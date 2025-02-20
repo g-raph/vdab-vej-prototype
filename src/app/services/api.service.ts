@@ -150,22 +150,22 @@ export class ApiService {
         {
           name: 'Haren knippen',
           leervorm: 'Groepsleren',
-          intensiteit: '20 uren / week',
+          duurtijd: '100 uren',
         },
         {
           name: 'Haren wassen',
           leervorm: 'Groepsleren',
-          intensiteit: '20 uren / week',
+          duurtijd: '100 uren',
         },
         {
           name: 'Haren brushen',
           leervorm: 'Online leren',
-          intensiteit: '20 uren / week',
+          duurtijd: '20 uren',
         },
         {
           name: 'Haren stylen',
           leervorm: 'Stage',
-          intensiteit: '20 uren / week',
+          duurtijd: '100 uren',
         },
       ],
       locaties: [
@@ -253,27 +253,27 @@ export class ApiService {
         {
           name: 'Kennismaking zorgsector',
           leervorm: 'Groepsleren',
-          intensiteit: '30 uren / week',
+          duurtijd: '100 uren',
         },
         {
           name: 'Specifieke zorgsituaties',
           leervorm: 'Groepsleren',
-          intensiteit: '30 uren / week',
+          duurtijd: '100 uren',
         },
         {
           name: 'Theorie: ziekteleer en EHBO',
           leervorm: 'Online leren',
-          intensiteit: '10 uren / week',
+          duurtijd: '100 uren',
         },
         {
           name: 'Praktijklessen',
           leervorm: 'Stage',
-          intensiteit: '30 uren / week',
+          duurtijd: '100 uren',
         },
         {
           name: 'Sociale en communicatieve vaardigheden',
           leervorm: 'Stage',
-          intensiteit: '30 uren / week',
+          duurtijd: '100 uren',
         },
       ],
       locaties: [
@@ -378,14 +378,11 @@ export class ApiService {
         },
       ],
       toelatingsvoorwaarden: [
-        'geen werk hebt en ingeschreven bent als (deeltijds) werkzoekende,',
-        'ingeschreven bent als tijdelijk werkloze,',
-        'in je opzegperiode zit, of',
-        'in de sociale economie werkt.',
-        'een ziekte-uitkering ontvangt en toestemming hebt van je ziekenfonds',
-        'Je slaagt voor een gezondheidstoezicht waaruit blijkt dat je geschikt bent om de opleiding te volgen. Je ontvangt hiervoor een uitnodiging.',
-        'Je hebt minstens niveau B1 / richtgraad 2.4 Nederlands behaald als je de opleiding in Vlaanderen volgt.',
-        'Je hebt minstens niveau B1 / richtgraad 2.2 Nederlands behaald als je de opleiding in Brussel volgt.',
+        'Je hebt geen werk en bent ingeschreven als (deeltijds) werkzoekende, of',
+        'je bent ingeschreven als tijdelijk werkloze, of',
+        'je zit in je opzegperiode, of',
+        'je werkt in de sociale economie, of',
+        'je ontvangt een ziekte-uitkering en hebt toestemming van je ziekenfonds.',
       ],
       beschrijving: 'Ben je sociaal ingesteld en help je graag andere mensen? Volg dan de opleiding tot verzorgende en zorgkundige. Je hebt het hart op de juiste plaats, bent geduldig en steekt graag de handen uit de mouwen. Je werkt graag met zorgbehoevende ouderen, gezinnen met kinderen, chronisch zieken of personen met een handicap en je kan je goed aanpassen. Als verzorgende in de thuiszorg ondersteun je personen die thuis bepaalde taken niet meer alleen kunnen doen door ziekte, een handicap of sociale omstandigheden. Een zorgkundige werkt in teamverband in woonzorgcentra en zorgt voor een aangename nieuwe thuis in de residentie. Wil je ontdekken of een job als verzorgende/zorgkundige iets voor jou is? Neem dan zeker het digitaal infopakket al eens door! Nog geen diploma secundair onderwijs? Combineer de beroepsopleiding met algemene vakken. Zo behaal je het diploma secundair onderwijs.',
       name: 'Verzorgende',
@@ -432,32 +429,32 @@ export class ApiService {
         {
           name: 'Welkom: het belang van assertief communiceren',
           leervorm: 'Online leren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'Wat is assertieve communicatie?',
           leervorm: 'Online leren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'Waarom ben je niet altijd assertief?',
           leervorm: 'Online leren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'Welke verschillende gedragsstijlen zijn er?',
           leervorm: 'Online leren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'Hoe kan je assertief zijn?',
           leervorm: 'Online leren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'En nu? Je actieplan.',
           leervorm: 'Online leren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
       ],
       toelatingsvoorwaarden: [
@@ -507,22 +504,22 @@ export class ApiService {
         {
           name: 'Deel 1',
           leervorm: 'Groepsleren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'Deel 2',
           leervorm: 'Groepsleren',
-          intensiteit: '2 uren',
+          duurtijd: '2 uur',
         },
         {
           name: 'Deel 3',
           leervorm: 'Groepsleren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
         {
           name: 'Deel 4',
           leervorm: 'Groepsleren',
-          intensiteit: '1 uur',
+          duurtijd: '1 uur',
         },
       ],
       locaties: [

@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, TemplateRef, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../../services/api.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -7,6 +7,7 @@ import { AsyncPipe, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { bottomNavItem } from '../../jobs/job-list/job-list.component';
 import { OpleidingLocatie, Result } from '../opleidingen';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ModalService } from '../../../services/modal.service';
 
 @Component({
   selector: 'app-opleiding-detail',
@@ -49,7 +50,7 @@ export class OpleidingDetailComponent {
     }
   }
 
-  constructor(private api: ApiService, private router: ActivatedRoute, private el: ElementRef, private sanitizer: DomSanitizer) {
+  constructor(private api: ApiService, private router: ActivatedRoute, private el: ElementRef, private sanitizer: DomSanitizer, private modalService: ModalService) {
     this.opleidingId = this.router.snapshot.params['id'];
     this.opleiding$ = this.api.getOpleiding(parseInt(this.opleidingId));
   }
@@ -65,5 +66,8 @@ export class OpleidingDetailComponent {
   getLocationsString(locations: OpleidingLocatie[]) {
     const str = locations.map(location => location.stad).join(', ');
     return str;
+  }
+  openModal(template: TemplateRef<any>) {
+    this.modalService.openModal(template);
   }
 }
