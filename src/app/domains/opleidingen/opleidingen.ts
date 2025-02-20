@@ -35,6 +35,7 @@ export interface TreeNode {
     intensiteit?: string;
     prijs?: number;
     videoUrl?: string;
+    mapImg?: string;
     watJeLeert?: string[];
     modules?: Module[];
     locaties?: OpleidingLocatie[];

@@ -134,6 +134,7 @@ export class ApiService {
     {
       id: 1,
       videoUrl: '/assets/video-kapper.png',
+      mapImg: '/assets/detail-map.png',
       saved: false,
       prijs: 420,
       duurtijd: 'tussen 3 en 6 maanden',

@@ -14,6 +14,11 @@ $color-light: #DBECF8;
     display: flex;
     flex-flow: column;
     align-items: center;
+    .map img {
+        width: 100%;
+        height: auto;
+        border-radius: .5rem
+    }
     .box {
         display: flex;
         flex-flow: column;

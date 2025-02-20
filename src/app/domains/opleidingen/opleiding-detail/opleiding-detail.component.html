@@ -4,8 +4,10 @@
       <div class="opleiding-detail__title--left">
         <h1>{{ opleiding.name }}</h1>
         <div class="tags">
-          <div class="tag"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
-          <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag"><span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
+          <div class="tag"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)"
+              class="material-symbols-outlined info">info</span></div>
+          <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag"><span>Knelpuntberoep</span><span
+              (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
         </div>
       </div>
       <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
@@ -16,40 +18,44 @@
         <div class="tldr">
           <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
           <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span>{{
-            opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
+              opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
               ? "Gratis voor wie werkt"
               : opleiding.filterGratis === "Gratis voor iedereen"
               ? "Gratis voor iedereen"
               : "Gratis voor wie geen werk heeft of een uitkering onvangt"
-          }} <span *ngIf="opleiding.prijs">, {{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></span></div>
-          <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
+              }} <span *ngIf="opleiding.prijs">, {{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></span>
+          </div>
+          <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span
+              class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
           <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
           <!-- <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div> -->
-          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
+          <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span
+              class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
           <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding'">Bekijk benodigdheden</span></div> -->
           <!-- <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span></span></div> -->
         </div>
         <div class="ctas mobile-only">
-          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
-            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
+          <div class="notification warning"
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
+            VDAB-account aan
           </div>
-          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary"
+            *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">
             Kies locatie en vraag opleiding aan
           </button>
-          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          <button class="btn btn--primary"
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             Start opleiding
           </button>
-          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          <button class="btn btn--secondary"
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             <span>Contacteer opleidingsaanbieder</span>
           </button>
-          <button
-          (click)="setAsFavorite(opleiding.id)"
-          class="btn"
-          [class.btn--secondary]="!opleiding.saved"
-          [class.btn--yellow]="opleiding.saved"
-          >
-          <span class="material-symbols-outlined">star</span
-            ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
+          <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
+            [class.btn--yellow]="opleiding.saved">
+            <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
+              opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
         <div class="video" *ngIf="opleiding.videoUrl">
@@ -84,11 +90,12 @@
             </tbody>
           </table>
         </div>
-        <div
-          class="toelatingsvoorwaarden"
-          *ngIf="opleiding.toelatingsvoorwaarden"
-        >
-          <h2><span *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">Toelatingsvoorwaarden voor werkzoekenden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">Benodigdheden</span></h2>
+        <div class="toelatingsvoorwaarden" *ngIf="opleiding.toelatingsvoorwaarden">
+          <h2><span
+              *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">Toelatingsvoorwaarden
+              voor werkzoekenden</span><span
+              *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">Benodigdheden</span>
+          </h2>
           <ul>
             <li *ngFor="let item of opleiding.toelatingsvoorwaarden">
               {{ item }}
@@ -99,39 +106,36 @@
           <button class="btn btn--primary">
             Start opleiding
           </button>
-          <button
-          (click)="setAsFavorite(opleiding.id)"
-          class="btn"
-          [class.btn--secondary]="!opleiding.saved"
-          [class.btn--yellow]="opleiding.saved"
-          >
-          <span class="material-symbols-outlined">star</span
-            ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
+          <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
+            [class.btn--yellow]="opleiding.saved">
+            <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
+              opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
       </div>
       <div class="right desktop-only--flex">
         <div class="ctas">
-          <div class="notification warning" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
-            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een VDAB-account aan
+          <div class="notification warning"
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+            Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
+            VDAB-account aan
           </div>
-          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
+          <button (click)="scrollToPosition('.locaties')" class="btn btn--primary"
+            *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
             Kies locatie en vraag opleiding aan
           </button>
-          <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          <button class="btn btn--primary"
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             Start opleiding
           </button>
-          <button class="btn btn--secondary" *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          <button class="btn btn--secondary"
+            *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
             <span>Contacteer opleidingsaanbieder</span>
           </button>
-          <button
-          (click)="setAsFavorite(opleiding.id)"
-          class="btn"
-          [class.btn--secondary]="!opleiding.saved"
-          [class.btn--yellow]="opleiding.saved"
-          >
-          <span class="material-symbols-outlined">star</span
-            ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
+          <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
+            [class.btn--yellow]="opleiding.saved">
+            <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
+              opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
         <div class="card">
@@ -139,8 +143,10 @@
         </div>
         <div class="card">
           <h4>Ben je zeker dat deze opleiding bij je past?</h4>
-          <a class="arrow-link" [routerLink]="['..']"><span>Lees de beroepenpagina</span><span class="material-symbols-outlined">chevron_right</span></a>
-          <a class="arrow-link" [routerLink]="['..']"><span>Informatie over de sector</span><span class="material-symbols-outlined">chevron_right</span></a>
+          <a class="arrow-link" [routerLink]="['..']"><span>Lees de beroepenpagina</span><span
+              class="material-symbols-outlined">chevron_right</span></a>
+          <a class="arrow-link" [routerLink]="['..']"><span>Informatie over de sector</span><span
+              class="material-symbols-outlined">chevron_right</span></a>
         </div>
       </div>
     </div>
@@ -152,7 +158,8 @@
         <li>Je krijgt meer info via mail.</li>
         <li>Je krijgt een uitnodiging voor een fysiek of online gesprek, en tips om je hierop voor te bereiden.</li>
         <li>
-          Tijdens het gesprek bespreken we of de opleiding past in je zoektocht naar werk. We kijken naar je motivatie, vaardigheden, werkervaring, kennis Nederlands en wanneer je kan starten.
+          Tijdens het gesprek bespreken we of de opleiding past in je zoektocht naar werk. We kijken naar je motivatie,
+          vaardigheden, werkervaring, kennis Nederlands en wanneer je kan starten.
           <ul>
             <li>Past de opleiding? Dan bespreken we de volgende stappen.</li>
             <li>Past de opleiding niet? Dan bekijken we de andere mogelijkheden.</li>
@@ -161,64 +168,74 @@
       </ul>
     </div>
     <div class="locaties" *ngIf="opleiding.locaties">
-      
+
       <h2>Locaties waar je kan inschrijven</h2>
       <div class="locatie" *ngFor="let locatie of opleiding.locaties">
-          <div class="top">
-              <div class="left">
-                  <h3 class="link">{{locatie.stad}}</h3>
-                  <small><span>{{locatie.adres}}</span> | <span>Startdatum: {{locatie.startdatum}}</span> | <span>Gemiddelde wachttijd: {{locatie.wachttijd}}</span></small>
-              </div>
-              <div class="right">
-                  <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined">star</span></a>
-                  <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
-                  <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding aanvragen</button>
-                  <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Workshop'">Start opleiding</button>
-              </div>
+        <div class="top">
+          <div class="left">
+            <h3 class="link">{{locatie.stad}}</h3>
+            <small><span>{{locatie.adres}}</span> | <span>Startdatum: {{locatie.startdatum}}</span> | <span>Gemiddelde
+                wachttijd: {{locatie.wachttijd}}</span></small>
           </div>
-          <div class="bottom">
-              <div>
-                  <small>Doelgroep</small>
-                  <div>{{locatie.doelgroep}}</div>
-              </div>
-              <div>
-                  <small>Leervorm</small>
-                  <div>{{locatie.leervorm}}</div>
-              </div>
-              <div>
-                  <small>Lesgever</small>
-                  <div>{{locatie.lesgever}}</div>
-              </div>
-              <div>
-                  <small>Intensiteit</small>
-                  <div>{{locatie.intensiteit}}</div>
-              </div>
+          <div class="right">
+            <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined">star</span></a>
+            <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
+            <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding
+              aanvragen</button>
+            <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Workshop'">Start opleiding</button>
           </div>
-          <div class="footer">
-            <a class="bewaar"><span class="material-symbols-outlined">star</span></a>
-            <button class="btn btn--secondary">Contact</button>
-            <button class="btn btn--primary">Aanvragen</button>
+        </div>
+        <div class="bottom">
+          <div>
+            <small>Doelgroep</small>
+            <div>{{locatie.doelgroep}}</div>
           </div>
+          <div>
+            <small>Leervorm</small>
+            <div>{{locatie.leervorm}}</div>
+          </div>
+          <div>
+            <small>Lesgever</small>
+            <div>{{locatie.lesgever}}</div>
+          </div>
+          <div>
+            <small>Intensiteit</small>
+            <div>{{locatie.intensiteit}}</div>
+          </div>
+        </div>
+        <div class="footer">
+          <a class="bewaar"><span class="material-symbols-outlined">star</span></a>
+          <button class="btn btn--secondary">Contact</button>
+          <button class="btn btn--primary">Aanvragen</button>
+        </div>
       </div>
-  </div>
+      <div class="map" *ngIf="opleiding.mapImg">
+        <img [src]="opleiding.mapImg" alt="">
+      </div>
+    </div>
   </div>
 </div>
 
 <ng-template #leervormModalTemplate>
   <h2>Leervorm</h2>
   <h4>Afstandsleren</h4>
-  <p>Je leert waar en wanneer je wil. Je krijgt de cursus en je neemt hem zelfstandig door. Je kan bij een instructeur terecht met vragen.</p>
+  <p>Je leert waar en wanneer je wil. Je krijgt de cursus en je neemt hem zelfstandig door. Je kan bij een instructeur
+    terecht met vragen.</p>
   <h4>Duaal leren</h4>
   <p>Je leert een beroep aan. Dit zal deels op de werkvloer en deels bij een opleidingsverstrekker gebeuren.</p>
   <h4>Groepsleren</h4>
-  <p>Je volgt de cursus in een opleidingscentrum. Soms volg je ook een deel thuis. Je wordt begeleid door een instructeur en krijgt toegang tot het nodige leermateriaal.</p>
+  <p>Je volgt de cursus in een opleidingscentrum. Soms volg je ook een deel thuis. Je wordt begeleid door een
+    instructeur en krijgt toegang tot het nodige leermateriaal.</p>
   <h4>Online leren</h4>
-  <p>Je leert waar en wanneer je wil. De cursus staat online en je neemt hem zelfstandig door. Je kan bij een instructeur terecht met vragen.</p>
+  <p>Je leert waar en wanneer je wil. De cursus staat online en je neemt hem zelfstandig door. Je kan bij een
+    instructeur terecht met vragen.</p>
   <h4>Workshop</h4>
-  <p>Je volgt een korte praktijkgerichte trainingssessie in groep. Dit kan zowel online als in een opleidingscentrum.</p>
+  <p>Je volgt een korte praktijkgerichte trainingssessie in groep. Dit kan zowel online als in een opleidingscentrum.
+  </p>
 </ng-template>
 
 <ng-template #knelpuntModalTemplate>
   <h2>Knelpuntberoep</h2>
-  <p>Knelpuntberoepen zijn jobs waar altijd vraag naar is. Kies je een knelpuntberoep, dan heb je een grote kans op werk.</p>
+  <p>Knelpuntberoepen zijn jobs waar altijd vraag naar is. Kies je een knelpuntberoep, dan heb je een grote kans op
+    werk.</p>
 </ng-template>
