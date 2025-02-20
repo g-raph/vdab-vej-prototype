@@ -137,6 +137,14 @@
             ><span *ngIf="!opleiding.saved">Bewaar opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
+        <div class="card">
+          <a [routerLink]="['..']">Bekijk al onze opleidingen voor {{ opleiding.name }}</a>
+        </div>
+        <div class="card">
+          <h4>Ben je zeker dat deze opleiding bij je past?</h4>
+          <a class="arrow-link" [routerLink]="['..']"><span>Lees de beroepenpagina</span><span class="material-symbols-outlined">chevron_right</span></a>
+          <a class="arrow-link" [routerLink]="['..']"><span>Informatie over de sector</span><span class="material-symbols-outlined">chevron_right</span></a>
+        </div>
       </div>
     </div>
   </div>
