@@ -17,14 +17,19 @@
       <div class="left">
         <div class="tldr">
           <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
-          <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span>{{
+          <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span *ngIf="opleiding.filterGratis !== 'Betalend'">{{
               opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
               ? "Gratis voor wie werkt"
               : opleiding.filterGratis === "Gratis voor iedereen"
               ? "Gratis voor iedereen"
               : "Gratis voor wie geen werk heeft of een uitkering onvangt"
               }} <span *ngIf="opleiding.prijs">, {{opleiding.prijs | currency:'EUR' }} voor wie werk heeft</span></span>
+              <span *ngIf="opleiding.filterGratis === 'Betalend'">{{opleiding.prijs | currency:'EUR' }} - Contacteer de opleidingsaanbieder voor informatie over de kostprijs.</span>
           </div>
+          <div class="tldr__item tldr--warning" *ngIf="opleiding.partner"><span
+              class="material-symbols-outlined">emergency_home</span> <span>
+                <span>Opgelet: </span><a href="/opleidingen/vind-een-opleiding/1">deze opleiding bestaat op sommige locaties ook in samenwerking mét VDAB, met financiële voordelen voor werkzoekenden</a>
+              </span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span
               class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
           <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
@@ -34,7 +39,7 @@
           <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding'">Bekijk benodigdheden</span></div> -->
           <!-- <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span></span></div> -->
         </div>
-        <div class="notification warning"
+        <div class="notification warning mobile-only"
           *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
           Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
           VDAB-account aan
@@ -61,6 +66,10 @@
             <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
               opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
+        </div>
+        <div class="notification" *ngIf="opleiding.partner">
+          <strong>Deze opleiding wordt niet in samenwerking met VDAB georganiseerd.</strong><br>
+          Volg je deze opleiding dan is ze betalend en krijg je geen financiële voordelen.Ontvang je een werkloosheids- of inschakelingsuitkering? Kijk of je in aanmerking komt voor een vrijstelling van beschikbaarheid.
         </div>
         <div class="video" *ngIf="opleiding.videoUrl">
           <img [src]="opleiding.videoUrl" alt="">
@@ -105,6 +114,9 @@
               {{ item }}
             </li>
           </ul>
+        </div>
+        <div class="notification warning" *ngIf="opleiding.partner">
+          VDAB is niet aansprakelijk voor de inhoud van deze opleiding en de eventuele inbreuken op de geldende wetgeving. Klachten over de opleiding kan je uitsluitend doorgeven aan de opleidingsverstrekker.
         </div>
         <div class="online-ctas" *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
           <button class="btn btn--primary">
@@ -160,7 +172,7 @@
     </div>
   </div>
   <div class="box">
-    <div class="infobox watnu" *ngIf="opleiding.filterLeervorm !== 'Workshop' && opleiding.filterLeervorm !== 'Online opleiding'">
+    <div class="infobox watnu" *ngIf="opleiding.filterGratis !== 'Betalend' && opleiding.filterLeervorm !== 'Workshop' && opleiding.filterLeervorm !== 'Online opleiding'">
       <h3>Opleiding aangevraagd: wat nu?</h3>
       <ul>
         <li>Je krijgt meer info via mail.</li>
@@ -174,6 +186,10 @@
           </ul>
         </li>
       </ul>
+    </div>
+    <div class="notification" *ngIf="opleiding.partner" style="margin-top: 2rem;">
+      <h3>Opleiding aangevraagd: wat nu?</h3>
+      <p>De opleidingsaanbieder bekijkt je aanvraag en neemt contact met je op.</p>
     </div>
     <div class="locaties" *ngIf="opleiding.locaties">
 

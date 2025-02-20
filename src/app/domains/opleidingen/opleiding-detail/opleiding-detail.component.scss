@@ -227,6 +227,10 @@ $color-light: #DBECF8;
         > span:first-child {
             color: #1769A4;
         }
+        a {
+            font-weight: 400;
+            text-decoration: underline;
+        }
     }
     &--locaties, &--toelatingsvoorwaarden {
         > span:last-child {
@@ -255,7 +259,7 @@ $color-light: #DBECF8;
     display: flex;
     flex-flow: column;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 0;
     h2 {
         margin-bottom: 0;
     }

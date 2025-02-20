@@ -31,6 +31,7 @@ export interface TreeNode {
     name: string;
     saved?: boolean;
     duurtijd?: string;
+    partner?: string;
     leerbewijs?: string;
     intensiteit?: string;
     prijs?: number;
