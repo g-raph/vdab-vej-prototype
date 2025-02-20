@@ -32,7 +32,7 @@ export class OpleidingListComponent {
       hasBadge: true
     },
   ];
-  filterboxOpen = true;
+  filterboxOpen = false;
   filterCategorie: TreeNode[] = [
     {
       name: 'Beroepsopleidingen en specialisatie',
