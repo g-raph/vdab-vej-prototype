@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { JobListComponent } from './domains/jobs/job-list/job-list.component';
 import { JobDetailComponent } from './domains/jobs/job-detail/job-detail.component';
 import { JobSearchComponent } from './domains/jobs/job-search/job-search.component';
-import { LoginComponent } from './pages/auth/login/login.component';
 import { FavoritesComponent } from './domains/jobs/favorites/favorites.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StudieboomComponent } from './pages/studieboom/studieboom.component';
@@ -12,6 +11,9 @@ import { OpleidingListComponent } from './domains/opleidingen/opleiding-list/opl
 import { OpleidingDetailComponent } from './domains/opleidingen/opleiding-detail/opleiding-detail.component';
 import { OrienterenSearchComponent } from './domains/orienteren/orienteren-search/orienteren-search.component';
 import { ContentpageComponent } from './pages/contentpage/contentpage.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './services/auth.guard';
+import { ThanksComponent } from './pages/thanks/thanks.component';
 
 export const routes: Routes = [
     {
@@ -21,7 +23,7 @@ export const routes: Routes = [
                 path: '',
                 component: HomeComponent,
             },
-        ]
+        ], canActivate: [AuthGuard]
     },
     {
         path:'test', 
@@ -30,7 +32,7 @@ export const routes: Routes = [
                 path: '',
                 component: TestComponent,
             },
-        ]
+        ], canActivate: [AuthGuard]
     },
     {
         path:'jobs', 
@@ -56,7 +58,7 @@ export const routes: Routes = [
                     },
                 ]
             },
-        ]
+        ], canActivate: [AuthGuard]
     },
     {
         path:'opleidingen', 
@@ -82,7 +84,7 @@ export const routes: Routes = [
                     },
                 ]
             },
-        ]
+        ], canActivate: [AuthGuard]
     },
     {
         path:'orienteren', 
@@ -93,11 +95,13 @@ export const routes: Routes = [
                 component: OrienterenSearchComponent, 
                 data: { breadcrumb: 'Alles over oriënteren'},                
             }
-        ]
+        ], canActivate: [AuthGuard]
     },
-    {path:'login', component: LoginComponent, data: { breadcrumb: 'Login'} },
-    {path:'favorites', component: FavoritesComponent, data: { breadcrumb: 'Bewaarde vacatures / opleidingen'} },
-    {path:'studieboom', component: StudieboomComponent, data: { breadcrumb: 'Studieboom'} },
-    {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'} },
-    {path:'**', redirectTo:'vind-een-job'},
+    // {path:'login', component: LoginComponent, data: { breadcrumb: 'Login'} },
+    {path:'favorites', component: FavoritesComponent, data: { breadcrumb: 'Bewaarde vacatures / opleidingen'}, canActivate: [AuthGuard] },
+    {path:'studieboom', component: StudieboomComponent, data: { breadcrumb: 'Studieboom'}, canActivate: [AuthGuard] },
+    {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'}, canActivate: [AuthGuard] },
+    {path:'bedankt', component: ThanksComponent, data: { breadcrumb: 'Bedankt voor je aanvraag'}, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

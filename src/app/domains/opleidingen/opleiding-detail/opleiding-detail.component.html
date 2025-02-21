@@ -49,7 +49,7 @@
             *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
             Kies locatie en vraag opleiding aan
           </button>
-          <button class="btn btn--primary"
+          <button routerLink="/bedankt" class="btn btn--primary"
             *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
             Start opleiding
           </button>
@@ -119,7 +119,7 @@
           VDAB is niet aansprakelijk voor de inhoud van deze opleiding en de eventuele inbreuken op de geldende wetgeving. Klachten over de opleiding kan je uitsluitend doorgeven aan de opleidingsverstrekker.
         </div>
         <div class="online-ctas" *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
-          <button class="btn btn--primary">
+          <button routerLink="/bedankt" class="btn btn--primary">
             Start opleiding
           </button>
           <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
@@ -140,7 +140,7 @@
             *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">
             Kies locatie en vraag opleiding aan
           </button>
-          <button class="btn btn--primary"
+          <button routerLink="/bedankt" class="btn btn--primary"
             *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
             Start opleiding
           </button>
@@ -187,7 +187,7 @@
         </li>
       </ul>
     </div>
-    <div class="notification" *ngIf="opleiding.partner" style="margin-top: 2rem;">
+    <div class="notification watnu" *ngIf="opleiding.partner" style="margin-top: 2rem;">
       <h3>Opleiding aangevraagd: wat nu?</h3>
       <p>De opleidingsaanbieder bekijkt je aanvraag en neemt contact met je op.</p>
     </div>
@@ -206,7 +206,7 @@
           <div class="right">
             <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined">star</span></a>
             <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
-            <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding
+            <button routerLink="/bedankt" class="btn btn--primary" *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding
               aanvragen</button>
             <!-- <button class="btn btn--primary" *ngIf="opleiding.filterLeervorm === 'Workshop'">Start opleiding</button> -->
           </div>
@@ -247,7 +247,7 @@
               <small>Beschikbare plaatsen</small>
               <div>2 (van 15)</div>
             </div>
-            <button class="btn btn--primary btn--small">Schrijf je in</button>
+            <button routerLink="/bedankt" class="btn btn--primary btn--small">Schrijf je in</button>
           </div>
           <div class="row">
             <div>
@@ -266,7 +266,7 @@
               <small>Beschikbare plaatsen</small>
               <div>Volzet</div>
             </div>
-            <button class="btn btn--secondary btn--small">Zet je op de wachtlijst</button>
+            <button routerLink="/bedankt" class="btn btn--secondary btn--small">Zet je op de wachtlijst</button>
           </div>
           <div class="row">
             <div>
@@ -285,7 +285,7 @@
               <small>Beschikbare plaatsen</small>
               <div>12 (van 15)</div>
             </div>
-            <button class="btn btn--primary btn--small">Schrijf je in</button>
+            <button routerLink="/bedankt" class="btn btn--primary btn--small">Schrijf je in</button>
           </div>
           <div class="row">
             <div>
@@ -327,7 +327,7 @@
         <div class="footer">
           <a class="bewaar"><span class="material-symbols-outlined">star</span></a>
           <button class="btn btn--secondary">Contact</button>
-          <button *ngIf="opleiding.filterLeervorm !== 'Workshop'" class="btn btn--primary">Aanvragen</button>
+          <button routerLink="/bedankt" *ngIf="opleiding.filterLeervorm !== 'Workshop'" class="btn btn--primary">Aanvragen</button>
         </div>
       </div>
       <div class="map" *ngIf="opleiding.mapImg">

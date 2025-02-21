@@ -4,6 +4,7 @@ import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
 import { NgIf } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, filter } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
   fontForm: FormGroup;
   searchTerm = '';
   isHome: boolean = false;
-  constructor(fb: FormBuilder, private router: Router) {
+  constructor(fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.form = fb.group({
       text: ''
     });
@@ -45,6 +46,9 @@ export class HeaderComponent implements OnInit {
       .subscribe((event) => {
         this.isHome = event.url === '/';
       });
+  }
+  logout() {
+    this.authService.logout();
   }
   onOptionChangeFontForm(value: string) {
     document.body.classList.remove('font-inter');
