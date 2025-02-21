@@ -68,6 +68,9 @@ $color-primary: #1769A4;
             font-size: 1rem;
             font-weight: 700;
             margin: 0 0 .5rem;
+            display: flex;
+            align-items: center;
+            gap: .25rem;
         }
         @media screen and (max-width: 990px) {
             .summary {

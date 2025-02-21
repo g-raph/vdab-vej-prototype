@@ -8,7 +8,7 @@
       <div class="right"></div>
     </div>
     <div class="contentbox" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]">
-      <div class="locations" *ngIf="opleiding.locaties">{{getLocationsString(opleiding.locaties)}}</div>
+      <div class="locations" *ngIf="opleiding.locaties"><span class="material-symbols-outlined info">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
       <div class="summary" *ngIf="opleiding.beschrijving">{{opleiding.beschrijving.substring(0, 200)}}...</div>
     </div>
     <div class="footerbox">
