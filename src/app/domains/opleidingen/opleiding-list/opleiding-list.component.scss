@@ -57,12 +57,11 @@
     .parents {
       display: flex;
       gap: .25rem;
-      align-items: center;
+      align-items: flex-start;
       > .material-symbols-outlined {
         cursor: pointer;
         transform: rotate(0deg);
         transition: all .2s ease;
-        margin-top: -.5rem;
         &.open {
           transform: rotate(90deg);
         }
