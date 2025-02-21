@@ -365,7 +365,7 @@ export class ApiService {
       videoUrl: '/assets/video-kapper.png',
       mapImg: '/assets/detail-map.png',
       saved: false,
-      prijs: 420,
+      prijs: 960,
       duurtijd: 'tussen 3 en 6 maanden',
       leerbewijs: 'Diploma',
       intensiteit: '20 uren / week',

@@ -23,6 +23,12 @@
                     </a>
                 </li>
                 <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen']" routerLinkActive="active">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span>Opleidingen</span>
+                    </a>
+                </li>
+                <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen/vind-een-opleiding']" routerLinkActive="active">
                         <span class="material-symbols-outlined">workspace_premium</span>
                         <span>Vind een opleiding</span>
