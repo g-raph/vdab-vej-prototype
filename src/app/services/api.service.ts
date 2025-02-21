@@ -568,28 +568,6 @@ export class ApiService {
         'in elektronische letterzetting. Het is in de jaren 60 populair geworden met de introductie van Letraset vellen',
         'met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.',
       ],
-      modules: [
-        {
-          name: 'Deel 1',
-          leervorm: 'Groepsleren',
-          duurtijd: '1 uur',
-        },
-        {
-          name: 'Deel 2',
-          leervorm: 'Groepsleren',
-          duurtijd: '2 uur',
-        },
-        {
-          name: 'Deel 3',
-          leervorm: 'Groepsleren',
-          duurtijd: '1 uur',
-        },
-        {
-          name: 'Deel 4',
-          leervorm: 'Groepsleren',
-          duurtijd: '1 uur',
-        },
-      ],
       locaties: [
         {
           stad: 'Asse',
