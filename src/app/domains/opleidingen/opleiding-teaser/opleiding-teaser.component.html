@@ -13,7 +13,7 @@
     </div>
     <div class="footerbox">
       <div class="opleiding__tags">
-        <div class="tag"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
+        <div class="tag tag--leervorm"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
         <div class="tag">
           {{
             opleiding.filterGratis === "Gratis opleidingen voor wie werk heeft"
@@ -25,7 +25,7 @@
               : "Gratis voor wie geen werk heeft of een uitkering onvangt"
           }}
         </div>
-        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag"><span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
+        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag tag--knelpunt"><span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
       </div>
       <div class="duurtijd" *ngIf="opleiding.duurtijd">Duurtijd: <span>{{opleiding.duurtijd}}</span></div>
     </div>

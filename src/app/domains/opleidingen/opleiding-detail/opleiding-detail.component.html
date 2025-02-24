@@ -4,9 +4,9 @@
       <div class="opleiding-detail__title--left">
         <h1>{{ opleiding.name }}</h1>
         <div class="tags">
-          <div class="tag"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)"
+          <div class="tag tag--leervorm"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)"
               class="material-symbols-outlined info">info</span></div>
-          <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag"><span>Knelpuntberoep</span><span
+          <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag tag--knelpunt"><span>Knelpuntberoep</span><span
               (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
         </div>
       </div>
@@ -18,8 +18,8 @@
         <div class="tldr">
           <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
           <div class="tldr__item tldr--prijs"><span class="material-symbols-outlined">euro</span> <span *ngIf="opleiding.filterGratis !== 'Betalend'">{{
-              opleiding.filterGratis === "Gratis opleidingen voor wie werkt"
-              ? "Gratis voor wie werkt"
+              opleiding.filterGratis === "Gratis opleidingen voor wie werk heeft"
+              ? "Gratis voor wie werk heeft"
               : opleiding.filterGratis === "Gratis voor iedereen"
               ? "Gratis voor iedereen"
               : "Gratis voor wie geen werk heeft of een uitkering onvangt"
@@ -28,7 +28,7 @@
           </div>
           <div class="tldr__item tldr--warning" *ngIf="opleiding.partner"><span
               class="material-symbols-outlined">emergency_home</span> <span>
-                <span>Opgelet: </span><a href="/opleidingen/vind-een-opleiding/1">deze opleiding bestaat op sommige locaties ook in samenwerking mét VDAB, met financiële voordelen voor werkzoekenden</a>
+                <span>Belangrijk om te weten: heb je geen werk of ontvang je een uitkering? Dan kan je deze opleiding op bepaalde locaties gratis volgen. <a href="/opleidingen/vind-een-opleiding/1">(link naar erkende opleiding)</a> </span>
               </span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span
               class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
@@ -104,8 +104,10 @@
           </table>
         </div>
         <div class="toelatingsvoorwaarden" *ngIf="opleiding.toelatingsvoorwaarden">
-          <h2><span
-              *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop'">Toelatingsvoorwaarden
+          <h2>
+            <span *ngIf="opleiding.filterGratis === 'Betalend'">Toelatingsvoorwaarden</span>
+            <span
+              *ngIf="opleiding.filterLeervorm !== 'Online opleiding' && opleiding.filterLeervorm !== 'Workshop' && opleiding.filterGratis !== 'Betalend'">Toelatingsvoorwaarden
               voor werkzoekenden</span><span
               *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">Benodigdheden</span>
           </h2>
@@ -117,6 +119,11 @@
         </div>
         <div class="notification warning" *ngIf="opleiding.partner">
           VDAB is niet aansprakelijk voor de inhoud van deze opleiding en de eventuele inbreuken op de geldende wetgeving. Klachten over de opleiding kan je uitsluitend doorgeven aan de opleidingsverstrekker.
+        </div>
+        <div class="notification warning"
+          *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
+          Om deze online opleiding te volgen, heb je een VDAB-account nodig. Log in op je VDAB-account of maak een
+          VDAB-account aan
         </div>
         <div class="online-ctas" *ngIf="opleiding.filterLeervorm === 'Online opleiding'">
           <button routerLink="/bedankt" class="btn btn--primary">
@@ -165,8 +172,8 @@
           <h4>Ben je zeker dat deze opleiding bij je past?</h4>
           <a class="arrow-link" [routerLink]="['..']"><span>Lees de beroepenpagina</span><span
               class="material-symbols-outlined">chevron_right</span></a>
-          <a class="arrow-link" [routerLink]="['..']"><span>Informatie over de sector</span><span
-              class="material-symbols-outlined">chevron_right</span></a>
+          <!-- <a class="arrow-link" [routerLink]="['..']"><span>Informatie over de sector</span><span
+              class="material-symbols-outlined">chevron_right</span></a> -->
         </div>
       </div>
     </div>

@@ -193,9 +193,13 @@ button {
     background-color: rgb(242, 139, 42);
     color: #fff;
   }
+  &--leervorm {
+    background-color: #f5efdd;
+    color: #222;
+  }
   &--knelpunt {
-    background-color: rgb(109 169 140);
-    color: #fff;
+    background-color: #ddf5f2;
+    color: #222;
   }
 }
 
