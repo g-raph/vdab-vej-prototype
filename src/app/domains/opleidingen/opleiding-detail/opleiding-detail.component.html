@@ -32,8 +32,8 @@
             </span>
             <span *ngIf="opleiding.filterGratis === 'Betalend'">{{opleiding.prijs | currency:'EUR' }} - Contacteer de opleidingsaanbieder voor informatie over de kostprijs.</span>
             <ul *ngIf="opleiding.filterGratis === 'Gratis opleidingen voor wie geen werk heeft of een uitkering ontvangt'">
-              <li>Gratis: voor wie geen werk heeft of een uitkering ontvangt (<a href="http://vdab.be/opleidingen/doelgroep/meer-info">meer info</a>). <a href="https://www.vdab.be/opleidingen/gratis-en-voordelig-leren/geen-werk/erkend">Bekijk alle financiële voordelen</a>.</li>
-              <li *ngIf="opleiding.prijs">{{opleiding.prijs | currency:'EUR' }}: voor wie werk heeft. <a href="https://www.vdab.be/opleidingen/gratis-en-voordelig-leren/werk#paragraph--id-50384">Misschien heb je wel recht op financiële voordelen</a>.</li>
+              <li>Gratis: voor wie geen werk heeft of een uitkering ontvangt (<a target="_blank" href="http://vdab.be/opleidingen/doelgroep/meer-info">meer info</a>). <a target="_blank" href="https://www.vdab.be/opleidingen/gratis-en-voordelig-leren/geen-werk/erkend">Bekijk alle financiële voordelen</a>.</li>
+              <li *ngIf="opleiding.prijs">{{opleiding.prijs | currency:'EUR' }}: voor wie werk heeft. <a target="_blank" href="https://www.vdab.be/opleidingen/gratis-en-voordelig-leren/werk#paragraph--id-50384">Misschien heb je wel recht op financiële voordelen</a>.</li>
             </ul>
           </div>
           <div class="tldr__item tldr--warning" *ngIf="opleiding.partner"><span
