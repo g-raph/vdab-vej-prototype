@@ -78,6 +78,15 @@
     <div class="header__bottom" *ngIf="!isHome">
         <app-breadcrumb></app-breadcrumb>
     </div>
+    <div class="notification">
+        <div class="notification__inner">
+            <span class="material-symbols-outlined">construction</span>
+            <div class="message">
+                <strong>Werkzaamheden</strong><br>
+                <span>Op maandag 2/12 zal er vanaf 19u15 gewerkt worden aan vdab.be. Onze toepassingen kunnen tijdelijk onbeschikbaar zijn. Onze excuses voor het ongemak!</span>
+            </div>
+        </div>
+    </div>
     <div *ngIf="showSearchForm" (click)="toggleSearchForm()" class="fade"></div>
     <div class="search-form" [class.open]="showSearchForm" [class.ishome]="isHome">
         <form [formGroup]="form">
@@ -96,6 +105,15 @@
 </div>
 
 <div class="header-desktop desktop-only--flex">
+    <!-- <div class="notification">
+        <div class="notification__inner">
+            <span class="material-symbols-outlined">construction</span>
+            <div class="message">
+                <strong>Werkzaamheden</strong><br>
+                <span>Op maandag 2/12 zal er vanaf 19u15 gewerkt worden aan vdab.be. Onze toepassingen kunnen tijdelijk onbeschikbaar zijn. Onze excuses voor het ongemak!</span>
+            </div>
+        </div>
+    </div> -->
     <div class="header-desktop--top">
         <img src="/assets/vlaanderen-logo.svg" alt="vlaanderen logo">
         <div class="right">
@@ -159,6 +177,15 @@
                         <a href="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="notification">
+        <div class="notification__inner">
+            <span class="material-symbols-outlined">construction</span>
+            <div class="message">
+                <strong>Werkzaamheden</strong><br>
+                <span>Op maandag 2/12 zal er vanaf 19u15 gewerkt worden aan vdab.be. Onze toepassingen kunnen tijdelijk onbeschikbaar zijn. Onze excuses voor het ongemak!</span>
             </div>
         </div>
     </div>
