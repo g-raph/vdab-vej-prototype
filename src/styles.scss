@@ -303,3 +303,29 @@ input[type=text] {
     margin: 0 0 0.75rem;
   }
 }
+
+.notification {
+  background-color: rgb(253,239,218);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__inner {
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 1440px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .75rem 1rem;
+      line-height: 1.2;
+      .material-symbols-outlined {
+          font-size: 3rem;
+          opacity: .25;
+      }
+      .message {
+          span {
+              opacity: .75;
+          }
+      }
+  }
+}
