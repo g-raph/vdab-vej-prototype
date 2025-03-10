@@ -5,10 +5,10 @@
         <h1>{{ opleiding.name }}</h1>
         <div class="tags">
           <div class="tag tag--leervorm"><span>{{opleiding.filterLeervorm}}</span><span
-              (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
+              (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info" translate="no">info</span></div>
           <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag tag--knelpunt">
             <span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)"
-              class="material-symbols-outlined info">info</span></div>
+              class="material-symbols-outlined info" translate="no">info</span></div>
         </div>
       </div>
       <app-bottom-nav [bottomNavConfig]="navConfig"></app-bottom-nav>
@@ -17,9 +17,9 @@
     <div class="opleiding-detail__content">
       <div class="left">
         <div class="tldr">
-          <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
+          <!-- <div class="tldr__item tldr--leervorm" *ngIf="opleiding.filterLeervorm"><span class="material-symbols-outlined" translate="no">groups</span> <span>{{opleiding.filterLeervorm}}</span></div> -->
           <div class="tldr__item tldr--prijs">
-            <span class="material-symbols-outlined">euro</span> 
+            <span class="material-symbols-outlined" translate="no">euro</span> 
             <span
               *ngIf="opleiding.filterGratis !== 'Betalend'">{{
               opleiding.filterGratis === "Gratis opleidingen voor wie werk heeft"
@@ -37,18 +37,18 @@
             </ul>
           </div>
           <div class="tldr__item tldr--warning" *ngIf="opleiding.partner"><span
-              class="material-symbols-outlined">emergency_home</span> <span>
+              class="material-symbols-outlined" translate="no">emergency_home</span> <span>
               <span>Belangrijk om te weten: heb je geen werk of ontvang je een uitkering? Dan kan je <a href="/opleidingen/vind-een-opleiding/1">deze opleiding</a> op
                 bepaalde locaties gratis volgen.</span>
             </span></div>
           <div class="tldr__item tldr--leerbewijs" *ngIf="opleiding.leerbewijs"><span
-              class="material-symbols-outlined">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
-          <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
-          <!-- <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div> -->
+              class="material-symbols-outlined" translate="no">workspace_premium</span> <span>{{opleiding.leerbewijs}}</span></div>
+          <!-- <div class="tldr__item tldr--intensiteit" *ngIf="opleiding.intensiteit"><span class="material-symbols-outlined" translate="no">swap_horiz</span> <span>Intensiteit: {{opleiding.intensiteit}}</span></div> -->
+          <!-- <div class="tldr__item tldr--locaties" *ngIf="opleiding.locaties" (click)="scrollToPosition('.locaties')"><span class="material-symbols-outlined" translate="no">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div> -->
           <div class="tldr__item tldr--duurtijd" *ngIf="opleiding.duurtijd"><span
-              class="material-symbols-outlined">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
-          <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding'">Bekijk benodigdheden</span></div> -->
-          <!-- <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined">credit_card_off</span> <span></span></div> -->
+              class="material-symbols-outlined" translate="no">schedule</span> <span>Duurtijd: {{opleiding.duurtijd}}</span></div>
+          <!-- <div class="tldr__item tldr--toelatingsvoorwaarden" (click)="scrollToPosition('.toelatingsvoorwaarden')"><span class="material-symbols-outlined" translate="no">conditions</span> <span *ngIf="opleiding.filterLeervorm !== 'Online opleiding'">Bekijk toelatingsvoorwaarden</span><span *ngIf="opleiding.filterLeervorm === 'Online opleiding'">Bekijk benodigdheden</span></div> -->
+          <!-- <div class="tldr__item tldr--gratis" *ngIf="opleiding.filterGratis"><span class="material-symbols-outlined" translate="no">credit_card_off</span> <span></span></div> -->
         </div>
         <div class="notification warning mobile-only"
           *ngIf="opleiding.filterLeervorm === 'Online opleiding' || opleiding.filterLeervorm === 'Workshop'">
@@ -73,7 +73,7 @@
           </button>
           <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
             [class.btn--yellow]="opleiding.saved">
-            <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
+            <span class="material-symbols-outlined" translate="no">star</span><span *ngIf="!opleiding.saved">Bewaar
               opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
@@ -143,7 +143,7 @@
           </button>
           <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
             [class.btn--yellow]="opleiding.saved">
-            <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
+            <span class="material-symbols-outlined" translate="no">star</span><span *ngIf="!opleiding.saved">Bewaar
               opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
@@ -172,7 +172,7 @@
           </button>
           <button (click)="setAsFavorite(opleiding.id)" class="btn" [class.btn--secondary]="!opleiding.saved"
             [class.btn--yellow]="opleiding.saved">
-            <span class="material-symbols-outlined">star</span><span *ngIf="!opleiding.saved">Bewaar
+            <span class="material-symbols-outlined" translate="no">star</span><span *ngIf="!opleiding.saved">Bewaar
               opleiding</span><span *ngIf="opleiding.saved">Opleiding bewaard</span>
           </button>
         </div>
@@ -182,9 +182,9 @@
         <div class="card">
           <h4>Ben je zeker dat deze opleiding bij je past?</h4>
           <a class="arrow-link" [routerLink]="['..']"><span>Lees de beroepenpagina</span><span
-              class="material-symbols-outlined">chevron_right</span></a>
+              class="material-symbols-outlined" translate="no">chevron_right</span></a>
           <!-- <a class="arrow-link" [routerLink]="['..']"><span>Informatie over de sector</span><span
-              class="material-symbols-outlined">chevron_right</span></a> -->
+              class="material-symbols-outlined" translate="no">chevron_right</span></a> -->
         </div>
       </div>
     </div>
@@ -224,7 +224,7 @@
                 wachttijd: {{locatie.wachttijd}}</span></small>
           </div>
           <div class="right">
-            <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined">star</span></a>
+            <a class="bewaar"><span>Bewaar</span><span class="material-symbols-outlined" translate="no">star</span></a>
             <button class="btn btn--secondary">Contacteer opleidingsaanbieder</button>
             <button routerLink="/bedankt" class="btn btn--primary"
               *ngIf="opleiding.filterLeervorm !== 'Workshop'">Opleiding
@@ -346,7 +346,7 @@
           </div>
         </div>
         <div class="footer">
-          <a class="bewaar"><span class="material-symbols-outlined">star</span></a>
+          <a class="bewaar"><span class="material-symbols-outlined" translate="no">star</span></a>
           <button class="btn btn--secondary">Contact</button>
           <button routerLink="/bedankt" *ngIf="opleiding.filterLeervorm !== 'Workshop'"
             class="btn btn--primary">Aanvragen</button>

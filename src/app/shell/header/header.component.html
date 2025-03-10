@@ -2,42 +2,42 @@
     <div class="header__top">
         <a href="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
         <div class="icons">
-            <span (click)="toggleSettings()" class="material-symbols-outlined">settings</span>
-            <span (click)="toggleSearchForm()" class="material-symbols-outlined">search</span>
-            <!-- <span [routerLink]="['/favorites']" class="material-symbols-outlined">star</span> -->
-            <!-- <span [routerLink]="['/login']" class="material-symbols-outlined">account_circle</span> -->
-            <a (click)="logout()"><span class="material-symbols-outlined">logout</span></a>
-            <span (click)="toggleMenu()" class="material-symbols-outlined">menu</span>
+            <span (click)="toggleSettings()" class="material-symbols-outlined" translate="no">settings</span>
+            <span (click)="toggleSearchForm()" class="material-symbols-outlined" translate="no">search</span>
+            <!-- <span [routerLink]="['/favorites']" class="material-symbols-outlined" translate="no">star</span> -->
+            <!-- <span [routerLink]="['/login']" class="material-symbols-outlined" translate="no">account_circle</span> -->
+            <a (click)="logout()"><span class="material-symbols-outlined" translate="no">logout</span></a>
+            <span (click)="toggleMenu()" class="material-symbols-outlined" translate="no">menu</span>
         </div>
         <div *ngIf="showMenu" class="menu-dropdown">
             <ul>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">assured_workload</span>
+                        <span class="material-symbols-outlined" translate="no">assured_workload</span>
                         <span>Jobs</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
-                        <span class="material-symbols-outlined">work</span>
+                        <span class="material-symbols-outlined" translate="no">work</span>
                         <span>Vind een job</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Opleidingen</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen/vind-een-opleiding']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">flowchart</span>
+                        <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
                 </li>
@@ -83,14 +83,14 @@
         <form [formGroup]="form">
             <div class="field" [class.open]="showSubMenu">
                 <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
-                <span *ngIf="!showCloseBtn" class="material-symbols-outlined">search</span>
-                <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined">close</span>
+                <span *ngIf="!showCloseBtn" class="material-symbols-outlined" translate="no">search</span>
+                <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined" translate="no">close</span>
             </div>
         </form>
         <div class="submenu" [class.open]="showSubMenu">
-            <a class="active" routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
-            <a routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
-            <a routerLink="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
+            <a class="active" routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
+            <a routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
+            <a routerLink="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
         </div>
     </div>
 </div>
@@ -98,7 +98,7 @@
 <div class="header-desktop desktop-only--flex">
     <!-- <div class="notification">
         <div class="notification__inner">
-            <span class="material-symbols-outlined">construction</span>
+            <span class="material-symbols-outlined" translate="no">construction</span>
             <div class="message">
                 <strong>Werkzaamheden</strong><br>
                 <span>Op maandag 2/12 zal er vanaf 19u15 gewerkt worden aan vdab.be. Onze toepassingen kunnen tijdelijk onbeschikbaar zijn. Onze excuses voor het ongemak!</span>
@@ -108,10 +108,10 @@
     <div class="header-desktop--top">
         <img src="/assets/vlaanderen-logo.svg" alt="vlaanderen logo">
         <div class="right">
-            <a routerLink="/content"><span class="material-symbols-outlined">shield_person</span><span>Naar site werkgevers</span></a>
-            <a routerLink="/content"><span class="material-symbols-outlined">handshake</span><span>Naar site partners</span></a>
-            <a (click)="logout()"><span class="material-symbols-outlined">account_circle</span><span>Afmelden</span></a>
-            <a (click)="toggleSettings()"><span class="material-symbols-outlined">settings</span></a>
+            <a routerLink="/content"><span class="material-symbols-outlined" translate="no">shield_person</span><span>Naar site werkgevers</span></a>
+            <a routerLink="/content"><span class="material-symbols-outlined" translate="no">handshake</span><span>Naar site partners</span></a>
+            <a (click)="logout()"><span class="material-symbols-outlined" translate="no">account_circle</span><span>Afmelden</span></a>
+            <a (click)="toggleSettings()"><span class="material-symbols-outlined" translate="no">settings</span></a>
         </div>
         <div *ngIf="showSettings" class="settings-dropdown">
             <form [formGroup]="fontForm" class="settings-form">
@@ -149,7 +149,7 @@
             <div class="left">
                 <a routerLink="/"><img src="/assets/vdab-logo-white.svg" alt=""></a>
                 <div (click)="toggleMenu()" class="menu" [class.active]="showMenu">
-                    <span class="material-symbols-outlined">menu</span>
+                    <span class="material-symbols-outlined" translate="no">menu</span>
                     <span>Menu</span>
                 </div>
             </div>
@@ -158,14 +158,14 @@
                     <form [formGroup]="form">
                         <div class="field" [class.open]="showSubMenu">
                             <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
-                            <span *ngIf="!showCloseBtn" class="material-symbols-outlined">search</span>
-                            <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined">close</span>
+                            <span *ngIf="!showCloseBtn" class="material-symbols-outlined" translate="no">search</span>
+                            <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined" translate="no">close</span>
                         </div>
                     </form>
                     <div class="submenu" [class.open]="showSubMenu">
-                        <a class="active" href="/jobs/vind-een-job"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
-                        <a href="/jobs/vind-een-job"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
-                        <a href="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
+                        <a class="active" href="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
+                        <a href="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
+                        <a href="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
                     </div>
                 </div>
             </div>
@@ -177,24 +177,24 @@
                 <li>
                     <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
                         <span>Jobs</span>
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span class="material-symbols-outlined" translate="no">chevron_right</span>
                     </h3>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
-                        <span class="material-symbols-outlined">work</span>
+                        <span class="material-symbols-outlined" translate="no">work</span>
                         <span>Vind een job</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">flowchart</span>
+                        <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
                 </li>
@@ -203,18 +203,18 @@
                 <li>
                     <h3 (click)="toggleMenu()" [routerLink]="['/opleidingen']" routerLinkActive="active">
                         <span>Opleidingen</span>
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span class="material-symbols-outlined" translate="no">chevron_right</span>
                     </h3>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">flowchart</span>
+                        <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
                 </li>
@@ -223,30 +223,30 @@
                 <li>
                     <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
                         <span>Oriënteren</span>
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span class="material-symbols-outlined" translate="no">chevron_right</span>
                     </h3>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">assured_workload</span>
+                        <span class="material-symbols-outlined" translate="no">assured_workload</span>
                         <span>Jobs</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
-                        <span class="material-symbols-outlined">work</span>
+                        <span class="material-symbols-outlined" translate="no">work</span>
                         <span>Vind een job</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">flowchart</span>
+                        <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
                 </li>
@@ -255,30 +255,30 @@
                 <li>
                     <h3 (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
                         <span>Prototypes</span>
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <span class="material-symbols-outlined" translate="no">chevron_right</span>
                     </h3>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">assured_workload</span>
+                        <span class="material-symbols-outlined" translate="no">assured_workload</span>
                         <span>Jobs</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" routerLink="/jobs/vind-een-job" routerLinkActive="active">
-                        <span class="material-symbols-outlined">work</span>
+                        <span class="material-symbols-outlined" translate="no">work</span>
                         <span>Vind een job</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">workspace_premium</span>
+                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
-                        <span class="material-symbols-outlined">flowchart</span>
+                        <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
                 </li>

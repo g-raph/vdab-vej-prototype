@@ -8,12 +8,12 @@
       <div class="right"></div>
     </div>
     <div class="contentbox" [routerLink]="['/opleidingen', 'vind-een-opleiding', opleiding.id]">
-      <div class="locations" *ngIf="opleiding.locaties"><span class="material-symbols-outlined info">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
+      <div class="locations" *ngIf="opleiding.locaties"><span class="material-symbols-outlined info" translate="no">location_on</span> <span>{{getLocationsString(opleiding.locaties)}}</span></div>
       <div class="summary" *ngIf="opleiding.beschrijving">{{opleiding.beschrijving.substring(0, 200)}}...</div>
     </div>
     <div class="footerbox">
       <div class="opleiding__tags">
-        <div class="tag tag--leervorm"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info">info</span></div>
+        <div class="tag tag--leervorm"><span>{{opleiding.filterLeervorm}}</span><span (click)="openModal(leervormModalTemplate)" class="material-symbols-outlined info" translate="no">info</span></div>
         <div class="tag">
           {{
             opleiding.filterGratis === "Gratis opleidingen voor wie werk heeft"
@@ -25,7 +25,7 @@
               : "Gratis voor wie geen werk heeft of een uitkering onvangt"
           }}
         </div>
-        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag tag--knelpunt"><span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info">info</span></div>
+        <div *ngIf="opleiding.filterKnelpuntberoep === 'Ja'" class="tag tag--knelpunt"><span>Knelpuntberoep</span><span (click)="openModal(knelpuntModalTemplate)" class="material-symbols-outlined info" translate="no">info</span></div>
       </div>
       <div class="duurtijd" *ngIf="opleiding.duurtijd">Duurtijd: <span>{{opleiding.duurtijd}}</span></div>
     </div>
@@ -34,6 +34,7 @@
     (click)="setAsFavoriteOpleiding(opleiding.id)"
     [class.active]="opleiding.saved"
     class="material-symbols-outlined star"
+    translate="no"
     >star</span
   >
 </div>

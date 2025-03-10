@@ -1,5 +1,5 @@
 <nav *ngIf="breadcrumbs$ | async as breadcrumbs" class="breadcrumbs">
-    <a routerLink="/"><span class="material-symbols-outlined"> home </span></a><span> &gt;</span>
+    <a routerLink="/"><span class="material-symbols-outlined" translate="no"> home </span></a><span> &gt;</span>
     <ng-container *ngFor="let breadcrumb of breadcrumbs; let last = last">
       <ng-container *ngIf="!last">
         <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a><span> &gt;</span>

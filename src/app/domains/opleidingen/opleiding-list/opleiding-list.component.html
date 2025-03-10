@@ -32,7 +32,7 @@
     <div class="opleiding-list__filters" [class.open]="filterboxOpen">
         <div class="filter-modal__header mobile-only">
           <h2>Vind een opleiding</h2>
-          <span (click)="toggleOpenFilters()" class="material-symbols-outlined">close</span>
+          <span (click)="toggleOpenFilters()" class="material-symbols-outlined" translate="no">close</span>
       </div>
       <div class="filter-modal__body">
         <div class="search mobile-only">
@@ -56,12 +56,12 @@
           <div class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersCategorie()" [class.open]="showFiltersCategorie">
               <h3>Categorie</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersCategorie">
               <div *ngFor="let category of filterCategorie; let i = index">
                 <div class="parents" formGroupName="filterCategorie">
-                  <span [ngStyle]="{'opacity': category.children ? '1' : '0'}" class="material-symbols-outlined" (click)="toggleChildren(i)" [class.open]="i === 0 ? showChildrenBeroep : showChildrenPersonal">chevron_right</span>
+                  <span [ngStyle]="{'opacity': category.children ? '1' : '0'}" class="material-symbols-outlined" translate="no" (click)="toggleChildren(i)" [class.open]="i === 0 ? showChildrenBeroep : showChildrenPersonal">chevron_right</span>
                   <label class="o-form__label c-checkbox__label" [for]="'veo_categorie_' + i" >
                     <input (click)="addToSelectedTreeFilters(category)" type="checkbox" class="c-checkbox__input" [id]="'veo_categorie_' + i"
                       [formControlName]="category.name"
@@ -93,7 +93,7 @@
           <div formGroupName="filterGratis" class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersGratis()" [class.open]="showFiltersGratis">
               <h3>Gratis</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersGratis">
               <div *ngFor="let category of filterGratis; let i = index">
@@ -102,7 +102,7 @@
                     [formControlName]="category" />
                   <span class="custom-checkbox"></span>
                   <div>
-                    {{ category }} <a *ngIf="i === 0" target="_blank" href="https://www.vdab.be/opleidingen/doelgroep/meer-info" class="material-symbols-outlined info" style="margin-right: .25rem;">info</a>
+                    {{ category }} <a *ngIf="i === 0" target="_blank" href="https://www.vdab.be/opleidingen/doelgroep/meer-info" class="material-symbols-outlined info" translate="no" style="margin-right: .25rem;">info</a>
                     <span class="c-filter__options-count">({{ countResults('filterGratis', category) }})</span>
                   </div>
                 </label>
@@ -112,7 +112,7 @@
           <div formGroupName="filterStartdatum" class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersStartdatum()" [class.open]="showFiltersStartdatum">
               <h3>Startdatum</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersStartdatum">
               <div *ngFor="let category of filterStartdatum; let i = index">
@@ -131,7 +131,7 @@
           <div formGroupName="filterLesmoment" class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersLesmoment()" [class.open]="showFiltersLesmoment">
               <h3>Lesmoment</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersLesmoment">
               <div *ngFor="let category of filterLesmoment; let i = index">
@@ -153,7 +153,7 @@
           <div formGroupName="filterWaarLeerJe" class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersWaarLeerJe()" [class.open]="showFiltersWaarLeerJe">
               <h3>Online of op locatie</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersWaarLeerJe">
               <div *ngFor="let category of filterWaarLeerJe; let i = index">
@@ -174,7 +174,7 @@
           <!-- <div formGroupName="filterLeervorm" class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersLeervorm()" [class.open]="showFiltersLeervorm">
               <h3>Leervorm</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersLeervorm">
               <div *ngFor="let category of filterLeervorm; let i = index">
@@ -195,7 +195,7 @@
           <div formGroupName="filterOrganisator" class="dropdown">
             <div class="dropdown__header" (click)="toggleFiltersOrganisator()" [class.open]="showFiltersOrganisator">
               <h3>Organisator</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersOrganisator">
               <div *ngFor="let category of filterOrganisator; let i = index">
@@ -215,7 +215,7 @@
             <div class="dropdown__header" (click)="toggleFiltersKnelpuntberoep()"
               [class.open]="showFiltersKnelpuntberoep">
               <h3>Knelpuntberoep</h3>
-              <span class="material-symbols-outlined">chevron_right</span>
+              <span class="material-symbols-outlined" translate="no">chevron_right</span>
             </div>
             <div class="dropdown__body" *ngIf="showFiltersKnelpuntberoep">
               <div *ngFor="let category of filterKnelpuntberoep; let i = index">
