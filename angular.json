@@ -31,11 +31,18 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet-draw/dist/leaflet.draw.css",
+              "node_modules/maplibre-gl/dist/maplibre-gl.css",
+              "node_modules/@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css",
+              "node_modules/@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css",
               "src/styles/fonts.scss",
               "src/styles/variables.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/leaflet/dist/leaflet.js"
+            ]
           },
           "configurations": {
             "production": {

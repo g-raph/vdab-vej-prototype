@@ -41,6 +41,18 @@
                         <span>Studieboom</span>
                     </a>
                 </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/map']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">map</span>
+                        <span>Map</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/mapgl']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">map</span>
+                        <span>MapGL</span>
+                    </a>
+                </li>
             </ul>
 
         </div>
@@ -271,9 +283,15 @@
                     </a>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
-                        <span class="material-symbols-outlined" translate="no">workspace_premium</span>
-                        <span>Vind een opleiding</span>
+                    <a (click)="toggleMenu()" [routerLink]="['/map']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">map</span>
+                        <span>Map</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/mapgl']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">map</span>
+                        <span>MapGL</span>
                     </a>
                 </li>
                 <li>

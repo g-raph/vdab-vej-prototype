@@ -14,6 +14,8 @@ import { ContentpageComponent } from './pages/contentpage/contentpage.component'
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { ThanksComponent } from './pages/thanks/thanks.component';
+import { MapComponent } from './components/map/map.component';
+import { MapglComponent } from './components/mapgl/mapgl.component';
 
 export const routes: Routes = [
     {
@@ -100,6 +102,8 @@ export const routes: Routes = [
     // {path:'login', component: LoginComponent, data: { breadcrumb: 'Login'} },
     {path:'favorites', component: FavoritesComponent, data: { breadcrumb: 'Bewaarde vacatures / opleidingen'}, canActivate: [AuthGuard] },
     {path:'studieboom', component: StudieboomComponent, data: { breadcrumb: 'Studieboom'}, canActivate: [AuthGuard] },
+    {path:'map', component: MapComponent, data: { breadcrumb: 'Map'}, canActivate: [AuthGuard] },
+    {path:'mapgl', component: MapglComponent, data: { breadcrumb: 'Map'}, canActivate: [AuthGuard] },
     {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'}, canActivate: [AuthGuard] },
     {path:'bedankt', component: ThanksComponent, data: { breadcrumb: 'Bedankt voor je aanvraag'}, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },

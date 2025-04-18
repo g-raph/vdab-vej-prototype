@@ -1,0 +1,37 @@
+.map-container {
+    height: calc(100vh - 164px);
+    @media screen and (max-width: 640px) {
+        height: calc(100vh - 84px);
+    }
+}
+
+.controls {
+    position: fixed;
+    width: 13.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column;
+    gap: .5rem;
+    z-index: 9999999;
+    left: -13.5rem;
+    box-sizing: border-box;
+    top: 13.375rem;
+    transition: all .2s ease;
+    &.open {
+        left: .5rem;
+    }
+}
+
+.toggle {
+    position: fixed;
+    padding: 0.5rem;
+    background-color: #fff;
+    top: 10.5rem;
+    left: 0.5rem;
+    z-index: 9999;
+    cursor: pointer;
+    span {
+        display: flex;
+    }
+}
