@@ -1,10 +1,8 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import * as maplibregl from 'maplibre-gl';
 import MaplibreDraw from 'maplibre-gl-draw';
-// import overrides from '../../../assets/mapstyle.json';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { circle } from 'leaflet';
 
 
 
@@ -30,7 +28,9 @@ export class MapglComponent implements OnInit {
     roads_major: '#ffffff',
     roads_minor: '#ffffff',
     landuse_park: '#b8ebad',
-    pois: '#7e94a9'
+    pois: '#7e94a9',
+    buildings: '#cccccc',
+    earth: "rgb(238,233,230)"
   };
 
   constructor(private http: HttpClient) {}
@@ -188,6 +188,8 @@ export class MapglComponent implements OnInit {
       if (layer.id === 'roads_major') this.layerColors.roads_major = layer.paint['line-color'];
       if (layer.id === 'roads_minor') this.layerColors.roads_minor = layer.paint['line-color'];
       if (layer.id === 'landuse_park') this.layerColors.landuse_park = layer.paint['fill-color'];
+      if (layer.id === 'buildings') this.layerColors.buildings = layer.paint['fill-color'];
+      if (layer.id === 'earth') this.layerColors.earth = layer.paint['fill-color'];
       if (layer.id === 'pois') this.layerColors.pois = layer.paint['text-color'];
     }
   }

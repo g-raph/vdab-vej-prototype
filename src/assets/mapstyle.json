@@ -5,6 +5,20 @@
     { "id": "roads_major", "paint": { "line-color": "#ffffff" } },
     { "id": "roads_minor", "paint": { "line-color": "#ffffff" } },
     { "id": "landuse_park", "paint": { "fill-color": "#b8ebad" } },
-    { "id": "pois", "paint": { "text-color": "#7e94a9" } }
+    { "id": "pois", "paint": { "text-color": "#7e94a9" } },
+    {
+      "id": "buildings",
+      "paint": {
+          "fill-color": "#cccccc",
+          "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "earth",
+      "paint": {
+          "fill-color": "rgb(238,233,230)"
+      }
+    }
   ]
 }
+

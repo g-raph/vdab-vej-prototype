@@ -25,6 +25,14 @@
     POI Labels:
     <input type="color" [(ngModel)]="layerColors.pois" (change)="updateLayerColor('pois', 'text-color', layerColors.pois)" />
   </label>
+  <label>
+    Buildings:
+    <input type="color" [(ngModel)]="layerColors.buildings" (change)="updateLayerColor('buildings', 'fill-color', layerColors.buildings)" />
+  </label>
+  <label>
+    Earth:
+    <input type="color" [(ngModel)]="layerColors.earth" (change)="updateLayerColor('earth', 'fill-color', layerColors.earth)" />
+  </label>
   <div style="margin-top: 1rem;">
     <button (click)="resetStyles()">Reset</button>
     <button (click)="saveStyles()">Download JSON</button>
