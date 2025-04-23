@@ -1,7 +1,7 @@
 {
     "layers": [
     { "id": "water", "paint": { "fill-color": "#99ddff" } },
-    { "id": "roads_highway", "paint": { "line-color": "#ffffff" } },
+    { "id": "roads_highway", "paint": { "line-color": "#f7c96e" } },
     { "id": "roads_major", "paint": { "line-color": "#ffffff" } },
     { "id": "roads_minor", "paint": { "line-color": "#ffffff" } },
     { "id": "landuse_park", "paint": { "fill-color": "#b8ebad" } },

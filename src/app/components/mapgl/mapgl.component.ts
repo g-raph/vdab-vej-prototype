@@ -24,7 +24,7 @@ export class MapglComponent implements OnInit {
 
   layerColors = {
     water: '#99ddff',
-    roads_highway: '#ffffff',
+    roads_highway: '#f7c96e',
     roads_major: '#ffffff',
     roads_minor: '#ffffff',
     landuse_park: '#b8ebad',
