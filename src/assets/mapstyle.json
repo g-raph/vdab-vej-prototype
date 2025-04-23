@@ -18,6 +18,12 @@
       "paint": {
           "fill-color": "#eee9e6"
       }
+    },
+    {
+      "id": "places_locality",
+      "paint": {
+          "text-color": "#000000"
+      }
     }
   ]
 }

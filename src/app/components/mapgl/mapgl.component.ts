@@ -30,7 +30,8 @@ export class MapglComponent implements OnInit {
     landuse_park: '#b8ebad',
     pois: '#7e94a9',
     buildings: '#ded7d3',
-    earth: "#eee9e6"
+    earth: "#eee9e6",
+    places_locality: '#000000'
   };
 
   constructor(private http: HttpClient) {}
@@ -191,6 +192,7 @@ export class MapglComponent implements OnInit {
       if (layer.id === 'buildings') this.layerColors.buildings = layer.paint['fill-color'];
       if (layer.id === 'earth') this.layerColors.earth = layer.paint['fill-color'];
       if (layer.id === 'pois') this.layerColors.pois = layer.paint['text-color'];
+      if (layer.id === 'places_locality') this.layerColors.places_locality = layer.paint['text-color'];
     }
   }
 
