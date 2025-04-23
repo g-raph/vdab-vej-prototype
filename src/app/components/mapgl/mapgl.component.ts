@@ -29,7 +29,7 @@ export class MapglComponent implements OnInit {
     roads_minor: '#ffffff',
     landuse_park: '#b8ebad',
     pois: '#7e94a9',
-    buildings: '#cccccc',
+    buildings: '#ded7d3',
     earth: "#eee9e6"
   };
 
