@@ -30,7 +30,7 @@ export class MapglComponent implements OnInit {
     landuse_park: '#b8ebad',
     pois: '#7e94a9',
     buildings: '#cccccc',
-    earth: "rgb(238,233,230)"
+    earth: "#eee9e6"
   };
 
   constructor(private http: HttpClient) {}

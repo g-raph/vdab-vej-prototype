@@ -16,7 +16,7 @@
     {
       "id": "earth",
       "paint": {
-          "fill-color": "rgb(238,233,230)"
+          "fill-color": "#eee9e6"
       }
     }
   ]
