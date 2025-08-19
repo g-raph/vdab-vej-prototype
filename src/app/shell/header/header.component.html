@@ -30,7 +30,8 @@
                     </a>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen/vind-een-opleiding']" routerLinkActive="active">
+                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen/vind-een-opleiding']"
+                        routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
@@ -57,34 +58,56 @@
 
         </div>
         <div *ngIf="showSettings" class="settings-dropdown">
-            <form [formGroup]="fontForm" class="settings-form">
-                <h4>Font family</h4>
-                <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option1" (change)="onOptionChangeFontForm('')" />
-                    Flanders
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option2" (change)="onOptionChangeFontForm('font-inter')" />
-                    Inter
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option3" (change)="onOptionChangeFontForm('font-opensans')" />
-                    Open Sans
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option4" (change)="onOptionChangeFontForm('font-comicsans')" />
-                    Comic Sans
-                  </label>
-                <h4>Font size</h4>
-                <label>
-                    <input type="radio" formControlName="optionfontsize" value="option1" (change)="onOptionChangeFontSize('')" />
-                    Normal (18px)
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontsize" value="option2" (change)="onOptionChangeFontSize('smaller-font')" />
-                    Smaller (16px)
-                  </label>
-            </form>
+            <div class="settings-dropdown__inner">
+                <span (click)="toggleSettings()" class="material-symbols-outlined close" translate="no">close</span>
+                <h2>Typografie tokens</h2>
+                <form [formGroup]="fontForm" class="settings-form">
+                    <div class="token-card">
+                        <h3>Font family</h3>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option1" (change)="onOptionChangeFontForm('')" />
+                            <span>Flanders</span>
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option2" (change)="onOptionChangeFontForm('font-inter')" />
+                            <span>Inter</span>
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option3" (change)="onOptionChangeFontForm('font-opensans')" />
+                            <span>Open Sans</span>
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option4" (change)="onOptionChangeFontForm('font-comicsans')" />
+                            <span>Comic Sans</span>
+                        </label>
+                    </div>
+                </form>
+                <form [formGroup]="formTokens" class="tokens-form">
+                    <div class="tokens-box" formArrayName="tokens">
+                        <div *ngFor="let token of tokensForm.controls; let i = index" [formGroupName]="i"
+                            class="token-card">
+                            <h3>{{ token.get('name')?.value }}</h3>
+                            <label>
+                                <span>Font Size:</span>
+                                <input type="text" formControlName="fontSize" />
+                            </label>
+                            <label>
+                                <span>Line Height:</span>
+                                <input type="text" formControlName="lineHeight" />
+                            </label>
+                            <label>
+                                <span>Font Weight:</span>
+                                <input type="text" formControlName="fontWeight" />
+                            </label>
+                            <label>
+                                <span>Letter Spacing:</span>
+                                <input type="text" formControlName="letterSpacing" />
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn--primary" (click)="resetTokens()">Reset</button>
+            </div>
         </div>
     </div>
     <div class="header__bottom" *ngIf="!isHome">
@@ -96,13 +119,19 @@
             <div class="field" [class.open]="showSubMenu">
                 <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
                 <span *ngIf="!showCloseBtn" class="material-symbols-outlined" translate="no">search</span>
-                <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined" translate="no">close</span>
+                <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined"
+                    translate="no">close</span>
             </div>
         </form>
         <div class="submenu" [class.open]="showSubMenu">
-            <a class="active" routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
-            <a routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
-            <a routerLink="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
+            <a class="active" routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined"
+                    translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in
+                        infopagina's</span></span></a>
+            <a routerLink="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span>
+                <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
+            <a routerLink="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined"
+                    translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in
+                        opleidingen</span></span></a>
         </div>
     </div>
 </div>
@@ -120,40 +149,65 @@
     <div class="header-desktop--top">
         <img src="/assets/vlaanderen-logo.svg" alt="vlaanderen logo">
         <div class="right">
-            <a routerLink="/content"><span class="material-symbols-outlined" translate="no">shield_person</span><span>Naar site werkgevers</span></a>
-            <a routerLink="/content"><span class="material-symbols-outlined" translate="no">handshake</span><span>Naar site partners</span></a>
-            <a (click)="logout()"><span class="material-symbols-outlined" translate="no">account_circle</span><span>Afmelden</span></a>
+            <a routerLink="/content"><span class="material-symbols-outlined"
+                    translate="no">shield_person</span><span>Naar site werkgevers</span></a>
+            <a routerLink="/content"><span class="material-symbols-outlined" translate="no">handshake</span><span>Naar
+                    site partners</span></a>
+            <a (click)="logout()"><span class="material-symbols-outlined"
+                    translate="no">account_circle</span><span>Afmelden</span></a>
             <a (click)="toggleSettings()"><span class="material-symbols-outlined" translate="no">settings</span></a>
         </div>
         <div *ngIf="showSettings" class="settings-dropdown">
-            <form [formGroup]="fontForm" class="settings-form">
-                <h4>Font family</h4>
-                <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option1" (change)="onOptionChangeFontForm('')" />
-                    Flanders
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option2" (change)="onOptionChangeFontForm('font-inter')" />
-                    Inter
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option3" (change)="onOptionChangeFontForm('font-opensans')" />
-                    Open Sans
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontfamily" value="option4" (change)="onOptionChangeFontForm('font-comicsans')" />
-                    Comic Sans
-                  </label>
-                <h4>Font size</h4>
-                <label>
-                    <input type="radio" formControlName="optionfontsize" value="option1" (change)="onOptionChangeFontSize('')" />
-                    Normal (18px)
-                  </label>
-                  <label>
-                    <input type="radio" formControlName="optionfontsize" value="option2" (change)="onOptionChangeFontSize('smaller-font')" />
-                    Smaller (16px)
-                  </label>
-            </form>
+            <div class="settings-dropdown__inner">
+                <span (click)="toggleSettings()" class="material-symbols-outlined close" translate="no">close</span>
+                <h2>Typografie tokens</h2>
+                <form [formGroup]="fontForm" class="settings-form">
+                    <div class="token-card">
+                        <h3>Font family</h3>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option1" (change)="onOptionChangeFontForm('')" />
+                            Flanders
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option2" (change)="onOptionChangeFontForm('font-inter')" />
+                            Inter
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option3" (change)="onOptionChangeFontForm('font-opensans')" />
+                            Open Sans
+                        </label>
+                        <label>
+                            <input type="radio" formControlName="optionfontfamily" value="option4" (change)="onOptionChangeFontForm('font-comicsans')" />
+                            Comic Sans
+                        </label>
+                    </div>
+                </form>
+                <form [formGroup]="formTokens" class="tokens-form">
+                    <div class="tokens-box" formArrayName="tokens">
+                        <div *ngFor="let token of tokensForm.controls; let i = index" [formGroupName]="i"
+                            class="token-card">
+                            <h3>{{ token.get('name')?.value }}</h3>
+                            <label>
+                                <span>Font Size:</span>
+                                <input type="text" formControlName="fontSize" />
+                            </label>
+                            <label>
+                                <span>Line Height:</span>
+                                <input type="text" formControlName="lineHeight" />
+                            </label>
+                            <label>
+                                <span>Font Weight:</span>
+                                <input type="text" formControlName="fontWeight" />
+                            </label>
+                            <label>
+                                <span>Letter Spacing:</span>
+                                <input type="text" formControlName="letterSpacing" />
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn--primary" (click)="resetTokens()">Reset</button>
+            </div>
         </div>
     </div>
     <div class="header-desktop--bottom">
@@ -171,13 +225,20 @@
                         <div class="field" [class.open]="showSubMenu">
                             <input type="text" formControlName="text" id="search" placeholder="Zoek op vdab.be">
                             <span *ngIf="!showCloseBtn" class="material-symbols-outlined" translate="no">search</span>
-                            <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined" translate="no">close</span>
+                            <span *ngIf="showCloseBtn" (click)="resetField()" class="material-symbols-outlined"
+                                translate="no">close</span>
                         </div>
                     </form>
                     <div class="submenu" [class.open]="showSubMenu">
-                        <a class="active" href="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in infopagina's</span></span></a>
-                        <a href="/jobs/vind-een-job"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in vacatures</span></span></a>
-                        <a href="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined" translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in opleidingen</span></span></a>
+                        <a class="active" href="/jobs/vind-een-job"><span class="material-symbols-outlined"
+                                translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in
+                                    infopagina's</span></span></a>
+                        <a href="/jobs/vind-een-job"><span class="material-symbols-outlined"
+                                translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in
+                                    vacatures</span></span></a>
+                        <a href="/opleidingen/vind-een-opleiding"><span class="material-symbols-outlined"
+                                translate="no">search</span> <span class="content"><span>{{searchTerm}}</span> <span>in
+                                    opleidingen</span></span></a>
                     </div>
                 </div>
             </div>
@@ -199,7 +260,14 @@
                     </a>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
+                    <a (click)="toggleMenu()" [routerLink]="['/mapgl']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">map</span>
+                        <span>Vacatures op kaart</span>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']"
+                        routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
@@ -209,7 +277,7 @@
                         <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="block-2">
                 <li>
@@ -219,17 +287,18 @@
                     </h3>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
+                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']"
+                        routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="block-3">
                 <li>
@@ -251,7 +320,8 @@
                     </a>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']" routerLinkActive="active">
+                    <a (click)="toggleMenu()" [routerLink]="['/opleidingen', 'vind-een-opleiding']"
+                        routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">workspace_premium</span>
                         <span>Vind een opleiding</span>
                     </a>
@@ -270,7 +340,7 @@
                         <span class="material-symbols-outlined" translate="no">chevron_right</span>
                     </h3>
                 </li>
-                <li>
+                <!-- <li>
                     <a (click)="toggleMenu()" [routerLink]="['/jobs']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">assured_workload</span>
                         <span>Jobs</span>
@@ -281,23 +351,29 @@
                         <span class="material-symbols-outlined" translate="no">work</span>
                         <span>Vind een job</span>
                     </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a (click)="toggleMenu()" [routerLink]="['/map']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">map</span>
                         <span>Map</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/mapgl']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">map</span>
-                        <span>MapGL</span>
+                        <span>Vacatures op kaart</span>
                     </a>
                 </li>
                 <li>
                     <a (click)="toggleMenu()" [routerLink]="['/studieboom']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">flowchart</span>
                         <span>Studieboom</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/content']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">flowchart</span>
+                        <span>Content pagina</span>
                     </a>
                 </li>
             </ul>
