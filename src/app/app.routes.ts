@@ -108,6 +108,6 @@ export const routes: Routes = [
     {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'}, canActivate: [AuthGuard] },
     {path:'bedankt', component: ThanksComponent, data: { breadcrumb: 'Bedankt voor je aanvraag'}, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'tabbar', component: TabbarAnimationComponent },
+    { path: 'tabbar', component: TabbarAnimationComponent, data: { breadcrumb: 'Tabbar animatie'}, canActivate: [AuthGuard] },
     { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
