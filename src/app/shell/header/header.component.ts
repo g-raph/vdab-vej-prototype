@@ -33,244 +33,244 @@ export class HeaderComponent implements OnInit {
   searchTerm = '';
   isHome: boolean = false;
   defaultTokens: TypographyToken[] = [
-      {
+    {
       name: "headings-h1",
-     fontSize: "45px",
-     lineHeight: "49.5px",
-     fontWeight: "500",
+      fontSize: "45px",
+      lineHeight: "49.5px",
+      fontWeight: "500",
       letterSpacing: "-0.02em"
     },
     {
       name: "headings-h1-mobile",
-     fontSize: "34px",
-     lineHeight: "42.5px",
-     fontWeight: "500",
+      fontSize: "34px",
+      lineHeight: "42.5px",
+      fontWeight: "500",
       letterSpacing: "-0.02em"
     },
     {
       name: "headings-h2",
-     fontSize: "32px",
-     lineHeight: "40px",
-     fontWeight: "500",
+      fontSize: "32px",
+      lineHeight: "40px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h2-mobile",
-     fontSize: "28px",
-     lineHeight: "30.8px",
-     fontWeight: "500",
+      fontSize: "28px",
+      lineHeight: "30.8px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h3",
-     fontSize: "26px",
-     lineHeight: "28.6px",
-     fontWeight: "500",
+      fontSize: "26px",
+      lineHeight: "28.6px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h3-mobile",
-     fontSize: "26px",
-     lineHeight: "32.5px",
-     fontWeight: "500",
+      fontSize: "26px",
+      lineHeight: "32.5px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h4",
-     fontSize: "22px",
-     lineHeight: "27.5px",
-     fontWeight: "500",
+      fontSize: "22px",
+      lineHeight: "27.5px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h4-mobile",
-     fontSize: "22px",
-     lineHeight: "27.5px",
-     fontWeight: "500",
+      fontSize: "22px",
+      lineHeight: "27.5px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h5",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h5-mobile",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-medium-regular",
-     fontSize: "18px",
-     lineHeight: "24px",
-     fontWeight: "400",
+      fontSize: "18px",
+      lineHeight: "24px",
+      fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-medium-bold",
-     fontSize: "18px",
-     lineHeight: "24px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "24px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-small-regular",
-     fontSize: "14px",
-     lineHeight: "27px",
-     fontWeight: "400",
+      fontSize: "14px",
+      lineHeight: "27px",
+      fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-small-bold",
-     fontSize: "14px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "14px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-large-regular",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "400",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-large-bold",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-introduction-block",
-     fontSize: "26px",
-     lineHeight: "28.6px",
-     fontWeight: "300",
+      fontSize: "26px",
+      lineHeight: "28.6px",
+      fontWeight: "300",
       letterSpacing: "normal"
     }
   ];
   tokens: TypographyToken[] = [
-      {
+    {
       name: "headings-h1",
-     fontSize: "45px",
-     lineHeight: "49.5px",
-     fontWeight: "500",
+      fontSize: "45px",
+      lineHeight: "49.5px",
+      fontWeight: "500",
       letterSpacing: "-0.02em"
     },
     {
       name: "headings-h1-mobile",
-     fontSize: "34px",
-     lineHeight: "42.5px",
-     fontWeight: "500",
+      fontSize: "34px",
+      lineHeight: "42.5px",
+      fontWeight: "500",
       letterSpacing: "-0.02em"
     },
     {
       name: "headings-h2",
-     fontSize: "32px",
-     lineHeight: "40px",
-     fontWeight: "500",
+      fontSize: "32px",
+      lineHeight: "40px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h2-mobile",
-     fontSize: "28px",
-     lineHeight: "30.8px",
-     fontWeight: "500",
+      fontSize: "28px",
+      lineHeight: "30.8px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h3",
-     fontSize: "26px",
-     lineHeight: "28.6px",
-     fontWeight: "500",
+      fontSize: "26px",
+      lineHeight: "28.6px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h3-mobile",
-     fontSize: "26px",
-     lineHeight: "32.5px",
-     fontWeight: "500",
+      fontSize: "26px",
+      lineHeight: "32.5px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h4",
-     fontSize: "22px",
-     lineHeight: "27.5px",
-     fontWeight: "500",
+      fontSize: "22px",
+      lineHeight: "27.5px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h4-mobile",
-     fontSize: "22px",
-     lineHeight: "27.5px",
-     fontWeight: "500",
+      fontSize: "22px",
+      lineHeight: "27.5px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h5",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h5-mobile",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-medium-regular",
-     fontSize: "18px",
-     lineHeight: "24px",
-     fontWeight: "400",
+      fontSize: "18px",
+      lineHeight: "24px",
+      fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-medium-bold",
-     fontSize: "18px",
-     lineHeight: "24px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "24px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-small-regular",
-     fontSize: "14px",
-     lineHeight: "27px",
-     fontWeight: "400",
+      fontSize: "14px",
+      lineHeight: "27px",
+      fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-small-bold",
-     fontSize: "14px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "14px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-large-regular",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "400",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-large-bold",
-     fontSize: "18px",
-     lineHeight: "27px",
-     fontWeight: "500",
+      fontSize: "18px",
+      lineHeight: "27px",
+      fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-introduction-block",
-     fontSize: "26px",
-     lineHeight: "28.6px",
-     fontWeight: "300",
+      fontSize: "26px",
+      lineHeight: "28.6px",
+      fontWeight: "300",
       letterSpacing: "normal"
     }
   ];
@@ -325,33 +325,48 @@ export class HeaderComponent implements OnInit {
   }
 
   get tokensForm(): FormArray {
-      return this.formTokens.get('tokens') as FormArray;
-    }
-  
-    applyTokens(tokens: TypographyToken[]): void {
-      const root = document.documentElement;
-      tokens.forEach(token => {
-        root.style.setProperty(`--${token.name}-font-size`, token.fontSize);
-        root.style.setProperty(`--${token.name}-line-height`, token.lineHeight);
-        root.style.setProperty(`--${token.name}-font-weight`, token.fontWeight);
-        root.style.setProperty(`--${token.name}-letter-spacing`, token.letterSpacing);
-      });
-    }
-  
-    resetTokens(): void {
-      this.tokens = [...this.defaultTokens];
-      this.applyTokens(this.defaultTokens);
-      this.formTokens = this.fb.group({
-        tokens: this.fb.array(this.tokens.map(t => this.fb.group({
-          name: [t.name],
-          fontSize: [t.fontSize],
-          lineHeight: [t.lineHeight],
-          fontWeight: [t.fontWeight],
-          letterSpacing: [t.letterSpacing]
-        })))
-      });
-      localStorage.setItem('typographyTokens', JSON.stringify(this.defaultTokens));
-    }
+    return this.formTokens.get('tokens') as FormArray;
+  }
+
+  applyTokens(tokens: TypographyToken[]): void {
+    const root = document.documentElement;
+    tokens.forEach(token => {
+      root.style.setProperty(`--${token.name}-font-size`, token.fontSize);
+      root.style.setProperty(`--${token.name}-line-height`, token.lineHeight);
+      root.style.setProperty(`--${token.name}-font-weight`, token.fontWeight);
+      root.style.setProperty(`--${token.name}-letter-spacing`, token.letterSpacing);
+    });
+  }
+
+  resetTokens(): void {
+    this.tokens = [...this.defaultTokens];
+    this.applyTokens(this.defaultTokens);
+    this.formTokens = this.fb.group({
+      tokens: this.fb.array(this.tokens.map(t => this.fb.group({
+        name: [t.name],
+        fontSize: [t.fontSize],
+        lineHeight: [t.lineHeight],
+        fontWeight: [t.fontWeight],
+        letterSpacing: [t.letterSpacing]
+      })))
+    });
+    localStorage.setItem('typographyTokens', JSON.stringify(this.defaultTokens));
+  }
+
+  export() {
+    const values = this.formTokens.value;
+    const jsonTokens = {};
+    Object.keys(values).forEach(key => {
+      (jsonTokens as any)[key] = { value: values[key] };
+    });
+    const blob = new Blob([JSON.stringify(jsonTokens, null, 2)], { type: 'application/json' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'tokens.json';
+    a.click();
+    window.URL.revokeObjectURL(url);
+  }
 
   logout() {
     this.authService.logout();
@@ -385,7 +400,7 @@ export class HeaderComponent implements OnInit {
   resetField() {
     this.form.get('text')?.setValue('');
   }
-  openSubMenu(dataValue:string) {
+  openSubMenu(dataValue: string) {
     if (dataValue !== '') {
       this.showSubMenu = true;
       this.showCloseBtn = true;
