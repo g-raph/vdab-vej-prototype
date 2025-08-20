@@ -1,0 +1,65 @@
+.tabbar {
+    position: relative;
+    width: max-content;
+    margin: 50px auto;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0 3rem;
+    box-sizing: border-box;
+    @media screen and (max-width: 990px) {
+        padding: 0;
+    }
+}
+
+.tabbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.tabbar-item {
+    padding: 15px 20px 10px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: .75rem;
+    }
+    .material-symbols-outlined {
+        font-size: 2rem;
+    }
+}
+
+/* Het streepje zelf */
+.tabbar ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 0;
+    background: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+/* We lossen dit op met variabelen */
+.tabbar-item {
+    --item-left: 0px;
+    --item-width: 0px;
+    
+}
+
+.tabbar-item.active {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.tabbar ul::before {
+    left: var(--indicator-left, 0);
+    width: var(--indicator-width, 0);
+}

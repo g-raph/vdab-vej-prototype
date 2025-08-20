@@ -16,6 +16,7 @@ import { AuthGuard } from './services/auth.guard';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 import { MapComponent } from './components/map/map.component';
 import { MapglComponent } from './components/mapgl/mapgl.component';
+import { TabbarAnimationComponent } from './components/tabbar-animation/tabbar-animation.component';
 
 export const routes: Routes = [
     {
@@ -107,5 +108,6 @@ export const routes: Routes = [
     {path:'content', component: ContentpageComponent, data: { breadcrumb: 'Content pagina'}, canActivate: [AuthGuard] },
     {path:'bedankt', component: ThanksComponent, data: { breadcrumb: 'Bedankt voor je aanvraag'}, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
+    { path: 'tabbar', component: TabbarAnimationComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
