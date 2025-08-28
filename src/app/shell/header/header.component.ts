@@ -35,8 +35,8 @@ export class HeaderComponent implements OnInit {
   defaultTokens: TypographyToken[] = [
     {
       name: "headings-h1",
-      fontSize: "45px",
-      lineHeight: "49.5px",
+      fontSize: "40px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "-0.02em"
     },
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
     {
       name: "headings-h2",
       fontSize: "32px",
-      lineHeight: "40px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit {
     {
       name: "headings-h3",
       fontSize: "26px",
-      lineHeight: "28.6px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
@@ -77,8 +77,8 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: "headings-h4",
-      fontSize: "22px",
-      lineHeight: "27.5px",
+      fontSize: "20px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
@@ -91,8 +91,8 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: "headings-h5",
-      fontSize: "18px",
-      lineHeight: "27px",
+      fontSize: "16px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
@@ -105,175 +105,55 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: "paragraph-medium-regular",
-      fontSize: "18px",
-      lineHeight: "24px",
+      fontSize: "16px",
+      lineHeight: "1.5",
       fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-medium-bold",
-      fontSize: "18px",
-      lineHeight: "24px",
+      fontSize: "16px",
+      lineHeight: "1.5",
       fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-small-regular",
       fontSize: "14px",
-      lineHeight: "27px",
+      lineHeight: "1.5",
       fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-small-bold",
       fontSize: "14px",
-      lineHeight: "27px",
+      lineHeight: "1.5",
       fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-large-regular",
       fontSize: "18px",
-      lineHeight: "27px",
+      lineHeight: "1.5",
       fontWeight: "400",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-large-bold",
       fontSize: "18px",
-      lineHeight: "27px",
+      lineHeight: "1.5",
       fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "paragraph-introduction-block",
       fontSize: "26px",
-      lineHeight: "28.6px",
+      lineHeight: "1.5",
       fontWeight: "300",
       letterSpacing: "normal"
     }
   ];
-  tokens: TypographyToken[] = [
-    {
-      name: "headings-h1",
-      fontSize: "45px",
-      lineHeight: "49.5px",
-      fontWeight: "500",
-      letterSpacing: "-0.02em"
-    },
-    {
-      name: "headings-h1-mobile",
-      fontSize: "34px",
-      lineHeight: "42.5px",
-      fontWeight: "500",
-      letterSpacing: "-0.02em"
-    },
-    {
-      name: "headings-h2",
-      fontSize: "32px",
-      lineHeight: "40px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h2-mobile",
-      fontSize: "28px",
-      lineHeight: "30.8px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h3",
-      fontSize: "26px",
-      lineHeight: "28.6px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h3-mobile",
-      fontSize: "26px",
-      lineHeight: "32.5px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h4",
-      fontSize: "22px",
-      lineHeight: "27.5px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h4-mobile",
-      fontSize: "22px",
-      lineHeight: "27.5px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h5",
-      fontSize: "18px",
-      lineHeight: "27px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "headings-h5-mobile",
-      fontSize: "18px",
-      lineHeight: "27px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-medium-regular",
-      fontSize: "18px",
-      lineHeight: "24px",
-      fontWeight: "400",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-medium-bold",
-      fontSize: "18px",
-      lineHeight: "24px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-small-regular",
-      fontSize: "14px",
-      lineHeight: "27px",
-      fontWeight: "400",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-small-bold",
-      fontSize: "14px",
-      lineHeight: "27px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-large-regular",
-      fontSize: "18px",
-      lineHeight: "27px",
-      fontWeight: "400",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-large-bold",
-      fontSize: "18px",
-      lineHeight: "27px",
-      fontWeight: "500",
-      letterSpacing: "normal"
-    },
-    {
-      name: "paragraph-introduction-block",
-      fontSize: "26px",
-      lineHeight: "28.6px",
-      fontWeight: "300",
-      letterSpacing: "normal"
-    }
-  ];
+  tokens: TypographyToken[] = [...this.defaultTokens];
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.form = fb.group({
       text: ''
