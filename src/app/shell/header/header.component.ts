@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
     {
       name: "headings-h1-mobile",
       fontSize: "34px",
-      lineHeight: "42.5px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "-0.02em"
     },
@@ -57,7 +57,7 @@ export class HeaderComponent implements OnInit {
     {
       name: "headings-h2-mobile",
       fontSize: "28px",
-      lineHeight: "30.8px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
     {
       name: "headings-h3-mobile",
       fontSize: "22px",
-      lineHeight: "32.5px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
@@ -85,21 +85,21 @@ export class HeaderComponent implements OnInit {
     {
       name: "headings-h4-mobile",
       fontSize: "18px",
-      lineHeight: "27.5px",
+      lineHeight: "1.2",
       fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h5",
       fontSize: "16px",
-      lineHeight: "1.2",
+      lineHeight: "1.5",
       fontWeight: "500",
       letterSpacing: "normal"
     },
     {
       name: "headings-h5-mobile",
       fontSize: "16px",
-      lineHeight: "27px",
+      lineHeight: "1.5",
       fontWeight: "500",
       letterSpacing: "normal"
     },
