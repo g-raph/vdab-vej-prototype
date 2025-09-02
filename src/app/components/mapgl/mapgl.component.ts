@@ -46,7 +46,7 @@ export class MapglComponent implements OnInit {
 
     this.map.on('load', () => {
       const style = this.map.getStyle();
-      console.log('All layers:', style.layers.map(layer => {return {id: layer.id, paint: layer.paint}}));
+      console.log('All layers:', style.layers);
       this.http.get<any>('assets/mapstyle.json').subscribe(overrides => {
         this.defaultOverrides = JSON.parse(JSON.stringify(overrides)); // deep clone
         this.currentOverrides = JSON.parse(JSON.stringify(overrides));
