@@ -5,6 +5,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { debounceTime, filter } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { NavigationComponent } from "../navigation/navigation.component";
 
 export interface TypographyToken {
   name: string;
@@ -17,7 +18,7 @@ export interface TypographyToken {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, BreadcrumbComponent, NgIf, NgFor, ReactiveFormsModule],
+  imports: [NavigationComponent, RouterLink, RouterLinkActive, BreadcrumbComponent, NgIf, NgFor, ReactiveFormsModule, NavigationComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
