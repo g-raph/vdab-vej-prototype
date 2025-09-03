@@ -18,7 +18,7 @@ export interface TypographyToken {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NavigationComponent, RouterLink, RouterLinkActive, BreadcrumbComponent, NgIf, NgFor, ReactiveFormsModule, NavigationComponent],
+  imports: [NavigationComponent, RouterLink, BreadcrumbComponent, NgIf, NgFor, ReactiveFormsModule, NavigationComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
