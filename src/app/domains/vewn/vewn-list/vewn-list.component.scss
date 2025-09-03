@@ -1,0 +1,27 @@
+.vewn-list {
+  padding: 1rem 1rem 6rem;
+  box-sizing: border-box;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__top {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h1 {
+    width: 100%;
+    @media screen and (max-width: 990px) {
+      margin: 0 0 1rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}

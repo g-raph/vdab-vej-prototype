@@ -43,12 +43,6 @@
                     </a>
                 </li>
                 <li>
-                    <a (click)="toggleMenu()" [routerLink]="['/map']" routerLinkActive="active">
-                        <span class="material-symbols-outlined" translate="no">map</span>
-                        <span>Map</span>
-                    </a>
-                </li>
-                <li>
                     <a (click)="toggleMenu()" [routerLink]="['/mapgl']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">map</span>
                         <span>MapGL</span>
@@ -58,6 +52,12 @@
                     <a (click)="toggleMenu()" [routerLink]="['/tabbar']" routerLinkActive="active">
                         <span class="material-symbols-outlined" translate="no">animation</span>
                         <span>Tabbar animatie</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toggleMenu()" [routerLink]="['/content']" routerLinkActive="active">
+                        <span class="material-symbols-outlined" translate="no">animation</span>
+                        <span>Content page</span>
                     </a>
                 </li>
             </ul>
