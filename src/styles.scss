@@ -7,6 +7,7 @@ body {
   font-weight: var(--paragraph-medium-regular-font-weight);
   letter-spacing: var(--paragraph-medium-regular-letter-spacing);
   line-height: var(--paragraph-medium-regular-line-height);
+  text-rendering: geometricPrecision;
   p {
     text-align: left;
     color: #474b50;
