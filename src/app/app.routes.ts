@@ -19,6 +19,7 @@ import { MapglComponent } from './components/mapgl/mapgl.component';
 import { TabbarAnimationComponent } from './components/tabbar-animation/tabbar-animation.component';
 import { VewnListComponent } from './domains/vewn/vewn-list/vewn-list.component';
 import { VewnDetailComponent } from './domains/vewn/vewn-detail/vewn-detail.component';
+import { WysiwygComponent } from './components/wysiwyg/wysiwyg.component';
 
 export const routes: Routes = [
     {
@@ -36,6 +37,15 @@ export const routes: Routes = [
             {
                 path: '',
                 component: TestComponent,
+            },
+        ], canActivate: [AuthGuard]
+    },
+    {
+        path: 'wysiwyg',
+        children: [
+            {
+                path: '',
+                component: WysiwygComponent,
             },
         ], canActivate: [AuthGuard]
     },

@@ -41,7 +41,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
+              "node_modules/leaflet/dist/leaflet.js",
+              "src/assets/tinymce/tinymce.min.js"
             ]
           },
           "configurations": {

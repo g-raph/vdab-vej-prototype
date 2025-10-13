@@ -1,0 +1,8 @@
+<div class="wysiwyg">
+    <div class="wysiwyg__inner">
+        <editor [(ngModel)]="content" [init]="editorConfig" apiKey=""></editor>
+        
+        <h3>Preview:</h3>
+        <div [innerHTML]="content"></div>
+    </div>
+</div>
