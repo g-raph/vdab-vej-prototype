@@ -14,7 +14,7 @@ export class WysiwygComponent {
     <h2>Welkom bij TinyMCE met custom skin!</h2>
     <h3>Welkom bij TinyMCE met custom skin!</h3>
     <h4>Welkom bij TinyMCE met custom skin!</h4>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <p>Lorem Ipsum is <a href="https://google.be" title="Dit is een link naar Google" target="_blank" rel="noopener">simply dummy text of the printing</a> and typesetting industry.</p>
     <ul>
       <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
       <li>When an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
