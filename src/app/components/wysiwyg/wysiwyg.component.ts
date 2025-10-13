@@ -51,6 +51,6 @@ export class WysiwygComponent {
     toolbar:
       'undo redo | formatselect | bold italic underline | ' +
       'alignleft aligncenter alignright alignjustify | ' +
-      'bullist numlist outdent indent | link removeformat | help'
+      'bullist numlist outdent indent | link | removeformat'
   };
 }
