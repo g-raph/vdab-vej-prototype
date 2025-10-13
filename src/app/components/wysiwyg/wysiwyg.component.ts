@@ -49,7 +49,7 @@ export class WysiwygComponent {
       'searchreplace visualblocks code fullscreen ' +
       'insertdatetime media table code help wordcount',
     toolbar:
-      'undo redo | formatselect | bold italic backcolor | ' +
+      'undo redo | formatselect | bold italic underline | ' +
       'alignleft aligncenter alignright alignjustify | ' +
       'bullist numlist outdent indent | link removeformat | help'
   };
