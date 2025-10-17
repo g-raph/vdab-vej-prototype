@@ -36,14 +36,11 @@ export class WysiwygComponent {
     content_css: 'vdab',
     valid_elements: '*[*]',
     block_formats:
-      'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3; Heading 4=h4; Preformatted=pre',
+      'Paragraph=p; Heading 3=h3; Heading 4=h4; Preformatted=pre',
     style_formats: [
       { title: 'Paragraph', block: 'p' },
-      { title: 'Heading 1', block: 'h1' },
-      { title: 'Heading 2', block: 'h2' },
       { title: 'Heading 3', block: 'h3' },
       { title: 'Heading 4', block: 'h4' },
-      { title: 'Preformatted', block: 'pre' }
     ],
     plugins: 'advlist autolink lists link image charmap preview anchor ' +
       'searchreplace visualblocks code fullscreen ' +
