@@ -20,6 +20,7 @@ import { TabbarAnimationComponent } from './components/tabbar-animation/tabbar-a
 import { VewnListComponent } from './domains/vewn/vewn-list/vewn-list.component';
 import { VewnDetailComponent } from './domains/vewn/vewn-detail/vewn-detail.component';
 import { WysiwygComponent } from './components/wysiwyg/wysiwyg.component';
+import { TinymceComponent } from './components/tinymce/tinymce.component';
 
 export const routes: Routes = [
     {
@@ -45,7 +46,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component: WysiwygComponent,
+                component: TinymceComponent,
             },
         ], canActivate: [AuthGuard]
     },

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "serve": "ng serve -o",
     "start": "node server.js",
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
@@ -23,6 +24,8 @@
     "@mapbox/mapbox-gl-draw": "^1.5.0",
     "@maplibre/maplibre-gl-geocoder": "^1.8.0",
     "@tinymce/tinymce-angular": "^9.1.0",
+    "@vdab/vdab-design-assets-rich-text-editor-styling": "1.0.0",
+    "tinymce": "8.1.2",
     "express": "^4.19.2",
     "leaflet": "^1.9.4",
     "leaflet-draw": "^1.0.4",
@@ -30,7 +33,6 @@
     "maplibre-gl-draw": "^1.6.9",
     "path": "^0.12.7",
     "rxjs": "~7.8.0",
-    "tinymce": "^6.7.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

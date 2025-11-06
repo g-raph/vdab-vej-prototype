@@ -28,7 +28,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
+              { "glob": "**/*.min.css", "input": "./node_modules/@vdab/vdab-design-assets-rich-text-editor-styling/dist/content/", "output": "./assets/tinymce/content/" },
+              { "glob": "**/*.min.css", "input": "./node_modules/@vdab/vdab-design-assets-rich-text-editor-styling/dist/ui/", "output": "./assets/tinymce/ui/" }
             ],
             "styles": [
               "node_modules/leaflet/dist/leaflet.css",
@@ -42,7 +45,7 @@
             ],
             "scripts": [
               "node_modules/leaflet/dist/leaflet.js",
-              "src/assets/tinymce/tinymce.min.js"
+              "node_modules/tinymce/tinymce.min.js"
             ]
           },
           "configurations": {
