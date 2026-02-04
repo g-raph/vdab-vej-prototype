@@ -1,4 +1,5 @@
-<div class="content-page">
+<div class="toggle-reset-btn" (click)="toggleResetCss()">Reset</div>
+<div class="content-page" [class.reset-css]="showResetCss">
     <div class="box">
         <h1>Heading level 1: Lorem ipsum is een standaardopvultekst die gebruikt wordt in de grafische vormgeving en webdesign om de lay-out van een ontwerp te demonstreren zonder dat de inhoud afleidt.</h1>
         <h2>Heading level 2: Lorem ipsum is een standaardopvultekst die gebruikt wordt in de grafische vormgeving en webdesign om de lay-out van een ontwerp te demonstreren zonder dat de inhoud afleidt.</h2>

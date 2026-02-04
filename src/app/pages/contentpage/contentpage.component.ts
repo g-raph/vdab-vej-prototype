@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './contentpage.component.scss'
 })
 export class ContentpageComponent {
-
+  showResetCss = false;
+  toggleResetCss() {
+    this.showResetCss = !this.showResetCss;
+  }
 }
